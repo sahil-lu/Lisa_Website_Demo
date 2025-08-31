@@ -660,21 +660,21 @@ const Index = () => {
                             {feature}
                           </span>
                         ))}
-                      </div>
-                      
-
                     </div>
-                  </div>
+                    
+
+                      </div>
+                      </div>
 
 
-                </motion.div>
-              ))}
-            </motion.div>
+                  </motion.div>
+                ))}
+              </motion.div>
             
 
-                </div>
+        </div>
       </section>
-              
+
       {/* Trust & Scale Section */}
                       <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-blue-50/30 dark:to-blue-900/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

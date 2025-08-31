@@ -44,7 +44,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/effective-business-communication.png",
+    image: "/final2/effective-business-communication.png",
     tags: ["Communication", "Business", "Professional Development"]
   },
   {
@@ -64,7 +64,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/presentation-public-speaking.png",
+    image: "/final2/presentation-public-speaking.png",
     tags: ["Public Speaking", "Presentation", "Communication"]
   },
   {
@@ -85,7 +85,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/professional-email-business-writing.png",
+    image: "/final2/professional-email-business-writing.png",
     tags: ["Email", "Business Writing", "Communication"]
   },
   {
@@ -106,7 +106,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/the-complete-communication-skills-master-class-for.png",
+    image: "/final2/the-complete-communication-skills-master-class-for.png",
     tags: ["Communication", "Master Class", "Professional Development"]
   },
   {
@@ -125,7 +125,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/writing-with-flair-how-to-become-an-exceptional-wr.png",
+    image: "/final2/writing-with-flair-how-to-become-an-exceptional-wr.png",
     tags: ["Writing", "Communication", "Professional Development"]
   },
   {
@@ -146,7 +146,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/email-etiquette-write-more-effective-emails-at-wor.png",
+    image: "/final2/email-etiquette-write-more-effective-emails-at-wor.png",
     tags: ["Email", "Etiquette", "Communication"]
   },
   {
@@ -165,7 +165,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/cross-cultural-communication.png",
+    image: "/final2/cross-cultural-communication.png",
     tags: ["Cross-cultural", "Communication", "Diversity"]
   },
   {
@@ -185,7 +185,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/feedback-performance-conversations.png",
+    image: "/final2/feedback-performance-conversations.png",
     tags: ["Feedback", "Performance", "Leadership"]
   },
   {
@@ -204,7 +204,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/emotional-intelligence-for-teams.png",
+    image: "/final2/emotional-intelligence-for-teams.png",
     tags: ["Emotional Intelligence", "Teams", "Leadership"]
   },
   {
@@ -224,7 +224,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/conflict-resolution-negotiation.png",
+    image: "/final2/conflict-resolution-negotiation.png",
     tags: ["Conflict Resolution", "Negotiation", "Leadership"]
   },
   {
@@ -245,7 +245,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/conflict-management-with-emotional-intelligence.png",
+    image: "/final2/conflict-management-with-emotional-intelligence.png",
     tags: ["Conflict Management", "Emotional Intelligence", "Leadership"]
   },
   {
@@ -266,7 +266,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/master-your-emotions-during-conflict.png",
+    image: "/final2/master-your-emotions-during-conflict.png",
     tags: ["Emotional Management", "Conflict", "Leadership"]
   },
   {
@@ -286,7 +286,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/team-collaboration-trust-building.png",
+    image: "/final2/team-collaboration-trust-building.png",
     tags: ["Team Collaboration", "Trust Building", "Leadership"]
   },
   {
@@ -306,7 +306,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/personal-accountability-at-work.png",
+    image: "/final2/personal-accountability-at-work.png",
     tags: ["Accountability", "Leadership", "Professional Development"]
   },
   {
@@ -327,7 +327,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/leadership-fundamentals.png",
+    image: "/final2/leadership-fundamentals.png",
     tags: ["Leadership", "Management", "Professional Development"]
   },
   {
@@ -347,7 +347,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/management-skills-training-for-new-experienced-man.png",
+    image: "/final2/management-skills-training-for-new-experienced-man.png",
     tags: ["Management", "Leadership", "Professional Development"]
   },
   {
@@ -367,7 +367,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/new-manager-the-basics-and-more-of-being-a-great-l.png",
+    image: "/final2/new-manager-the-basics-and-more-of-being-a-great-l.png",
     tags: ["New Manager", "Leadership", "Management"]
   },
   {
@@ -388,7 +388,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/the-science-of-leadership.png",
+    image: "/final2/the-science-of-leadership.png",
     tags: ["Leadership", "Science", "Evidence-based"]
   },
   {
@@ -409,7 +409,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/think-like-a-leader.png",
+    image: "/final2/think-like-a-leader.png",
     tags: ["Leadership", "Strategic Thinking", "Brian Tracy"]
   },
   {
@@ -430,7 +430,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/how-to-manage-influence-your-virtual-team.png",
+    image: "/final2/how-to-manage-influence-your-virtual-team.png",
     tags: ["Virtual Teams", "Remote Management", "Leadership"]
   },
   {
@@ -450,7 +450,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/critical-thinking-strategies-for-better-decisions.png",
+    image: "/final2/critical-thinking-strategies-for-better-decisions.png",
     tags: ["Critical Thinking", "Decision Making", "Problem Solving"]
   },
   {
@@ -469,7 +469,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/equal-opportunity-non-discrimination.png",
+    image: "/final2/equal-opportunity-non-discrimination.png",
     tags: ["Equal Opportunity", "Compliance", "Workplace Rights"]
   },
   {
@@ -490,7 +490,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/data-privacy-protection.png",
+    image: "/final2/data-privacy-protection.png",
     tags: ["Data Privacy", "Compliance", "Information Security"]
   },
   {
@@ -510,7 +510,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/workplace-safety-health-compliance.png",
+    image: "/final2/workplace-safety-health-compliance.png",
     tags: ["Workplace Safety", "Health Compliance", "Risk Management"]
   },
   {
@@ -529,7 +529,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/generative-ai-for-business-leaders-a-quick-overvie.png",
+    image: "/final2/generative-ai-for-business-leaders-a-quick-overvie.png",
     tags: ["Generative AI", "Technology", "Business Strategy"]
   },
   {
@@ -550,7 +550,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/workplace-cybersecurity-basics.png",
+    image: "/final2/workplace-cybersecurity-basics.png",
     tags: ["Cybersecurity", "Digital Security", "Technology"]
   },
   {
@@ -571,7 +571,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/digital-dexterity-adapting-to-new-tech-at-work.png",
+    image: "/final2/digital-dexterity-adapting-to-new-tech-at-work.png",
     tags: ["Digital Dexterity", "Technology Adoption", "Workplace Skills"]
   },
   {
@@ -590,7 +590,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/understanding-gender-sensitivity-at-work.png",
+    image: "/final2/understanding-gender-sensitivity-at-work.png",
     tags: ["Gender Sensitivity", "Diversity", "Inclusion"]
   },
   {
@@ -611,7 +611,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/neurodiversity-awareness-in-the-workplace.png",
+    image: "/final2/neurodiversity-awareness-in-the-workplace.png",
     tags: ["Neurodiversity", "Inclusion", "Workplace Diversity"]
   },
   {
@@ -631,7 +631,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-allyship-from-bystander-to-upstander.png",
+    image: "/final2/building-allyship-from-bystander-to-upstander.png",
     tags: ["Allyship", "Diversity", "Inclusion"]
   },
   {
@@ -651,7 +651,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/performance-management-build-a-high-performing-tea.png",
+    image: "/final2/performance-management-build-a-high-performing-tea.png",
     tags: ["Performance Management", "Team Building", "Leadership"]
   },
   {
@@ -671,7 +671,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/managers-guide-to-effective-11-meetings.png",
+    image: "/final2/managers-guide-to-effective-11-meetings.png",
     tags: ["1:1 Meetings", "Management", "Leadership"]
   },
   {
@@ -692,7 +692,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/be-a-great-mentor-a-practical-guide-to-mentorship.png",
+    image: "/final2/be-a-great-mentor-a-practical-guide-to-mentorship.png",
     tags: ["Mentorship", "Leadership", "Professional Development"]
   },
   {
@@ -713,7 +713,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/workplace-diversity-inclusion.png",
+    image: "/final2/workplace-diversity-inclusion.png",
     tags: ["Diversity", "Inclusion", "Workplace Culture"]
   },
   {
@@ -734,7 +734,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/unconscious-bias-fuel-diversity-and-become-a-bette.png",
+    image: "/final2/unconscious-bias-fuel-diversity-and-become-a-bette.png",
     tags: ["Unconscious Bias", "Diversity", "Inclusion"]
   },
   {
@@ -754,7 +754,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/workplace-etiquette-professionalism.png",
+    image: "/final2/workplace-etiquette-professionalism.png",
     tags: ["Workplace Etiquette", "Professionalism", "Career Development"]
   },
   {
@@ -774,7 +774,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/time-management-productivity.png",
+    image: "/final2/time-management-productivity.png",
     tags: ["Time Management", "Productivity", "Professional Development"]
   },
   {
@@ -795,7 +795,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/stress-management-resilience.png",
+    image: "/final2/stress-management-resilience.png",
     tags: ["Stress Management", "Resilience", "Wellness"]
   },
   {
@@ -815,7 +815,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-a-growth-mindset.png",
+    image: "/final2/building-a-growth-mindset.png",
     tags: ["Growth Mindset", "Personal Development", "Professional Growth"]
   },
   {
@@ -834,7 +834,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/innovation-creative-thinking.png",
+    image: "/final2/innovation-creative-thinking.png",
     tags: ["Innovation", "Creative Thinking", "Problem Solving"]
   },
   {
@@ -854,7 +854,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/anti-harassment-workplace-conduct.png",
+    image: "/final2/anti-harassment-workplace-conduct.png",
     tags: ["Anti-Harassment", "Workplace Conduct", "Compliance"]
   },
   {
@@ -874,7 +874,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/ethics-fraud-anti-money-laundering.png",
+    image: "/final2/ethics-fraud-anti-money-laundering.png",
     tags: ["Ethics", "Fraud Prevention", "Compliance"]
   },
   {
@@ -894,7 +894,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/environmental-regulations-sustainability.png",
+    image: "/final2/environmental-regulations-sustainability.png",
     tags: ["Environmental Regulations", "Sustainability", "Compliance"]
   },
   {
@@ -914,7 +914,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/emergency-preparedness-crisis-management.png",
+    image: "/final2/emergency-preparedness-crisis-management.png",
     tags: ["Emergency Preparedness", "Crisis Management", "Risk Management"]
   },
   {
@@ -935,7 +935,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/change-management-for-leaders-lead-like-a-lion.png",
+    image: "/final2/change-management-for-leaders-lead-like-a-lion.png",
     tags: ["Change Management", "Leadership", "Organizational Transformation"]
   },
   {
@@ -955,7 +955,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/become-a-product-manager-learn-the-skills-get-the-.png",
+    image: "/final2/become-a-product-manager-learn-the-skills-get-the-.png",
     tags: ["Product Management", "Career Development", "Professional Skills"]
   },
   {
@@ -976,7 +976,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/posh-awareness.png",
+    image: "/final2/posh-awareness.png",
     tags: ["POSH", "Sexual Harassment Prevention", "Compliance"]
   },
   {
@@ -997,7 +997,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/mastering-difficult-conversations-at-work.png",
+    image: "/final2/mastering-difficult-conversations-at-work.png",
     tags: ["Difficult Conversations", "Communication", "Leadership"]
   },
   {
@@ -1017,7 +1017,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/nonverbal-communication-body-language.png",
+    image: "/final2/nonverbal-communication-body-language.png",
     tags: ["Nonverbal Communication", "Body Language", "Communication"]
   },
   {
@@ -1036,7 +1036,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/storytelling-for-business-impact.png",
+    image: "/final2/storytelling-for-business-impact.png",
     tags: ["Storytelling", "Business Communication", "Influence"]
   },
   {
@@ -1057,7 +1057,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/communicating-with-clarity-confidence.png",
+    image: "/final2/communicating-with-clarity-confidence.png",
     tags: ["Clear Communication", "Confidence", "Professional Development"]
   },
   {
@@ -1078,7 +1078,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/listening-to-understand-active-listening-deep-dive.png",
+    image: "/final2/listening-to-understand-active-listening-deep-dive.png",
     tags: ["Active Listening", "Communication", "Interpersonal Skills"]
   },
   {
@@ -1098,7 +1098,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/emotional-agility-at-work.png",
+    image: "/final2/emotional-agility-at-work.png",
     tags: ["Emotional Agility", "Leadership", "Resilience"]
   },
   {
@@ -1118,7 +1118,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-emotional-resilience-in-high-stress-roles.png",
+    image: "/final2/building-emotional-resilience-in-high-stress-roles.png",
     tags: ["Emotional Resilience", "Stress Management", "Leadership"]
   },
   {
@@ -1138,7 +1138,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/navigating-office-politics-with-emotional-intellig.png",
+    image: "/final2/navigating-office-politics-with-emotional-intellig.png",
     tags: ["Office Politics", "Emotional Intelligence", "Leadership"]
   },
   {
@@ -1158,7 +1158,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/preventing-and-managing-team-burnout.png",
+    image: "/final2/preventing-and-managing-team-burnout.png",
     tags: ["Team Burnout", "Wellness", "Leadership"]
   },
   {
@@ -1178,7 +1178,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/constructive-confrontation-how-to-disagree-respectfully.png",
+    image: "/final2/constructive-confrontation-how-to-disagree-respectfully.png",
     tags: ["Constructive Confrontation", "Conflict Resolution", "Leadership"]
   },
   {
@@ -1198,7 +1198,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/leading-without-a-title.png",
+    image: "/final2/leading-without-a-title.png",
     tags: ["Informal Leadership", "Influence", "Leadership"]
   },
   {
@@ -1217,7 +1217,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-high-trust-teams.png",
+    image: "/final2/building-high-trust-teams.png",
     tags: ["High-Trust Teams", "Team Building", "Leadership"]
   },
   {
@@ -1238,7 +1238,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/situational-leadership-adapting-your-style.png",
+    image: "/final2/situational-leadership-adapting-your-style.png",
     tags: ["Situational Leadership", "Adaptive Leadership", "Leadership"]
   },
   {
@@ -1258,7 +1258,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/delegation-mastery-getting-work-done-through-other.png",
+    image: "/final2/delegation-mastery-getting-work-done-through-other.png",
     tags: ["Delegation", "Team Management", "Leadership"]
   },
   {
@@ -1278,7 +1278,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/collaborative-decision-making.png",
+    image: "/final2/collaborative-decision-making.png",
     tags: ["Collaborative Decision-Making", "Team Consensus", "Leadership"]
   },
   {
@@ -1297,7 +1297,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/inclusive-language-in-the-workplace.png",
+    image: "/final2/inclusive-language-in-the-workplace.png",
     tags: ["Inclusive Language", "Diversity", "Communication"]
   },
   {
@@ -1316,7 +1316,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/cultural-intelligence-cq-thrive-in-diverse-teams.png",
+    image: "/final2/cultural-intelligence-cq-thrive-in-diverse-teams.png",
     tags: ["Cultural Intelligence", "Diversity", "Global Teams"]
   },
   {
@@ -1335,7 +1335,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/understanding-gender-sensitivity-at-work.png",
+    image: "/final2/understanding-gender-sensitivity-at-work.png",
     tags: ["Gender Sensitivity", "Diversity", "Inclusion"]
   },
   {
@@ -1356,7 +1356,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/neurodiversity-awareness-in-the-workplace.png",
+    image: "/final2/neurodiversity-awareness-in-the-workplace.png",
     tags: ["Neurodiversity", "Inclusion", "Workplace Diversity"]
   },
   {
@@ -1376,7 +1376,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-allyship-from-bystander-to-upstander.png",
+    image: "/final2/building-allyship-from-bystander-to-upstander.png",
     tags: ["Allyship", "Diversity", "Inclusion"]
   },
   {
@@ -1397,7 +1397,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/beat-procrastination-science-backed-techniques.png",
+    image: "/final2/beat-procrastination-science-backed-techniques.png",
     tags: ["Procrastination", "Productivity", "Time Management"]
   },
   {
@@ -1417,7 +1417,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/developing-grit-sustained-effort-over-time.png",
+    image: "/final2/developing-grit-sustained-effort-over-time.png",
     tags: ["Grit", "Perseverance", "Professional Development"]
   },
   {
@@ -1438,7 +1438,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/deep-work-managing-distractions-focus.png",
+    image: "/final2/deep-work-managing-distractions-focus.png",
     tags: ["Deep Work", "Focus", "Productivity"]
   },
   {
@@ -1458,7 +1458,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/the-power-of-habit-create-lasting-change.png",
+    image: "/final2/the-power-of-habit-create-lasting-change.png",
     tags: ["Habit Formation", "Behavioral Change", "Professional Development"]
   },
   {
@@ -1478,7 +1478,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/reframing-failure-mindset-for-growth-resilience.png",
+    image: "/final2/reframing-failure-mindset-for-growth-resilience.png",
     tags: ["Growth Mindset", "Resilience", "Professional Development"]
   },
   {
@@ -1498,7 +1498,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/design-thinking-fundamentals.png",
+    image: "/final2/design-thinking-fundamentals.png",
     tags: ["Design Thinking", "Problem Solving", "Innovation"]
   },
   {
@@ -1518,7 +1518,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/from-ideas-to-execution-innovation-in-action.png",
+    image: "/final2/from-ideas-to-execution-innovation-in-action.png",
     tags: ["Innovation Execution", "Project Management", "Innovation"]
   },
   {
@@ -1538,7 +1538,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/problem-framing-root-cause-analysis.png",
+    image: "/final2/problem-framing-root-cause-analysis.png",
     tags: ["Problem Framing", "Root Cause Analysis", "Problem Solving"]
   },
   {
@@ -1559,7 +1559,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/creative-confidence-for-professionals.png",
+    image: "/final2/creative-confidence-for-professionals.png",
     tags: ["Creative Confidence", "Innovation", "Problem Solving"]
   },
   {
@@ -1578,7 +1578,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/lateral-thinking-techniques-for-everyday-work.png",
+    image: "/final2/lateral-thinking-techniques-for-everyday-work.png",
     tags: ["Lateral Thinking", "Creative Problem Solving", "Innovation"]
   },
   {
@@ -1597,7 +1597,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/code-of-conduct-walking-the-talk.png",
+    image: "/final2/code-of-conduct-walking-the-talk.png",
     tags: ["Code of Conduct", "Ethics", "Compliance"]
   },
   {
@@ -1618,7 +1618,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/workplace-cybersecurity-basics.png",
+    image: "/final2/workplace-cybersecurity-basics.png",
     tags: ["Cybersecurity", "Digital Security", "Technology"]
   },
   {
@@ -1639,7 +1639,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/insider-trading-confidentiality.png",
+    image: "/final2/insider-trading-confidentiality.png",
     tags: ["Insider Trading", "Confidentiality", "Compliance"]
   },
   {
@@ -1659,7 +1659,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/safety-in-remote-hybrid-work-environments.png",
+    image: "/final2/safety-in-remote-hybrid-work-environments.png",
     tags: ["Remote Safety", "Hybrid Work", "Compliance"]
   },
   {
@@ -1679,7 +1679,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/ethics-in-everyday-decision-making.png",
+    image: "/final2/ethics-in-everyday-decision-making.png",
     tags: ["Ethics", "Decision Making", "Compliance"]
   },
   {
@@ -1699,7 +1699,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/career-planning-personal-branding.png",
+    image: "/final2/career-planning-personal-branding.png",
     tags: ["Career Planning", "Personal Branding", "Professional Development"]
   },
   {
@@ -1718,7 +1718,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-a-portfolio-career.png",
+    image: "/final2/building-a-portfolio-career.png",
     tags: ["Portfolio Career", "Career Development", "Professional Growth"]
   },
   {
@@ -1738,7 +1738,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/strategic-thinking-for-individual-contributors.png",
+    image: "/final2/strategic-thinking-for-individual-contributors.png",
     tags: ["Strategic Thinking", "Individual Contributors", "Professional Development"]
   },
   {
@@ -1758,7 +1758,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/role-clarity-expectation-management.png",
+    image: "/final2/role-clarity-expectation-management.png",
     tags: ["Role Clarity", "Expectation Management", "Leadership"]
   },
   {
@@ -1778,7 +1778,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/internal-mobility-navigating-growth-within.png",
+    image: "/final2/internal-mobility-navigating-growth-within.png",
     tags: ["Internal Mobility", "Career Growth", "Professional Development"]
   },
   {
@@ -1799,7 +1799,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/digital-dexterity-adapting-to-new-tech-at-work.png",
+    image: "/final2/digital-dexterity-adapting-to-new-tech-at-work.png",
     tags: ["Digital Dexterity", "Technology Adoption", "Workplace Skills"]
   },
   {
@@ -1819,7 +1819,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/leading-through-uncertainty.png",
+    image: "/final2/leading-through-uncertainty.png",
     tags: ["Leading Through Uncertainty", "Leadership", "Resilience"]
   },
   {
@@ -1840,7 +1840,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/automation-future-of-work.png",
+    image: "/final2/automation-future-of-work.png",
     tags: ["Automation", "Future of Work", "Technology"]
   },
   {
@@ -1860,7 +1860,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/ai-basics-for-non-tech-teams.png",
+    image: "/final2/ai-basics-for-non-tech-teams.png",
     tags: ["AI Basics", "Technology", "Business Applications"]
   },
   {
@@ -1880,7 +1880,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/reskilling-upskilling-your-career-toolkit.png",
+    image: "/final2/reskilling-upskilling-your-career-toolkit.png",
     tags: ["Reskilling", "Upskilling", "Career Development"]
   },
   {
@@ -1900,7 +1900,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/effective-onboarding-for-new-hires.png",
+    image: "/final2/effective-onboarding-for-new-hires.png",
     tags: ["Onboarding", "Employee Engagement", "Leadership"]
   },
   {
@@ -1921,7 +1921,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/managing-underperformance-with-empathy.png",
+    image: "/final2/managing-underperformance-with-empathy.png",
     tags: ["Underperformance Management", "Empathy", "Leadership"]
   },
   {
@@ -1941,7 +1941,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/performance-appraisal-conversations.png",
+    image: "/final2/performance-appraisal-conversations.png",
     tags: ["Performance Appraisal", "Feedback", "Leadership"]
   },
   {
@@ -1962,7 +1962,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/creating-psychological-safety-for-your-team.png",
+    image: "/final2/creating-psychological-safety-for-your-team.png",
     tags: ["Psychological Safety", "Team Culture", "Leadership"]
   },
   {
@@ -1982,7 +1982,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-a-feedback-culture.png",
+    image: "/final2/building-a-feedback-culture.png",
     tags: ["Feedback Culture", "Team Development", "Leadership"]
   },
   {
@@ -2003,7 +2003,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/writing-proposals-that-win.png",
+    image: "/final2/writing-proposals-that-win.png",
     tags: ["Proposal Writing", "Business Communication", "Sales"]
   },
   {
@@ -2024,7 +2024,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/clear-and-concise-report-writing.png",
+    image: "/final2/clear-and-concise-report-writing.png",
     tags: ["Report Writing", "Business Communication", "Professional Writing"]
   },
   {
@@ -2044,7 +2044,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/grammar-proofreading-for-professionals.png",
+    image: "/final2/grammar-proofreading-for-professionals.png",
     tags: ["Grammar", "Proofreading", "Professional Writing"]
   },
   {
@@ -2064,7 +2064,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-sops-and-process-documents.png",
+    image: "/final2/building-sops-and-process-documents.png",
     tags: ["SOPs", "Process Documentation", "Professional Development"]
   },
   {
@@ -2083,7 +2083,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/writing-for-executives-briefs-summaries.png",
+    image: "/final2/writing-for-executives-briefs-summaries.png",
     tags: ["Executive Writing", "Briefs", "Communication"]
   },
   {
@@ -2102,7 +2102,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/mastering-virtual-presentations.png",
+    image: "/final2/mastering-virtual-presentations.png",
     tags: ["Virtual Presentations", "Communication", "Digital Skills"]
   },
   {
@@ -2122,7 +2122,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-culture-in-remote-teams.png",
+    image: "/final2/building-culture-in-remote-teams.png",
     tags: ["Remote Culture", "Team Building", "Leadership"]
   },
   {
@@ -2142,7 +2142,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/asynchronous-communication-best-practices.png",
+    image: "/final2/asynchronous-communication-best-practices.png",
     tags: ["Asynchronous Communication", "Remote Work", "Communication"]
   },
   {
@@ -2162,7 +2162,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/running-effective-remote-meetings.png",
+    image: "/final2/running-effective-remote-meetings.png",
     tags: ["Remote Meetings", "Virtual Collaboration", "Leadership"]
   },
   {
@@ -2182,7 +2182,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/time-zone-management-for-global-teams.png",
+    image: "/final2/time-zone-management-for-global-teams.png",
     tags: ["Time Zone Management", "Global Teams", "Leadership"]
   },
   {
@@ -2202,7 +2202,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/coaching-conversations-for-managers.png",
+    image: "/final2/coaching-conversations-for-managers.png",
     tags: ["Coaching", "Employee Development", "Leadership"]
   },
   {
@@ -2222,7 +2222,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/building-a-mentorship-program-at-work.png",
+    image: "/final2/building-a-mentorship-program-at-work.png",
     tags: ["Mentorship Programs", "Professional Development", "Leadership"]
   },
   {
@@ -2242,7 +2242,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/reverse-mentoring-for-cross-generational-learning.png",
+    image: "/final2/reverse-mentoring-for-cross-generational-learning.png",
     tags: ["Reverse Mentoring", "Cross-Generational Learning", "Leadership"]
   },
   {
@@ -2263,7 +2263,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/peer-coaching-skill-building-in-pairs.png",
+    image: "/final2/peer-coaching-skill-building-in-pairs.png",
     tags: ["Peer Coaching", "Skill Building", "Leadership"]
   },
   {
@@ -2283,7 +2283,7 @@ const courses: Course[] = [
     deliveryFormat: "Portrait video + Quiz + LinkedIn Certificate",
     assessment: "Yes",
     certificate: "Available",
-    image: "/final 2/giving-receiving-developmental-feedback.png",
+    image: "/final2/giving-receiving-developmental-feedback.png",
     tags: ["Developmental Feedback", "Team Development", "Leadership"]
   }
 ];
