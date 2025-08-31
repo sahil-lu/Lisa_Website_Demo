@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import Corporate from "./pages/Corporate";
 import University from "./pages/University";
+import ContentLibrary from "./pages/ContentLibrary";
 import NotFound from "./pages/NotFound";
 
 
@@ -25,6 +26,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/corporate" element={<Corporate />} />
               <Route path="/university" element={<University />} />
+              <Route path="/content-library" element={<ContentLibrary />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

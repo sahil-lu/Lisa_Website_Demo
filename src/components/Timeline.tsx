@@ -33,8 +33,8 @@ const Timeline: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, .
       <div className="container mx-auto px-4">
         <Reveal>
           <div className="mb-16 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">The Future of Learning is AI-First</h2>
-            <p className="text-lg text-muted-foreground">We're on a mission to completely transform how the world learns.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Vision</h2>
+            <p className="text-lg text-muted-foreground">2025 – 100% Human Teaching → 2035 – 100% AI Teaching</p>
           </div>
         </Reveal>
         
@@ -94,7 +94,7 @@ const Timeline: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, .
         <Reveal>
           <div className="text-center mt-16 max-w-3xl mx-auto">
             <p className="text-lg text-muted-foreground">
-              At Lisa, we're building AI tutors that can educate at scale, personalize at depth, and deliver learning outcomes better, faster, and smarter than ever before.
+              Lisa is building AI tutors that teach better than any human, at global scale.
             </p>
           </div>
         </Reveal>
