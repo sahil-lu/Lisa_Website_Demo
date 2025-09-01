@@ -210,13 +210,13 @@ const Index = () => {
               viewport={{ once: true }}
             >
               {/* Top row - responsive button layout */}
-              <div className="flex flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
-                <Button variant="cta" size="xl" className="flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <div className="flex flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                   <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
                     Book a Demo
                   </a>
                 </Button>
-                <Button variant="cta" size="xl" className="flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                   <a href="/content-library">
                     Explore 110+ Courses Library
                   </a>
@@ -770,23 +770,23 @@ const Index = () => {
             </motion.h2>
             
             <motion.div 
-              className="flex flex-row items-center justify-center gap-2 sm:gap-6 mt-8 sm:mt-12 w-full"
+              className="flex flex-row flex-wrap justify-center items-center gap-2 sm:gap-6 mt-8 sm:mt-12 w-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button variant="cta" size="xl" className="flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                 <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
                   Book a Demo
                     </a>
                   </Button>
-              <Button variant="cta" size="xl" className="flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                 <a href="/content-library">
                   Explore Course Library
                     </a>
                   </Button>
-              <Button variant="outline" size="xl" className="flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300" asChild>
+              <Button variant="outline" size="xl" className="last:basis-full sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300 whitespace-normal text-center" asChild>
                 <a href="#how-it-works">
                   Create with AI Now
                 </a>

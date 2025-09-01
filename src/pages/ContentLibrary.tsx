@@ -2717,11 +2717,11 @@ const ContentLibrary = () => {
                 </div>
                 
                 {/* Action Buttons */}
-                <div className="flex flex-row gap-3">
-                  <Button variant="cta" size="lg" className="flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4">
+                <div className="flex flex-row flex-wrap justify-center gap-2 sm:gap-3">
+                  <Button variant="cta" size="lg" className="basis-1/2 sm:basis-auto flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4 whitespace-normal text-center">
                     Enroll Now
                   </Button>
-                  <Button variant="outline" size="lg" className="flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4">
+                  <Button variant="outline" size="lg" className="basis-1/2 sm:basis-auto flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4 whitespace-normal text-center">
                     Preview Course
                   </Button>
                 </div>
