@@ -2344,7 +2344,7 @@ const ContentLibrary = () => {
                 Back to Home
               </a>
             </Button>
-            <img src="/lisa-logo.svg" alt="LISA Logo" className="h-8 w-auto" />
+            <img src="/lisa-logo.svg" alt="LISA Logo" className="h-8 w-auto max-w-[120px] sm:max-w-none" />
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
@@ -2545,7 +2545,7 @@ const ContentLibrary = () => {
           {/* Pagination Controls */}
           {filteredCourses.length > 0 && totalPages > 1 && (
             <motion.div 
-              className="flex items-center justify-center gap-2 mt-12"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -2556,14 +2556,15 @@ const ContentLibrary = () => {
                 size="sm"
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Previous
+                <span className="hidden sm:inline">Previous</span>
+                <span className="sm:hidden">Prev</span>
               </Button>
 
               {/* Page Numbers */}
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 order-first sm:order-none mb-3 sm:mb-0">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => {
                   // Show first page, last page, current page, and pages around current page
                   if (
@@ -2598,9 +2599,10 @@ const ContentLibrary = () => {
                 size="sm"
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto justify-center"
               >
-                Next
+                <span className="hidden sm:inline">Next</span>
+                <span className="sm:hidden">Next</span>
                 <ArrowLeft className="h-4 w-4 rotate-180" />
               </Button>
             </motion.div>
@@ -2741,18 +2743,20 @@ const ContentLibrary = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 border border-purple-200 dark:border-purple-800">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-6 sm:p-8 border border-purple-200 dark:border-purple-800">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
                 Ready to Access the Full Library?
               </h3>
-              <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto text-center leading-relaxed">
                 Get unlimited access to our complete course catalog with advanced features, progress tracking, and personalized learning paths.
               </p>
-              <Button variant="cta" size="xl" className="px-8 py-4 text-lg" asChild>
-                <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
-                  🗣️ Talk to Our Team for Full Access
-                </a>
-              </Button>
+              <div className="flex justify-center">
+                <Button variant="cta" size="xl" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" asChild>
+                  <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
+                    🗣️ Talk to Our Team for Full Access
+                  </a>
+                </Button>
+              </div>
             </div>
           </motion.div>
         </div>
