@@ -439,8 +439,8 @@ const Index = () => {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               We will operate in your budgets
             </p>
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-4">
-                              Rs. 200/month/Employee
+            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-4 break-words whitespace-normal leading-snug">
+              Rs. 200/month/<wbr/>Employee
               </div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
                               Just pay Rs.200/- extra and make them more productive – we believe everyone needs some personal attention and care to perform the best
