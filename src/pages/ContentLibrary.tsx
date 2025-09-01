@@ -2296,6 +2296,8 @@ const ContentLibrary = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedLevel, setSelectedLevel] = useState("All");
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const coursesPerPage = 20;
 
   const filteredCourses = courses.filter(course => {
     const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -2306,6 +2308,17 @@ const ContentLibrary = () => {
     
     return matchesSearch && matchesCategory && matchesLevel;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+  const startIndex = (currentPage - 1) * coursesPerPage;
+  const endIndex = startIndex + coursesPerPage;
+  const currentCourses = filteredCourses.slice(startIndex, endIndex);
+
+  // Reset to first page when filters change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory, selectedLevel]);
 
   return (
     <main>
@@ -2430,7 +2443,8 @@ const ContentLibrary = () => {
               {/* Results Count */}
               <div className="text-center pt-6 mt-6 border-t border-gray-200 dark:border-gray-600">
                 <p className="text-sm text-muted-foreground">
-                  Showing <span className="font-semibold text-purple-600">{filteredCourses.length}</span> of <span className="font-semibold">{courses.length}</span> courses
+                  Showing <span className="font-semibold text-purple-600">{startIndex + 1}-{Math.min(endIndex, filteredCourses.length)}</span> of <span className="font-semibold">{filteredCourses.length}</span> courses
+                  {filteredCourses.length !== courses.length && ` (filtered from ${courses.length} total)`}
                 </p>
               </div>
             </div>
@@ -2442,7 +2456,7 @@ const ContentLibrary = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {filteredCourses.map((course, index) => (
+            {currentCourses.map((course, index) => (
               <motion.div
                 key={course.id}
                 className="group cursor-pointer"
@@ -2525,6 +2539,70 @@ const ContentLibrary = () => {
               <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">No courses found</h3>
               <p className="text-muted-foreground">Try adjusting your search or filters to find what you're looking for.</p>
+            </motion.div>
+          )}
+
+          {/* Pagination Controls */}
+          {filteredCourses.length > 0 && totalPages > 1 && (
+            <motion.div 
+              className="flex items-center justify-center gap-2 mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Previous Page Button */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Previous
+              </Button>
+
+              {/* Page Numbers */}
+              <div className="flex items-center gap-1">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => {
+                  // Show first page, last page, current page, and pages around current page
+                  if (
+                    pageNum === 1 ||
+                    pageNum === totalPages ||
+                    (pageNum >= currentPage - 1 && pageNum <= currentPage + 1)
+                  ) {
+                    return (
+                      <Button
+                        key={pageNum}
+                        variant={pageNum === currentPage ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setCurrentPage(pageNum)}
+                        className="min-w-[40px] h-9"
+                      >
+                        {pageNum}
+                      </Button>
+                    );
+                  } else if (
+                    pageNum === currentPage - 2 ||
+                    pageNum === currentPage + 2
+                  ) {
+                    return <span key={pageNum} className="px-2 text-muted-foreground">...</span>;
+                  }
+                  return null;
+                })}
+              </div>
+
+              {/* Next Page Button */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="flex items-center gap-2"
+              >
+                Next
+                <ArrowLeft className="h-4 w-4 rotate-180" />
+              </Button>
             </motion.div>
           )}
         </div>
