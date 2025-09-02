@@ -69,7 +69,16 @@ const Index = () => {
             </button>
             
             {/* Logo */}
-            <img src="/lisa-logo.svg" alt="LISA Logo" className="h-8 w-auto" />
+            <img 
+              src="/lisa-logo.svg" 
+              alt="LISA Logo" 
+              className="h-8 w-auto dark:hidden" 
+            />
+            <img 
+              src="/lisa_-_final_-_logo_-_wite__e2e8f0 (2).svg" 
+              alt="LISA Logo" 
+              className="h-8 w-auto hidden dark:block" 
+            />
           </div>
           
           {/* Navigation Links - Centered */}

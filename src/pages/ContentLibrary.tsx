@@ -2344,7 +2344,16 @@ const ContentLibrary = () => {
                 Back to Home
               </a>
             </Button>
-            <img src="/lisa-logo.svg" alt="LISA Logo" className="h-8 w-auto max-w-[120px] sm:max-w-none" />
+            <img 
+              src="/lisa-logo.svg" 
+              alt="LISA Logo" 
+              className="h-8 w-auto max-w-[120px] sm:max-w-none dark:hidden" 
+            />
+            <img 
+              src="/lisa_-_final_-_logo_-_wite__e2e8f0 (2).svg" 
+              alt="LISA Logo" 
+              className="h-8 w-auto max-w-[120px] sm:max-w-none hidden dark:block" 
+            />
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
