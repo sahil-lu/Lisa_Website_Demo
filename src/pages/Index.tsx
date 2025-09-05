@@ -795,7 +795,15 @@ const Index = () => {
                   Explore Course Library
                     </a>
                   </Button>
-              <Button variant="outline" size="lg" className="last:basis-full sm:basis-auto flex-1 sm:flex-none w-auto px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300 whitespace-normal text-center" asChild>
+            </motion.div>
+            <motion.div 
+              className="flex justify-center items-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300" asChild>
                 <a href="#how-it-works">
                   Create with AI Now
                 </a>
