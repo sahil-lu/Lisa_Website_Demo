@@ -795,7 +795,7 @@ const Index = () => {
                   Explore Course Library
                     </a>
                   </Button>
-              <Button variant="outline" size="xl" className="last:basis-full sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300 whitespace-normal text-center" asChild>
+              <Button variant="outline" size="lg" className="last:basis-full sm:basis-auto flex-1 sm:flex-none w-auto px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300 whitespace-normal text-center" asChild>
                 <a href="#how-it-works">
                   Create with AI Now
                 </a>
