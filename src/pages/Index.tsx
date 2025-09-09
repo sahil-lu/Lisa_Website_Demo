@@ -129,7 +129,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="main" className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elegant Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-50/20 to-blue-50/20 dark:from-background dark:via-purple-900/10 dark:to-blue-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-900/10 to-blue-900/10" />
         
         {/* Animated Geometric Elements - Enhanced scroll animations */}
         <motion.div 
@@ -227,14 +227,14 @@ const Index = () => {
                 </Button>
                 <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                   <a href="/content-library">
-                    Explore 110+ Courses Library
+                    Explore 500+ Courses Library
                   </a>
                 </Button>
               </div>
               
               {/* Bottom row - single centered button */}
               <div className="flex justify-center w-full">
-                <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[250px] sm:min-w-[280px] h-12 sm:h-14 text-base sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300" asChild>
+                <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[250px] sm:min-w-[280px] h-12 sm:h-14 text-base sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-100 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
                   <a href="#how-it-works">
                     Create a Course with AI Instantly
                   </a>
@@ -246,7 +246,7 @@ const Index = () => {
       </section>
 
       {/* The Problem Section */}
-      <section id="problem" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-red-50/30 dark:to-red-900/10">
+      <section id="problem" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-red-900/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -310,7 +310,7 @@ const Index = () => {
             ].map((problem, index) => (
               <motion.div
                 key={problem.title}
-                className="backdrop-blur-xl bg-white/20 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-red-200/40 dark:border-red-800/40 hover:bg-white/30 dark:hover:bg-gray-800/40 group"
+                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-red-200/40 dark:border-red-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -342,7 +342,7 @@ const Index = () => {
       </section>
 
       {/* Our Solution Section */}
-      <section id="solution" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-red-50/30 to-green-50/30 dark:from-red-900/10 dark:to-green-900/10">
+      <section id="solution" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-red-900/10 to-green-900/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -390,7 +390,7 @@ const Index = () => {
             {[
               { 
                 icon: Library, 
-                title: "110+ Ready Courses", 
+                title: "500+ Ready Courses", 
                 description: "Across tech, business, and workplace skills",
                 color: "green"
               },
@@ -409,7 +409,7 @@ const Index = () => {
             ].map((feature, index) => (
                   <motion.div
                 key={feature.title}
-                                                className="backdrop-blur-xl bg-white/20 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-green-200/40 dark:border-green-800/40 text-center hover:bg-white/30 dark:hover:bg-gray-800/40 group"
+                                                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-green-200/40 dark:border-green-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -436,7 +436,7 @@ const Index = () => {
                 
           {/* Cost Section */}
                 <motion.div 
-            className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-3xl p-8 border border-green-200 dark:border-green-800 max-w-4xl mx-auto text-center"
+            className="bg-gradient-to-r from-green-50/20 to-blue-50/20 dark:from-green-900/20 dark:to-blue-900/20 rounded-3xl p-8 border border-green-300 dark:border-green-600 max-w-4xl mx-auto text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -459,7 +459,7 @@ const Index = () => {
       </section>
 
       {/* Why Lisa AI Section */}
-      <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-green-50/30 to-purple-50/30 dark:from-green-900/10 dark:to-purple-900/10">
+      <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-green-900/10 to-purple-900/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -488,7 +488,7 @@ const Index = () => {
           >
             {/* Partnership Card */}
                         <motion.div 
-              className="backdrop-blur-xl bg-white/20 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-800/40 hover:bg-white/30 dark:hover:bg-gray-800/40 group"
+              className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-200 dark:border-purple-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
               initial={{ opacity: 0, x: -30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
@@ -517,7 +517,7 @@ const Index = () => {
               
             {/* The Big Unlock Card */}
           <motion.div 
-              className="backdrop-blur-xl bg-white/20 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-800/40 hover:bg-white/30 dark:hover:bg-gray-800/40 group"
+              className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-200 dark:border-purple-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
               initial={{ opacity: 0, x: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
@@ -565,7 +565,7 @@ const Index = () => {
       </section>
 
             {/* How It Works Section */}
-      <section id="how-it-works" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-purple-50/30 to-background">
+      <section id="how-it-works" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-purple-900/10 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -595,11 +595,11 @@ const Index = () => {
               {[
                 {
                   step: "1",
-                  title: "Pick from 110+ courses or start from a topic", 
+                  title: "Pick from 500+ courses or start from a topic", 
                   icon: "📚",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
                   description: "Choose from our extensive library of pre-built courses or create custom content tailored to your organization's specific needs.",
-                  features: ["110+ pre-built courses", "Custom topic creation", "Industry-specific content", "Expert-curated materials"]
+                  features: ["500+ pre-built courses", "Custom topic creation", "Industry-specific content", "Expert-curated materials"]
                 },
                 {
                   step: "2",
@@ -685,7 +685,7 @@ const Index = () => {
       </section>
 
       {/* Trust & Scale Section */}
-                      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-blue-50/30 dark:to-blue-900/10">
+                      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-blue-900/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div 
               className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -731,7 +731,7 @@ const Index = () => {
             ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  className="backdrop-blur-xl bg-white/20 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-blue-200/40 dark:border-blue-800/40 text-center hover:bg-white/30 dark:hover:bg-gray-800/40 group"
+                  className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-blue-200/40 dark:border-blue-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
                   initial={{ opacity: 0, y: 20, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -759,7 +759,7 @@ const Index = () => {
       </section>
             
       {/* Final CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-blue-50/30 to-background">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-blue-900/10 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
             className="text-center max-w-4xl mx-auto px-4"
@@ -803,7 +803,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300" asChild>
+              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-100 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
                 <a href="#how-it-works">
                   Create with AI Now
                 </a>
@@ -816,7 +816,7 @@ const Index = () => {
 
 
       {/* Book Demo Section */}
-      <section id="demo" className="py-16 sm:py-24">
+      <section id="demo" className="py-16 sm:py-24 bg-gradient-to-b from-background to-purple-900/10">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-4xl mx-auto"

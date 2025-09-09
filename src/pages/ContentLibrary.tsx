@@ -2324,7 +2324,7 @@ const ContentLibrary = () => {
     <main>
       <Helmet>
         <title>Content Library - Lisa AI</title>
-        <meta name="description" content="Access 110+ auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
+        <meta name="description" content="Access 500+ auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
       </Helmet>
 
       {/* Navigation Header */}
@@ -2365,7 +2365,7 @@ const ContentLibrary = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-background to-purple-50/30">
+      <section className="py-16 sm:py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-16"
@@ -2378,13 +2378,13 @@ const ContentLibrary = () => {
               Explore Lisa's Content Library
             </h1>
             <p className="text-xl text-muted-foreground">
-              110+ Courses across Communication, Leadership, Compliance & More — Auto-Generated, Expert-Reviewed.
+              500+ Courses across Communication, Leadership, Compliance & More — Auto-Generated, Expert-Reviewed.
             </p>
           </motion.div>
 
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-border">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-border">
               <h3 className="text-xl font-bold mb-6 text-center text-gray-900 dark:text-white">
                 Find Your Perfect Course
               </h3>
@@ -2476,9 +2476,9 @@ const ContentLibrary = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
+                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
                   {/* Course Thumbnail */}
-                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-700">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
                     <img 
                       src={course.image} 
                       alt={course.title}
@@ -2743,7 +2743,7 @@ const ContentLibrary = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-b from-purple-50/30 to-background">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-4xl mx-auto"
@@ -2752,7 +2752,7 @@ const ContentLibrary = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-6 sm:p-8 border border-purple-200 dark:border-purple-800">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
                 Ready to Access the Full Library?
               </h3>
