@@ -803,7 +803,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-100 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
+              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
                 <a href="#how-it-works">
                   Create with AI Now
                 </a>
