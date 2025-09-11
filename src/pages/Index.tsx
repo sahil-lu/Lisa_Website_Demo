@@ -95,7 +95,7 @@ const Index = () => {
               <a
                 key={link.href}
                 href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.querySelector(link.href);
@@ -234,7 +234,7 @@ const Index = () => {
               
               {/* Bottom row - single centered button */}
               <div className="flex justify-center w-full">
-                <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[250px] sm:min-w-[280px] h-12 sm:h-14 text-base sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50 dark:hover:bg-purple-100 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
+                <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[250px] sm:min-w-[280px] h-12 sm:h-14 text-base sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
                   <a href="#how-it-works">
                     Create a Course with AI Instantly
                   </a>
@@ -327,7 +327,7 @@ const Index = () => {
                     <problem.icon className="h-5 w-5 sm:h-6 sm:w-6 text-red-600 dark:text-red-400" />
                 </motion.div>
                   <div className="text-center sm:text-left">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-600 transition-colors duration-300">
                       {problem.title}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -424,7 +424,7 @@ const Index = () => {
                 >
                   <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600 dark:text-green-400" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -504,7 +504,7 @@ const Index = () => {
                 >
                   <Building2 className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
           </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
                   Deep Partnerships
                 </h3>
                   </div>
@@ -533,7 +533,7 @@ const Index = () => {
                 >
                   <Star className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
                   The Big Unlock
                     </h3>
                     </div>
@@ -653,7 +653,7 @@ const Index = () => {
                     {/* Content */}
                     <div className="p-4 flex-1 flex flex-col">
                       {/* Title */}
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
                         {step.title}
                       </h3>
                       
@@ -746,7 +746,7 @@ const Index = () => {
                 >
                   <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-blue-600 dark:text-blue-400" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors duration-300">
                   {feature.title}
                     </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">

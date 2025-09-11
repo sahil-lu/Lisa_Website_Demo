@@ -2502,7 +2502,7 @@ const ContentLibrary = () => {
                   
                   {/* Course Info */}
                   <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
                       {course.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-4 flex-1 min-h-[4.5rem]">
