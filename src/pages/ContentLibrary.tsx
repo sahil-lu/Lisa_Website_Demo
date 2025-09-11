@@ -2482,10 +2482,10 @@ const ContentLibrary = () => {
                     <img 
                       src={course.image} 
                       alt={course.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                       style={{ 
                         objectPosition: 'center center',
-                        objectFit: 'cover'
+                        objectFit: 'contain'
                       }}
                       onError={(e) => {
                         // Fallback to a placeholder if image fails to load
@@ -2663,7 +2663,7 @@ const ContentLibrary = () => {
                   <img 
                     src={selectedCourse.image} 
                     alt={selectedCourse.title}
-                    className="w-full h-full object-cover transition-transform duration-300"
+                    className="w-full h-full object-contain transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium">
@@ -2727,13 +2727,12 @@ const ContentLibrary = () => {
                   ))}
                 </div>
                 
-                {/* Action Buttons */}
-                <div className="flex flex-row flex-wrap justify-center gap-2 sm:gap-3">
-                  <Button variant="cta" size="lg" className="basis-1/2 sm:basis-auto flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4 whitespace-normal text-center">
-                    Enroll Now
-                  </Button>
-                  <Button variant="outline" size="lg" className="basis-1/2 sm:basis-auto flex-1 min-w-0 text-sm sm:text-base px-3 sm:px-6 py-3 sm:py-4 whitespace-normal text-center">
-                    Preview Course
+                {/* Action Button */}
+                <div className="flex justify-center">
+                  <Button variant="cta" size="lg" className="text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" asChild>
+                    <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
+                      Book a Demo Now!
+                    </a>
                   </Button>
                 </div>
               </div>
