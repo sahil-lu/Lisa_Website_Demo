@@ -91,7 +91,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/navigating-office-politics-with-emotional-intelligence.png",
+    "image": "/final/navigating-office-politics-with-emotional-intellig.png",
     "tags": [
       "Emotional Intelligence",
       "Professional Development",
@@ -139,7 +139,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/constructive-confrontation-how-to-disagree-respectfully.png",
+    "image": "/final/Constructive_Confrontation_How_to_Disagree_Respectfully.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -235,7 +235,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/delegation-mastery-getting-work-done-through-others.png",
+    "image": "/final/delegation-mastery-getting-work-done-through-other.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -283,7 +283,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/inclusive-language-in-the-workplace.png",
+    "image": "/final/Inclusive_Language_in_the_Workplace.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -811,7 +811,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/strategic-thinking-for-individual-contributors.png",
+    "image": "/final/Strategic_Thinking_for_Individual_Contributors.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -955,7 +955,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/ai-basics-for-non-tech-teams.png",
+    "image": "/final/AI_Basics_for_Non-Tech_Teams.png",
     "tags": [
       "Leadership",
       "Professional Development",
@@ -1195,7 +1195,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/writing-for-executives-briefs-summaries.png",
+    "image": "/final/Writing_for_Executives:Briefs_&_Summaries.png",
     "tags": [
       "Communication",
       "Professional Development",
@@ -1459,7 +1459,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/problem-solving-with-data-basic-analytics-for-everyone.png",
+    "image": "/final/problem-solving-with-data-basic-analytics-for-ever.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -1651,7 +1651,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/negotiation-skills-for-everyday-work-not-just-managers.png",
+    "image": "/final/negotiation-skills-for-everyday-work-not-just-mana.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -1747,7 +1747,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/digital-wellness-managing-screen-time-online-boundaries.png",
+    "image": "/final/digital-wellness-managing-screen-time-online-bound.png",
     "tags": [
       "Productivity",
       "Professional Development",
@@ -1843,7 +1843,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/navigating-organizational-change-for-non-managers-too.png",
+    "image": "/final/navigating-organizational-change-for-non-managers-.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -2011,7 +2011,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/collaboration-tools-slack-teams-zoom-best-practices.png",
+    "image": "/final/collaboration-tools-slack-teams-zoom-best-practice.png",
     "tags": [
       "Leadership",
       "Professional Development",
@@ -10914,7 +10914,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/the-complete-communication-skills-master-class-for-life.png",
+    "image": "/final/the-complete-communication-skills-master-class-for.png",
     "tags": [
       "Communication",
       "Professional Development",
@@ -10938,7 +10938,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/writing-with-flair-how-to-become-an-exceptional-writer.png",
+    "image": "/final/writing-with-flair-how-to-become-an-exceptional-wr.png",
     "tags": [
       "Communication",
       "Professional Development",
@@ -10962,7 +10962,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/email-etiquette-write-more-effective-emails-at-work.png",
+    "image": "/final/email-etiquette-write-more-effective-emails-at-wor.png",
     "tags": [
       "Communication",
       "Professional Development",
@@ -11202,7 +11202,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/leadership-practical-leadership-skills.png",
+    "image": "/final/Leadership_Practical_leadership_skills.png",
     "tags": [
       "Leadership",
       "Professional Development",
@@ -11226,7 +11226,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/management-skills-training-for-new-experienced-managers.png",
+    "image": "/final/management-skills-training-for-new-experienced-man.png",
     "tags": [
       "Leadership",
       "Professional Development",
@@ -11250,7 +11250,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/new-manager-the-basics-and-more-of-being-a-great-leader.png",
+    "image": "/final/new-manager-the-basics-and-more-of-being-a-great-l.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -11346,7 +11346,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/performance-management-build-a-high-performing-team.png",
+    "image": "/final/performance-management-build-a-high-performing-tea.png",
     "tags": [
       "Leadership",
       "Professional Development",
@@ -11442,7 +11442,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/unconscious-bias-fuel-diversity-and-become-a-better-you.png",
+    "image": "/final/unconscious-bias-fuel-diversity-and-become-a-bette.png",
     "tags": [
       "Diversity & Inclusion",
       "Professional Development",
@@ -11538,7 +11538,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/adaptability-in-a-changing-workplace.png",
+    "image": "/final/Adaptability_in_a_changing_workplace.png",
     "tags": [
       "Professional Development",
       "Professional Development",
@@ -11802,7 +11802,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/generative-ai-for-business-leaders-a-quick-overview.png",
+    "image": "/final/generative-ai-for-business-leaders-a-quick-overvie.png",
     "tags": [
       "Technology & Innovation",
       "Professional Development",
@@ -11850,7 +11850,7 @@ const courses: Course[] = [
     "deliveryFormat": "Portrait video + Quiz + LinkedIn Certificate",
     "assessment": "Yes",
     "certificate": "Available",
-    "image": "/final/become-a-product-manager-learn-the-skills-get-the-job.png",
+    "image": "/final/become-a-product-manager-learn-the-skills-get-the-.png",
     "tags": [
       "Professional Development",
       "Professional Development",
