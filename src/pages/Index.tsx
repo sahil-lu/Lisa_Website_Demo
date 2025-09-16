@@ -227,7 +227,7 @@ const Index = () => {
                 </Button>
                 <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
                   <a href="/content-library">
-                    Explore 500+ Courses Library
+                    Explore 500 Courses Library
                   </a>
                 </Button>
               </div>
@@ -390,7 +390,7 @@ const Index = () => {
             {[
               { 
                 icon: Library, 
-                title: "500+ Ready Courses", 
+                title: "500 Ready Courses", 
                 description: "Across tech, business, and workplace skills",
                 color: "green"
               },
@@ -595,11 +595,11 @@ const Index = () => {
               {[
                 {
                   step: "1",
-                  title: "Pick from 500+ courses or start from a topic", 
+                  title: "Pick from 500 courses or start from a topic", 
                   icon: "📚",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
                   description: "Choose from our extensive library of pre-built courses or create custom content tailored to your organization's specific needs.",
-                  features: ["500+ pre-built courses", "Custom topic creation", "Industry-specific content", "Expert-curated materials"]
+                  features: ["500 pre-built courses", "Custom topic creation", "Industry-specific content", "Expert-curated materials"]
                 },
                 {
                   step: "2",
