@@ -42,7 +42,7 @@ const University = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -67,7 +67,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -96,7 +96,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-6">
               Why Lisa for Higher Education?
             </h2>
           </motion.div>
@@ -123,7 +123,7 @@ const University = () => {
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100">
                         <item.icon className="h-6 w-6 text-purple-600" />
                       </div>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
+                      <h3 className="font-black text-lg">{item.title}</h3>
                     </div>
                     <p className="text-muted-foreground">{item.desc}</p>
                   </CardContent>
@@ -144,7 +144,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-6">
               Key Features for Universities
             </h2>
           </motion.div>
@@ -163,7 +163,7 @@ const University = () => {
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 mb-4 mx-auto group-hover:bg-purple-200 transition-colors duration-300">
                     <feature.icon className="h-6 w-6 text-purple-600 group-hover:text-purple-700 transition-colors duration-300" />
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-600 transition-colors duration-300">{feature.title}</h3>
+                  <h3 className="font-black mb-2 group-hover:text-purple-600 transition-colors duration-300">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{feature.desc}</p>
                 </div>
               </Enhanced3DCard>
@@ -182,7 +182,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-6">
               Ideal For
             </h2>
           </motion.div>
@@ -207,7 +207,7 @@ const University = () => {
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 mb-4 mx-auto">
                       <institution.icon className="h-6 w-6 text-purple-600" />
                     </div>
-                    <h3 className="font-semibold mb-2">{institution.title}</h3>
+                    <h3 className="font-black mb-2">{institution.title}</h3>
                     <p className="text-sm text-muted-foreground">{institution.desc}</p>
                   </CardContent>
                 </Card>
@@ -227,7 +227,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-6">
               Student Experience
             </h2>
           </motion.div>
@@ -252,7 +252,7 @@ const University = () => {
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 mb-4 mx-auto">
                       <experience.icon className="h-6 w-6 text-purple-600" />
                     </div>
-                    <h3 className="font-semibold mb-2">{experience.title}</h3>
+                    <h3 className="font-black mb-2">{experience.title}</h3>
                     <p className="text-sm text-muted-foreground">{experience.desc}</p>
                   </CardContent>
                 </Card>
@@ -272,7 +272,7 @@ const University = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-6">
               Try Lisa at Your Campus
             </h2>
             <p className="text-lg text-muted-foreground mb-8">

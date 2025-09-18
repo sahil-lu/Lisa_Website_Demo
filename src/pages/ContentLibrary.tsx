@@ -12113,7 +12113,7 @@ const ContentLibrary = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6">
               Explore Lisa's Content Library
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -12124,7 +12124,7 @@ const ContentLibrary = () => {
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-border">
-              <h3 className="text-xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+              <h3 className="text-xl font-black mb-6 text-center text-gray-900 dark:text-white">
                 Find Your Perfect Course
               </h3>
               
@@ -12145,7 +12145,7 @@ const ContentLibrary = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Category Filter */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  <label className="block text-sm font-black text-gray-700 dark:text-gray-300 mb-3">
                     📂 Category
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -12153,7 +12153,7 @@ const ContentLibrary = () => {
                       <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedCategory === category
                             ? "bg-purple-600 text-white shadow-md"
                             : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
@@ -12167,7 +12167,7 @@ const ContentLibrary = () => {
                 
                 {/* Level Filter */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  <label className="block text-sm font-black text-gray-700 dark:text-gray-300 mb-3">
                     📊 Difficulty Level
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -12175,7 +12175,7 @@ const ContentLibrary = () => {
                       <button
                         key={level}
                         onClick={() => setSelectedLevel(level)}
-                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedLevel === level
                             ? "bg-purple-600 text-white shadow-md"
                             : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
@@ -12191,7 +12191,7 @@ const ContentLibrary = () => {
               {/* Results Count */}
               <div className="text-center pt-6 mt-6 border-t border-gray-200 dark:border-gray-600">
                 <p className="text-sm text-muted-foreground">
-                  Showing <span className="font-semibold text-purple-600">{startIndex + 1}-{Math.min(endIndex, filteredCourses.length)}</span> of <span className="font-semibold">{filteredCourses.length}</span> courses
+                  Showing <span className="font-black text-purple-600">{startIndex + 1}-{Math.min(endIndex, filteredCourses.length)}</span> of <span className="font-black">{filteredCourses.length}</span> courses
                   {filteredCourses.length !== courses.length && ` (filtered from ${courses.length} total)`}
                 </p>
               </div>
@@ -12231,7 +12231,7 @@ const ContentLibrary = () => {
                         e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
                       }}
                     />
-                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
                       {course.category}
                     </div>
                     <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
@@ -12241,7 +12241,7 @@ const ContentLibrary = () => {
                   
                   {/* Course Info */}
                   <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                    <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
                       {course.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-4 flex-1 min-h-[4.5rem]">
@@ -12285,7 +12285,7 @@ const ContentLibrary = () => {
               animate={{ opacity: 1 }}
             >
               <BookOpen className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">No courses found</h3>
+              <h3 className="text-xl font-black mb-2">No courses found</h3>
               <p className="text-muted-foreground">Try adjusting your search or filters to find what you're looking for.</p>
             </motion.div>
           )}
@@ -12405,7 +12405,7 @@ const ContentLibrary = () => {
                     className="w-full h-full object-contain transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                  <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
                     {selectedCourse.category}
                   </div>
                   <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
@@ -12416,7 +12416,7 @@ const ContentLibrary = () => {
               
               {/* Content Section */}
               <div className="lg:w-1/2 flex flex-col justify-center">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-4">
                   {selectedCourse.title}
                 </h3>
                 
@@ -12446,7 +12446,7 @@ const ContentLibrary = () => {
                 
                 {/* Learning Outcomes */}
                 <div className="space-y-2 mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Learning Outcomes:</h4>
+                  <h4 className="text-sm font-black text-gray-900 dark:text-white mb-3">Learning Outcomes:</h4>
                   <ul className="space-y-2">
                     {selectedCourse.learningOutcomes.map((outcome, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
@@ -12491,7 +12491,7 @@ const ContentLibrary = () => {
             viewport={{ once: true }}
           >
             <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
+              <h3 className="text-xl sm:text-2xl font-black mb-4 text-gray-900 dark:text-white text-center">
                 Ready to Access the Full Library?
               </h3>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto text-center leading-relaxed">

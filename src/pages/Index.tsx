@@ -95,7 +95,7 @@ const Index = () => {
               <a
                 key={link.href}
                 href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.querySelector(link.href);
@@ -179,7 +179,7 @@ const Index = () => {
           >
             {/* Main Content */}
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mb-6 sm:mb-8 px-2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-6 sm:mb-8 px-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -191,7 +191,7 @@ const Index = () => {
             </motion.h1>
             
             <motion.h2 
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 px-4"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -256,7 +256,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-red-600 dark:text-red-400"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-red-600 dark:text-red-400"
                     initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -327,7 +327,7 @@ const Index = () => {
                     <problem.icon className="h-5 w-5 sm:h-6 sm:w-6 text-red-600 dark:text-red-400" />
                 </motion.div>
                   <div className="text-center sm:text-left">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-600 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-600 transition-colors duration-300">
                       {problem.title}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -352,7 +352,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-green-600 dark:text-green-400"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-green-600 dark:text-green-400"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -424,7 +424,7 @@ const Index = () => {
                 >
                   <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600 dark:text-green-400" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -442,13 +442,13 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-black mb-4 text-gray-900 dark:text-white">
               Unbeatable Cost
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               We will operate in your budgets
             </p>
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-4 break-words whitespace-normal leading-snug">
+            <div className="text-3xl font-black text-green-600 dark:text-green-400 mb-4 break-words whitespace-normal leading-snug">
               Rs. 200/month/<wbr/>Employee
               </div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -469,7 +469,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -504,7 +504,7 @@ const Index = () => {
                 >
                   <Building2 className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
           </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
                   Deep Partnerships
                 </h3>
                   </div>
@@ -533,7 +533,7 @@ const Index = () => {
                 >
                   <Star className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
                   The Big Unlock
                     </h3>
                     </div>
@@ -541,7 +541,7 @@ const Index = () => {
                 <p><strong>You're not just subscribing to an LMS — you're subscribing to a university.</strong></p>
                 <p>Launch your own learning university inside your company.</p>
                 <div className="mt-4 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-2">Talent & Hiring</h4>
+                  <h4 className="font-black text-purple-700 dark:text-purple-300 mb-2">Talent & Hiring</h4>
                   <p className="text-sm">Learners who enroll in your programs can be hired directly into your teams.</p>
                   <p className="text-sm mt-1">Why hire freshers when you can hire directly from your own trained pipeline?</p>
                   </div>
@@ -575,7 +575,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -632,7 +632,7 @@ const Index = () => {
                   <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px] group relative">
                     
                     {/* Step Number Badge - Top right corner like course category */}
-                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium z-10">
+                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black z-10">
                       Step {step.step}
                     </div>
                     
@@ -653,7 +653,7 @@ const Index = () => {
                     {/* Content */}
                     <div className="p-4 flex-1 flex flex-col">
                       {/* Title */}
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                      <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
                         {step.title}
                       </h3>
                       
@@ -665,7 +665,7 @@ const Index = () => {
                       {/* Features as Tags */}
                       <div className="flex flex-wrap gap-1 mb-4">
                         {step.features.slice(0, 3).map((feature, featureIndex) => (
-                          <span key={featureIndex} className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                          <span key={featureIndex} className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-black transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
                             {feature}
                           </span>
                         ))}
@@ -695,7 +695,7 @@ const Index = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h2 
-                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+                className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -746,7 +746,7 @@ const Index = () => {
                 >
                   <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-blue-600 dark:text-blue-400" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors duration-300">
                   {feature.title}
                     </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -769,7 +769,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -826,7 +826,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl font-bold mb-6"
+              className="text-3xl sm:text-4xl font-black mb-6"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
