@@ -12123,7 +12123,7 @@ const ContentLibrary = () => {
 
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-border">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border">
               <h3 className="text-xl font-black mb-6 text-center text-gray-900 dark:text-white">
                 Find Your Perfect Course
               </h3>
@@ -12155,7 +12155,7 @@ const ContentLibrary = () => {
                         onClick={() => setSelectedCategory(category)}
                         className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedCategory === category
-                            ? "bg-purple-600 text-white shadow-md"
+                            ? "bg-purple-600 text-white shadow-sm"
                             : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
                         }`}
                       >
@@ -12177,7 +12177,7 @@ const ContentLibrary = () => {
                         onClick={() => setSelectedLevel(level)}
                         className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedLevel === level
-                            ? "bg-purple-600 text-white shadow-md"
+                            ? "bg-purple-600 text-white shadow-sm"
                             : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
                         }`}
                       >
@@ -12215,7 +12215,7 @@ const ContentLibrary = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
+                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
                   {/* Course Thumbnail */}
                   <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
                     <img 
@@ -12404,7 +12404,7 @@ const ContentLibrary = () => {
                     alt={selectedCourse.title}
                     className="w-full h-full object-contain transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-background/20"></div>
                   <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
                     {selectedCourse.category}
                   </div>

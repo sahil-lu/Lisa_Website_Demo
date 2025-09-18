@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles } from "lucide-react";
+import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles, Briefcase } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
@@ -129,7 +129,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="main" className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elegant Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-900/10 to-blue-900/10" />
+        <div className="absolute inset-0 bg-background" />
         
         {/* Animated Geometric Elements - Enhanced scroll animations */}
         <motion.div 
@@ -201,7 +201,7 @@ const Index = () => {
             </motion.h2>
             
             <motion.p 
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-4"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -220,25 +220,27 @@ const Index = () => {
             >
               {/* Top row - responsive button layout */}
               <div className="flex flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 w-full sm:w-auto">
-                <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
-                  <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
-                    Book a Demo
-                  </a>
-                </Button>
-                <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
+                <Button variant="outline" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300 whitespace-normal text-center rounded-full" asChild>
                   <a href="/content-library">
                     Explore 500 Courses Library
                   </a>
                 </Button>
-              </div>
-              
-              {/* Bottom row - single centered button */}
-              <div className="flex justify-center w-full">
-                <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[250px] sm:min-w-[280px] h-12 sm:h-14 text-base sm:text-lg border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
-                  <a href="#how-it-works">
-                    Create a Course with AI Instantly
+                <Button variant="default" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-sm hover:shadow-md transition-all duration-300 whitespace-normal text-center !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
+                  <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
+                    Book a Demo
                   </a>
                 </Button>
+              </div>
+              
+              {/* Bottom row - single centered link */}
+              <div className="flex justify-center w-full">
+                <a 
+                  href="#how-it-works"
+                  className="inline-flex items-center gap-2 text-purple-500 dark:text-purple-600 hover:text-purple-600 dark:hover:text-purple-700 font-semibold text-base sm:text-lg transition-colors duration-200 group"
+                >
+                  Create a Course with AI Instantly
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
               </div>
             </motion.div>
           </motion.div>
@@ -246,7 +248,7 @@ const Index = () => {
       </section>
 
       {/* The Problem Section */}
-      <section id="problem" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-red-900/10">
+      <section id="problem" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -256,13 +258,13 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-red-600 dark:text-red-400"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
                     initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              The Problem (Why change?)
+              <span className="text-purple-600 dark:text-purple-400">The Problem</span> <span className="text-neutral-950 dark:text-neutral-50">(Why change?)</span>
             </motion.h2>
                   <motion.p
               className="text-base sm:text-lg text-muted-foreground"
@@ -284,25 +286,25 @@ const Index = () => {
           >
             {[
               { 
-                icon: AlertTriangle, 
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
                 title: "Endless recorded content", 
                 description: "Hours of boring videos that employees skip through",
                 color: "red"
               },
               { 
-                icon: AlertTriangle, 
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
                 title: "Foreign-author content", 
                 description: "Generic content that misses your organizational context",
                 color: "red"
               },
               { 
-                icon: AlertTriangle, 
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
                 title: "SCORM/xAPI packaging pain", 
                 description: "Technical headaches that slow down deployment",
                 color: "red"
               },
               { 
-                icon: AlertTriangle, 
+                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
                 title: "Low adoption & unclear impact", 
                 description: "Scattered reporting, unclear ROI, poor engagement",
                 color: "red"
@@ -310,7 +312,7 @@ const Index = () => {
             ].map((problem, index) => (
               <motion.div
                 key={problem.title}
-                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-red-200/40 dark:border-red-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
+                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-red-200/40 dark:border-red-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -320,11 +322,15 @@ const Index = () => {
             >
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
                 <motion.div 
-                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <problem.icon className="h-5 w-5 sm:h-6 sm:w-6 text-red-600 dark:text-red-400" />
+                    <img 
+                      src={problem.image} 
+                      alt={problem.title}
+                      className="w-full h-full object-cover"
+                    />
                 </motion.div>
                   <div className="text-center sm:text-left">
                     <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-600 transition-colors duration-300">
@@ -342,7 +348,7 @@ const Index = () => {
       </section>
 
       {/* Our Solution Section */}
-      <section id="solution" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-red-900/10 to-green-900/10">
+      <section id="solution" className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-32 pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -352,7 +358,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-green-600 dark:text-green-400"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-purple-600 dark:text-purple-400"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -367,7 +373,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-              Introducing Lisa AI — your corporate learning AI.
+              Introducing Lisa AI.
                   </motion.p>
             <motion.p 
               className="text-base sm:text-lg text-gray-700 dark:text-gray-300"
@@ -389,19 +395,19 @@ const Index = () => {
           >
             {[
               { 
-                icon: Library, 
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
                 title: "500 Ready Courses", 
                 description: "Across tech, business, and workplace skills",
                 color: "green"
               },
               { 
-                icon: Sparkles, 
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
                 title: "Create with AI", 
                 description: "From topic to quizzes in minutes with your org context",
                 color: "green"
               },
               { 
-                icon: Smartphone, 
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
                 title: "Mobile + Desktop", 
                 description: "Seamless learning on any device",
                 color: "green"
@@ -409,7 +415,7 @@ const Index = () => {
             ].map((feature, index) => (
                   <motion.div
                 key={feature.title}
-                                                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-green-200/40 dark:border-green-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
+                                                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-green-200/40 dark:border-green-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -418,11 +424,15 @@ const Index = () => {
               whileTap={{ scale: 0.98 }}
             >
                 <motion.div 
-                  className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600 dark:text-green-400" />
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
                 <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">
                   {feature.title}
@@ -434,138 +444,315 @@ const Index = () => {
                 ))}
                 </motion.div>
                 
-          {/* Cost Section */}
-                <motion.div 
-            className="bg-gradient-to-r from-green-50/20 to-blue-50/20 dark:from-green-900/20 dark:to-blue-900/20 rounded-3xl p-8 border border-green-300 dark:border-green-600 max-w-4xl mx-auto text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-            <h3 className="text-2xl font-black mb-4 text-gray-900 dark:text-white">
-              Unbeatable Cost
-            </h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              We will operate in your budgets
-            </p>
-            <div className="text-3xl font-black text-green-600 dark:text-green-400 mb-4 break-words whitespace-normal leading-snug">
-              Rs. 200/month/<wbr/>Employee
-              </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-                              Just pay Rs.200/- extra and make them more productive – we believe everyone needs some personal attention and care to perform the best
-            </p>
+        </div>
+      </section>
+
+      {/* Unbeatable Cost Section - Separate Section */}
+      <section className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 pb-16 sm:pb-20 md:pb-24 lg:pb-32 xl:pb-40 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="relative max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* Limited Time Offer Badge */}
+            <motion.div 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold mb-6 mx-auto"
+              initial={{ scale: 0, rotate: -10 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, type: "spring" }}
+              viewport={{ once: true }}
+            >
+              <span className="animate-pulse">⚡</span>
+              LIMITED TIME OFFER
             </motion.div>
+
+            {/* Main Content */}
+            <div className="bg-neutral-50 dark:bg-neutral-950 backdrop-blur-xl rounded-3xl p-8 sm:p-12 md:p-16 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+              
+              {/* Header */}
+              <div className="text-center mb-8">
+                <motion.h2 
+                  className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-950 dark:text-neutral-50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  Unbeatable Cost
+                </motion.h2>
+                
+                <motion.p 
+                  className="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  Transform your workforce for less than a coffee per employee
+                </motion.p>
+              </div>
+
+              {/* Pricing Display */}
+              <motion.div 
+                className="text-center mb-8"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1.0, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                <div className="relative inline-block">
+                  {/* Original Price (Crossed Out) */}
+                  <div className="text-2xl sm:text-3xl text-neutral-400 dark:text-neutral-600 line-through mb-2">
+                    Rs. 500/month/Employee
+                  </div>
+                  
+                  {/* Current Price */}
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-black text-purple-500 dark:text-purple-600 mb-2">
+                    Rs. 200
+                  </div>
+                  
+                  <div className="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-semibold">
+                    per month per employee
+                  </div>
+                  
+                  {/* Savings Badge */}
+                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    Save 60%
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Value Proposition */}
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
+                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">500+</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Ready Courses</div>
+                </div>
+                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
+                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">AI</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Course Creation</div>
+                </div>
+                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
+                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">24/7</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Support</div>
+                </div>
+              </motion.div>
+
+              {/* CTA */}
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                  ⏰ This offer expires soon. Lock in your rate today!
+                </p>
+                <Button 
+                  variant="default" 
+                  size="xl" 
+                  className="!bg-black dark:!bg-white !text-white dark:!text-black hover:!bg-gray-800 dark:hover:!bg-gray-100 px-8 py-4 text-lg font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-300 border-4 border-black dark:border-white"
+                  asChild
+                >
+                  <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
+                    Claim This Offer Now
+                  </a>
+                </Button>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Why Lisa AI Section */}
-      <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-green-900/10 to-purple-900/10">
+      <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Background Box for Entire Section */}
           <motion.div 
-            className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
-              initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-              Why Lisa AI
-            </motion.h2>
-          </motion.div>
-          
-          <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-6xl mx-auto px-4"
+            className="bg-neutral-100 dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 md:p-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            {/* Partnership Card */}
-                        <motion.div 
-              className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-200 dark:border-purple-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
-              initial={{ opacity: 0, x: -30, scale: 0.95 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-            viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.03, rotateY: 2 }}
-              whileTap={{ scale: 0.98 }}
+            <motion.div 
+              className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, type: "spring", stiffness: 100 }}
+              viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="text-center mb-4 sm:mb-6">
-                <motion.div 
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Building2 className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
-          </motion.div>
-                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
-                  Deep Partnerships
-                </h3>
+              <motion.h2 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6"
+                initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+                Why Lisa AI
+              </motion.h2>
+              
+              <motion.p 
+                className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                This is the future we are building along with LetsUpgrade.in and you can launch your Learning Academy for students to be part of online and be prepared for your job before they are even onboarded :)
+              </motion.p>
+            </motion.div>
+            
+            {/* Main Content with Image */}
+            <motion.div 
+              className="max-w-4xl mx-auto mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-sm">
+                <img 
+                  src="/platform_banner_1a0b63f87a.webp" 
+                  alt="LISA AI Platform"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Feature 1 */}
+              <motion.div 
+                className="text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <Building2 className="w-4 h-4 text-purple-500 dark:text-purple-600" />
                   </div>
-              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                <p>We are deeply partnered with <strong>ITM Group of Institutions</strong> (3 universities in India) & <strong>LetsUpgrade.in</strong></p>
-                <p>Optionally offer Degrees, NSDC certifications, and Micro-credits through our ecosystem</p>
-                <p>Build a talent pipeline: we can supply trained employees directly to your company</p>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      Deep Partnerships
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      We are deeply partnered with ITM Group of Institutions (3 universities in India) & LetsUpgrade.in
+                    </p>
+                  </div>
                 </div>
               </motion.div>
               
-            {/* The Big Unlock Card */}
-          <motion.div 
-              className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-purple-200/40 dark:border-purple-200 dark:border-purple-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
-              initial={{ opacity: 0, x: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
-            viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.03, rotateY: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="text-center mb-4 sm:mb-6">
-              <motion.div
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Star className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-600 dark:text-purple-400" />
-                </motion.div>
-                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">
-                  The Big Unlock
+              {/* Feature 2 */}
+              <motion.div 
+                className="text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <GraduationCap className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      Certifications & Degrees
                     </h3>
-                    </div>
-              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                <p><strong>You're not just subscribing to an LMS — you're subscribing to a university.</strong></p>
-                <p>Launch your own learning university inside your company.</p>
-                <div className="mt-4 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h4 className="font-black text-purple-700 dark:text-purple-300 mb-2">Talent & Hiring</h4>
-                  <p className="text-sm">Learners who enroll in your programs can be hired directly into your teams.</p>
-                  <p className="text-sm mt-1">Why hire freshers when you can hire directly from your own trained pipeline?</p>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      Optionally offer Degrees, NSDC certifications, and Micro-credits through our ecosystem
+                    </p>
                   </div>
                 </div>
               </motion.div>
-          </motion.div>
-          
-          {/* Future Vision */}
-          <motion.div 
-            className="mt-16 text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-lg text-gray-700 dark:text-gray-300 italic">
-              This is the future we are building along with LetsUpgrade.in and you can launch your Learning Academy for students to be part of online and be prepared for your job before they are even onboarded :)
-            </p>
+              
+              {/* Feature 3 */}
+              <motion.div 
+                className="text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      Talent Pipeline
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      Build a talent pipeline: we can supply trained employees directly to your company
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Feature 4 */}
+              <motion.div 
+                className="text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <School className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      University Partnership
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      You're not just subscribing to an LMS — you're subscribing to a university.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Feature 5 */}
+              <motion.div 
+                className="text-left sm:col-span-2 lg:col-span-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <Briefcase className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      Talent & Hiring
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      Learners who enroll in your programs can be hired directly into your teams. Why hire freshers when you can hire directly from your own trained pipeline?
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
             {/* How It Works Section */}
-      <section id="how-it-works" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-purple-900/10 to-background">
+      <section id="how-it-works" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -575,13 +762,13 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              How It Works (3 steps)
+              <span className="text-purple-600 dark:text-purple-400">How It Works</span> <span className="text-neutral-950 dark:text-neutral-50">(3 steps)</span>
             </motion.h2>
             </motion.div>
             
@@ -629,7 +816,7 @@ const Index = () => {
 
                     
                   {/* Step Card - Course card style */}
-                  <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px] group relative">
+                  <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border h-[520px] flex flex-col min-w-[320px] group relative">
                     
                     {/* Step Number Badge - Top right corner like course category */}
                     <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black z-10">
@@ -647,7 +834,7 @@ const Index = () => {
                           objectFit: 'cover'
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-background/20"></div>
                       </div>
                     
                     {/* Content */}
@@ -685,7 +872,7 @@ const Index = () => {
       </section>
 
       {/* Trust & Scale Section */}
-                      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-background to-blue-900/10">
+                      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div 
               className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
@@ -731,7 +918,7 @@ const Index = () => {
             ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-blue-200/40 dark:border-blue-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
+                  className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-blue-200/40 dark:border-blue-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
                   initial={{ opacity: 0, y: 20, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
@@ -758,65 +945,11 @@ const Index = () => {
             </div>
       </section>
             
-      {/* Final CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-blue-900/10 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
-            className="text-center max-w-4xl mx-auto px-4"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Ready to launch your learning universe?
-            </motion.h2>
-            
-            <motion.div 
-              className="flex flex-row flex-wrap justify-center items-center gap-2 sm:gap-6 mt-8 sm:mt-12 w-full"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
-                <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
-                  Book a Demo
-                    </a>
-                  </Button>
-              <Button variant="cta" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto px-3 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-normal text-center" asChild>
-                <a href="/content-library">
-                  Explore Course Library
-                    </a>
-                  </Button>
-            </motion.div>
-            <motion.div 
-              className="flex justify-center items-center mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Button variant="outline" size="xl" className="border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50 dark:bg-purple-50 dark:bg-purple-900/20 transition-all duration-300" asChild>
-                <a href="#how-it-works">
-                  Create with AI Now
-                </a>
-              </Button>
-            </motion.div>
-            </motion.div>
-        </div>
-      </section>
 
 
 
       {/* Book Demo Section */}
-      <section id="demo" className="py-16 sm:py-24 bg-gradient-to-b from-background to-purple-900/10">
+      <section id="demo" className="py-16 sm:py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-4xl mx-auto"
@@ -847,7 +980,7 @@ const Index = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button variant="cta" size="xl" asChild>
+              <Button variant="default" size="xl" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
                 <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Schedule a Demo</a>
               </Button>
             </motion.div>
