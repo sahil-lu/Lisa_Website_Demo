@@ -36,8 +36,8 @@ const Index = () => {
   return (
     <main>
       <Helmet>
-        <title>Lisa AI – Corporate Learning Platform Backed by a University</title>
-        <meta name="description" content="Corporate L&D that actually ships outcomes. Meet Lisa AI — your corporate learning platform backed by a university." />
+        <title>LISA AI – Corporate Learning Platform Backed by a University</title>
+        <meta name="description" content="Corporate L&D that actually ships outcomes. Meet LISA AI — your corporate learning platform backed by a university." />
         <link rel="canonical" href="/" />
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
@@ -85,10 +85,10 @@ const Index = () => {
           <div className="hidden md:flex items-center justify-center flex-1 px-8">
             <div className="flex items-center gap-6 lg:gap-8">
             {[
-              { href: "#main", label: "Lisa AI" },
+              { href: "#main", label: "LISA AI" },
                 { href: "#problem", label: "The Problem" },
                 { href: "#solution", label: "Our Solution" },
-                { href: "#why-lisa", label: "Why Lisa AI" },
+                { href: "#why-lisa", label: "Why LISA AI" },
                 { href: "#how-it-works", label: "How It Works" }
             ].map((link) => (
               <a
@@ -206,7 +206,7 @@ const Index = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Introducing Lisa AI — your corporate learning platform backed by a university
+              Introducing LISA AI — your corporate learning platform backed by a university
             </motion.p>
             
             {/* CTA Buttons - Responsive layout */}
@@ -372,7 +372,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-              Introducing Lisa AI.
+              Introducing LISA AI.
                   </motion.p>
             <motion.p 
               className="text-base sm:text-lg text-gray-700 dark:text-gray-300"
@@ -573,7 +573,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Lisa AI Section */}
+      {/* Why LISA AI Section */}
       <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Background Box for Entire Section */}
@@ -598,7 +598,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-                Why Lisa AI
+                Why LISA AI
               </motion.h2>
               
               <motion.p 
@@ -996,7 +996,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Curious how Lisa AI can transform learning in your organization?
+              Curious how LISA AI can transform learning in your organization?
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -1029,7 +1029,7 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Lisa AI is part of the LetsUpgrade EdTech Pvt Ltd. All rights reserved.
+            LISA AI is part of the LetsUpgrade EdTech Pvt Ltd. All rights reserved.
           </motion.p>
         </div>
       </motion.footer>
