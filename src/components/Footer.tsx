@@ -3,7 +3,7 @@ import { Facebook, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-20 border-t bg-card/50">
+    <footer className="mt-20 border-t bg-neutral-50 dark:bg-neutral-950">
       <div className="container mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="font-semibold mb-3">About Lisa</h3>

@@ -9,7 +9,6 @@ import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 
-import EnhancedParticles from "@/components/EnhancedParticles";
 import Logo3DCard from "@/components/Logo3DCard";
 import Enhanced3DCard from "@/components/Enhanced3DCard";
 import { Helmet } from "react-helmet-async";
@@ -115,10 +114,10 @@ const Index = () => {
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            <Button variant="default" size="sm" className="hidden sm:flex !bg-black !text-white hover:!bg-gray-800 rounded-full" asChild>
+            <Button variant="default" size="sm" className="hidden sm:flex !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
-            <Button variant="default" size="sm" className="sm:hidden !bg-black !text-white hover:!bg-gray-800 rounded-full" asChild>
+            <Button variant="default" size="sm" className="sm:hidden !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Demo</a>
             </Button>
           </div>
@@ -130,43 +129,6 @@ const Index = () => {
         {/* Elegant Background */}
         <div className="absolute inset-0 bg-background" />
         
-        {/* Animated Geometric Elements - Enhanced scroll animations */}
-        <motion.div 
-          className="absolute inset-0 opacity-5"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.05 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
-        >
-          <motion.div 
-            className="absolute top-8 left-8 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 border border-purple-300 rounded-full"
-            initial={{ scale: 0, rotate: 0 }}
-            whileInView={{ scale: 1, rotate: 360 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          />
-          <motion.div 
-            className="absolute top-16 right-8 sm:top-40 sm:right-32 w-12 h-12 sm:w-24 sm:h-24 border border-blue-300 rotate-45"
-            initial={{ scale: 0, rotate: 45 }}
-            whileInView={{ scale: 1, rotate: 405 }}
-            transition={{ duration: 1.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          />
-          <motion.div 
-            className="absolute bottom-16 left-8 sm:bottom-32 sm:left-1/4 w-8 h-8 sm:w-16 sm:h-16 border border-purple-300 rotate-12"
-            initial={{ scale: 0, rotate: 12 }}
-            whileInView={{ scale: 1, rotate: 372 }}
-            transition={{ duration: 1.5, delay: 0.6 }}
-            viewport={{ once: true }}
-          />
-          <motion.div 
-            className="absolute bottom-8 right-8 sm:bottom-20 sm:right-20 w-10 h-10 sm:w-20 sm:h-20 border border-blue-300 rounded-full"
-            initial={{ scale: 0, rotate: 0 }}
-            whileInView={{ scale: 1, rotate: 360 }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-            viewport={{ once: true }}
-          />
-        </motion.div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -237,9 +199,9 @@ const Index = () => {
                   href="#how-it-works"
                   className="inline-flex items-center gap-2 text-purple-500 dark:text-purple-600 hover:text-purple-600 dark:hover:text-purple-700 font-semibold text-base sm:text-lg transition-colors duration-200 group"
                 >
-                  Create a Course with AI Instantly
+                    Create a Course with AI Instantly
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </a>
+                  </a>
               </div>
             </motion.div>
           </motion.div>
@@ -263,7 +225,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              <span className="text-purple-600 dark:text-purple-400">The Problem</span> <span className="text-neutral-950 dark:text-neutral-50">(Why change?)</span>
+              <span className="text-purple-500 dark:text-purple-600">The Problem</span> <span className="text-neutral-950 dark:text-neutral-50">(Why change?)</span>
             </motion.h2>
                   <motion.p
               className="text-base sm:text-lg text-muted-foreground"
@@ -357,7 +319,7 @@ const Index = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-purple-600 dark:text-purple-400"
+              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-purple-500 dark:text-purple-600"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -449,7 +411,7 @@ const Index = () => {
       {/* Unbeatable Cost Section - Separate Section */}
       <section className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 pb-16 sm:pb-20 md:pb-24 lg:pb-32 xl:pb-40 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+                <motion.div 
             className="relative max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -469,18 +431,18 @@ const Index = () => {
             </motion.div>
 
             {/* Main Content */}
-            <div className="bg-neutral-50 dark:bg-neutral-950 backdrop-blur-xl rounded-3xl p-8 sm:p-12 md:p-16 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-xl rounded-3xl p-8 sm:p-12 md:p-16 shadow-sm">
               
               {/* Header */}
               <div className="text-center mb-8">
                 <motion.h2 
                   className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-950 dark:text-neutral-50"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  Unbeatable Cost
+                    viewport={{ once: true }}
+                  >
+              Unbeatable Cost
                 </motion.h2>
                 
                 <motion.p 
@@ -560,7 +522,7 @@ const Index = () => {
                 <Button 
                   variant="default" 
                   size="xl" 
-                  className="!bg-black dark:!bg-white !text-white dark:!text-black hover:!bg-gray-800 dark:hover:!bg-gray-100 px-8 py-4 text-lg font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-300 border-4 border-black dark:border-white"
+                  className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 px-8 py-4 text-lg font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-300"
                   asChild
                 >
                   <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
@@ -569,7 +531,7 @@ const Index = () => {
                 </Button>
               </motion.div>
             </div>
-          </motion.div>
+            </motion.div>
         </div>
       </section>
 
@@ -586,20 +548,20 @@ const Index = () => {
           >
             <motion.div 
               className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16"
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, type: "spring", stiffness: 100 }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <motion.h2 
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, type: "spring", stiffness: 100 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h2 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6"
-                initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            viewport={{ once: true }}
+          >
                 Why LISA AI
-              </motion.h2>
+            </motion.h2>
               
               <motion.p 
                 className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8"
@@ -610,16 +572,16 @@ const Index = () => {
               >
                 This is the future we are building along with LetsUpgrade.in and you can launch your Learning Academy for students to be part of online and be prepared for your job before they are even onboarded :)
               </motion.p>
-            </motion.div>
-            
+          </motion.div>
+          
             {/* Main Content with Image */}
-            <motion.div 
+          <motion.div 
               className="max-w-4xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
+            viewport={{ once: true, margin: "-50px" }}
+          >
               <div className="relative rounded-2xl overflow-hidden shadow-sm">
                 <img 
                   src="/platform_banner_1a0b63f87a.webp" 
@@ -632,12 +594,12 @@ const Index = () => {
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Feature 1 */}
-              <motion.div 
+                        <motion.div 
                 className="text-left"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
+            viewport={{ once: true }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
@@ -645,8 +607,8 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      Deep Partnerships
-                    </h3>
+                  Deep Partnerships
+                </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                       We are deeply partnered with ITM Group of Institutions (3 universities in India) & LetsUpgrade.in
                     </p>
@@ -655,12 +617,12 @@ const Index = () => {
               </motion.div>
               
               {/* Feature 2 */}
-              <motion.div 
+          <motion.div 
                 className="text-left"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                viewport={{ once: true }}
+            viewport={{ once: true }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
@@ -678,7 +640,7 @@ const Index = () => {
               </motion.div>
               
               {/* Feature 3 */}
-              <motion.div 
+              <motion.div
                 className="text-left"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -698,7 +660,7 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
               
               {/* Feature 4 */}
               <motion.div 
@@ -719,7 +681,7 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                       You're not just subscribing to an LMS — you're subscribing to a university.
                     </p>
-                  </div>
+                    </div>
                 </div>
               </motion.div>
               
@@ -744,16 +706,16 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
-              
+          </motion.div>
+          
               {/* Feature 6 */}
-              <motion.div 
+          <motion.div 
                 className="text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                viewport={{ once: true }}
-              >
+            viewport={{ once: true }}
+          >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
                     <Monitor className="w-4 h-4 text-purple-500 dark:text-purple-600" />
@@ -838,7 +800,7 @@ const Index = () => {
 
                     
                   {/* Step Card - Course card style */}
-                  <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border h-[520px] flex flex-col min-w-[320px] group relative">
+                  <div className="bg-neutral-100 dark:bg-neutral-900 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-[520px] flex flex-col min-w-[320px] group relative">
                     
                     {/* Step Number Badge - Top right corner like course category */}
                     <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black z-10">
@@ -862,7 +824,7 @@ const Index = () => {
                     {/* Content */}
                     <div className="p-4 flex-1 flex flex-col">
                       {/* Title */}
-                      <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                      <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-lg sm:text-xl leading-tight min-h-[3rem]">
                         {step.title}
                       </h3>
                       
@@ -1013,24 +975,92 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer with Microcopy */}
+      {/* Footer */}
       <motion.footer 
-        className="bg-gray-900 text-white py-12"
+        className="bg-background py-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <div className="container mx-auto px-4 text-center">
-          <motion.p 
-            className="text-sm text-gray-400"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            LISA AI is part of the LetsUpgrade EdTech Pvt Ltd. All rights reserved.
-          </motion.p>
+        <div className="container mx-auto px-4">
+          {/* Top Section - Four Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {/* About LISA */}
+            <div>
+              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">About LISA</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                LISA is an AI-powered learning ecosystem helping enterprises and institutions create personalized, adaptive learning at scale.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Products</a></li>
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Nexi Agents</a></li>
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Workshops</a></li>
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Reports</a></li>
+              </ul>
+            </div>
+
+            {/* Solutions */}
+            <div>
+              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Solutions</h3>
+              <ul className="space-y-2">
+                <li><a href="/corporate" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Corporate L&D</a></li>
+                <li><a href="/university" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Universities</a></li>
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Healthcare & BFSI</a></li>
+                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Retail & Manufacturing</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Contact</h3>
+              <div className="space-y-2">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">hello@lisa.ai</p>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Mumbai, IN • Remote-first</p>
+                <div className="flex space-x-4 mt-4">
+                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                    </svg>
+                  </a>
+                  <a href="mailto:hello@lisa.ai" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-neutral-200 dark:border-neutral-700 mb-8"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 sm:mb-0">
+              © 2025 LISA. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</a>
+            </div>
+          </div>
         </div>
       </motion.footer>
     </main>

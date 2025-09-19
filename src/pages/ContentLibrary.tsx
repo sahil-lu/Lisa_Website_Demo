@@ -12094,9 +12094,11 @@ const ContentLibrary = () => {
               className="h-8 w-auto max-w-[120px] sm:max-w-none hidden dark:block" 
             />
           </div>
+          
+          {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="default" size="sm" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
           </div>
@@ -12123,7 +12125,7 @@ const ContentLibrary = () => {
 
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border">
+            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-8 shadow-sm">
               <h3 className="text-xl font-black mb-6 text-center text-gray-900 dark:text-white">
                 Find Your Perfect Course
               </h3>
@@ -12215,7 +12217,7 @@ const ContentLibrary = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
+                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col min-w-[280px]">
                   {/* Course Thumbnail */}
                   <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
                     <img 
@@ -12490,7 +12492,7 @@ const ContentLibrary = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border">
+            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
               <h3 className="text-xl sm:text-2xl font-black mb-4 text-gray-900 dark:text-white text-center">
                 Ready to Access the Full Library?
               </h3>
@@ -12498,7 +12500,7 @@ const ContentLibrary = () => {
                 Get unlimited access to our complete course catalog with advanced features, progress tracking, and personalized learning paths.
               </p>
               <div className="flex justify-center">
-                <Button variant="cta" size="xl" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" asChild>
+                <Button variant="default" size="xl" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-full" asChild>
                   <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
                     🗣️ Talk to Our Team for Full Access
                   </a>
