@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles, Briefcase } from "lucide-react";
+import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles, Briefcase, Monitor } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
@@ -89,8 +89,7 @@ const Index = () => {
                 { href: "#problem", label: "The Problem" },
                 { href: "#solution", label: "Our Solution" },
                 { href: "#why-lisa", label: "Why Lisa AI" },
-                { href: "#how-it-works", label: "How It Works" },
-              { href: "#demo", label: "Book Demo" }
+                { href: "#how-it-works", label: "How It Works" }
             ].map((link) => (
               <a
                 key={link.href}
@@ -110,16 +109,16 @@ const Index = () => {
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
           </div>
           </div>
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <Button variant="outline" size="sm" className="hidden sm:flex" asChild>
+            <Button variant="default" size="sm" className="hidden sm:flex !bg-black !text-white hover:!bg-gray-800 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
-            <Button variant="outline" size="sm" className="sm:hidden" asChild>
+            <Button variant="default" size="sm" className="sm:hidden !bg-black !text-white hover:!bg-gray-800 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Demo</a>
             </Button>
           </div>
@@ -746,6 +745,29 @@ const Index = () => {
                   </div>
                 </div>
               </motion.div>
+              
+              {/* Feature 6 */}
+              <motion.div 
+                className="text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                    <Monitor className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
+                      Seamless Hybrid Learning
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                      Conduct online, offline & hybrid programs effortlessly
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -768,7 +790,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-purple-600 dark:text-purple-400">How It Works</span> <span className="text-neutral-950 dark:text-neutral-50">(3 steps)</span>
+              <span className="text-purple-500 dark:text-purple-600">How It Works</span> <span className="text-neutral-950 dark:text-neutral-50">(3 steps)</span>
             </motion.h2>
             </motion.div>
             

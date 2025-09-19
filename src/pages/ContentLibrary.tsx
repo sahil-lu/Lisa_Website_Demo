@@ -12123,7 +12123,7 @@ const ContentLibrary = () => {
 
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border">
+            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border">
               <h3 className="text-xl font-black mb-6 text-center text-gray-900 dark:text-white">
                 Find Your Perfect Course
               </h3>
@@ -12215,7 +12215,7 @@ const ContentLibrary = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
+                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 border border-border h-[480px] flex flex-col min-w-[280px]">
                   {/* Course Thumbnail */}
                   <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
                     <img 
