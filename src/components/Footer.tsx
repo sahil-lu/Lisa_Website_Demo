@@ -4,7 +4,7 @@ import { Facebook, Linkedin, Twitter, Mail } from "lucide-react";
 const Footer: React.FC = () => {
   return (
     <footer className="mt-20 border-t bg-neutral-50 dark:bg-neutral-950">
-      <div className="container mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div>
           <h3 className="font-semibold mb-3">About Lisa</h3>
           <p className="text-sm text-muted-foreground">
@@ -18,15 +18,6 @@ const Footer: React.FC = () => {
             <li><a href="#nexi" className="hover:text-foreground">Nexi Agents</a></li>
             <li><a href="#workshops" className="hover:text-foreground">Workshops</a></li>
             <li><a href="#reports" className="hover:text-foreground">Reports</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-semibold mb-3">Solutions</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>Corporate L&D</li>
-            <li>Universities</li>
-            <li>Healthcare & BFSI</li>
-            <li>Retail & Manufacturing</li>
           </ul>
         </div>
         <div>

@@ -5,6 +5,7 @@ import { CheckCircle2, Users, Zap, Clock, TrendingUp, Building2, GraduationCap, 
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 import Enhanced3DCard from "@/components/Enhanced3DCard";
+import StickyTopBar from "@/components/StickyTopBar";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
@@ -26,8 +27,11 @@ const Corporate = () => {
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
 
+      {/* Sticky Top Bar */}
+      <StickyTopBar />
+
       {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-[40px] z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center">
             <img src="/lisa-logo.svg" alt="LISA Logo" className="h-8 w-auto" />

@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
+import StickyTopBar from "@/components/StickyTopBar";
 
 import Logo3DCard from "@/components/Logo3DCard";
 import Enhanced3DCard from "@/components/Enhanced3DCard";
@@ -41,8 +42,11 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
 
+      {/* Sticky Top Bar */}
+      <StickyTopBar />
+
       {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-[40px] z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center gap-3">
