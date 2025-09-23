@@ -2,6 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Logo carousel animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 45s linear infinite;
+  will-change: transform;
+}
+
+/* Integrations carousel animations */
+@keyframes scroll-hris {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scroll-comms {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scroll-crm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scroll-content {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-hris {
+  animation: scroll-hris 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-comms {
+  animation: scroll-comms 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-crm {
+  animation: scroll-crm 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-content {
+  animation: scroll-content 26s linear infinite;
+  will-change: transform;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -162,6 +234,18 @@ All colors MUST be HSL.
   .scale-breathe {
     animation: scale-breathe 4s ease-in-out infinite;
   }
+  
+  .animate-shimmer {
+    animation: animate-shimmer 3s ease-in-out infinite;
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+.animate-marquee-slow {
+  animation: marquee-slow 15s linear infinite;
+}
 }
 
 @keyframes float {
@@ -202,6 +286,21 @@ All colors MUST be HSL.
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+@keyframes animate-shimmer {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%) skewX(-12deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-slow {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 .squares-canvas {

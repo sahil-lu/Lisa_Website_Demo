@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { useTheme } from './ThemeProvider';
 
 interface SquaresProps {
   speed?: number;
@@ -16,25 +15,16 @@ const Squares: React.FC<SquaresProps> = ({
   borderColor,
   hoverFillColor
 }) => {
-  const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Auto-adjust colors based on theme
+  // Auto-adjust colors for light mode only
   const getColors = () => {
-    if (theme === 'light') {
-      return {
-        border: borderColor || '#1f2937', // Dark gray for light mode
-        hover: hoverFillColor || '#8b5cf6', // Purple hover
-        opacity: 0.07 // 90% reduction from 0.7 (0.7 * 0.1 = 0.07)
-      };
-    } else {
-      return {
-        border: borderColor || '#ffffff', // White for dark mode
-        hover: hoverFillColor || '#8b5cf6', // Purple hover
-        opacity: 0.05 // 90% reduction from 0.5 (0.5 * 0.1 = 0.05)
-      };
-    }
+    return {
+      border: borderColor || '#1f2937', // Dark gray for light mode
+      hover: hoverFillColor || '#8b5cf6', // Purple hover
+      opacity: 0.07 // 90% reduction from 0.7 (0.7 * 0.1 = 0.07)
+    };
   };
 
   useEffect(() => {
@@ -182,7 +172,7 @@ const Squares: React.FC<SquaresProps> = ({
       resizeObserver.disconnect();
       canvas.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [speed, squareSize, direction, borderColor, hoverFillColor, theme]);
+  }, [speed, squareSize, direction, borderColor, hoverFillColor]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 w-full h-full z-0">

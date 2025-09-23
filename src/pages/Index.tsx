@@ -3,17 +3,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles, Briefcase, Monitor } from "lucide-react";
+import { CheckCircle2, FileText, Smartphone, Users, Bot, Mic, PhoneCall, Newspaper, GraduationCap, Rocket, BrainCircuit, Activity, BookOpen, BarChart3, Settings, Shield, Zap, Target, Clock, TrendingUp, Award, Globe, Building2, School, Users2, Lightbulb, Lock, AlertTriangle, CheckCircle, Star, ArrowRight, Play, Calendar, Library, Sparkles, Briefcase, Monitor, Plus, Search, ChevronDown, X } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import StickyTopBar from "@/components/StickyTopBar";
+import VisualBreaker from "@/components/VisualBreaker";
+import CourseLibraryCarousel from "@/components/CourseLibraryCarousel";
 
 import Logo3DCard from "@/components/Logo3DCard";
 import Enhanced3DCard from "@/components/Enhanced3DCard";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Logo = ({ name, src }: { name: string; src: string }) => (
   <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
@@ -31,7 +37,485 @@ const Logo = ({ name, src }: { name: string; src: string }) => (
 };
 
 const Index = () => {
+  const [activePillar, setActivePillar] = React.useState('platform');
+  const [pillarTimeLeft, setPillarTimeLeft] = React.useState(10);
+  const [activeOutcome, setActiveOutcome] = React.useState('onboarding');
+  const [timeLeft, setTimeLeft] = React.useState(10);
+  
+  // Demo section state
+  const [activeTab, setActiveTab] = React.useState("Dashboard");
+  const [showCreateModal, setShowCreateModal] = React.useState(false);
+  const [courseType, setCourseType] = React.useState("");
+  const [courseTitle, setCourseTitle] = React.useState("");
+  const [courseDescription, setCourseDescription] = React.useState("");
+  const [searchQuery, setSearchQuery] = React.useState("");
+  const [selectedCategory, setSelectedCategory] = React.useState("All");
+  const [userSearchQuery, setUserSearchQuery] = React.useState("");
+  const [selectedUserFilter, setSelectedUserFilter] = React.useState("All");
+  
+  // Testimonials state
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const testimonialsRef = useRef<HTMLDivElement[]>([]);
+  
+  
+  // Array of outcome keys for auto-rotation
+  const outcomeKeys = ['onboarding', 'upskilling', 'frontline', 'performance', 'talent', 'enterprise', 'compliance'];
+  
+  // Array of pillar keys for auto-rotation
+  const pillarKeys = ['platform', 'content', 'jit'];
 
+  // Steps data for How Fast Can We Go section
+  const steps = [
+    {
+      id: 1,
+      title: "Discover",
+      description: "Pick your outcomes + roles. Import current SOPs.",
+      details: "Identify key business outcomes and target roles. Import existing Standard Operating Procedures and documentation. Map current learning gaps and define success metrics."
+    },
+    {
+      id: 2,
+      title: "Launch",
+      description: "Configure platform, assign paths, ship v1 content in 7-10 days.",
+      details: "Set up the LISA platform with your branding and workflows. Create personalized learning paths for each role. Deploy initial content library and begin user onboarding."
+    },
+    {
+      id: 3,
+      title: "Scale",
+      description: "Automate JIT hooks, expand library, track KPIs, iterate monthly.",
+      details: "Integrate just-in-time learning into daily workflows. Continuously expand the content library based on user feedback. Monitor key performance indicators and optimize monthly."
+    }
+  ];
+
+  // Testimonials data
+  const testimonials = [
+    {
+      name: "Priya Sharma",
+      role: "Head of L&D",
+      company: "TechCorp India",
+      avatar: "https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      text: "Lisa AI has transformed our corporate learning. The AI course creation feature saved us months of development time, and our employees love the personalized learning paths.",
+      rating: 5
+    },
+    {
+      name: "Rajesh Kumar",
+      role: "HR Director",
+      company: "Global Solutions Ltd",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      text: "The university partnership and certification options are game-changers. We're now building our own talent pipeline with trained employees ready to join our teams.",
+      rating: 5
+    },
+    {
+      name: "Anjali Patel",
+      role: "Learning Manager",
+      company: "InnovateTech",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      text: "At ₹500 per employee per month, Lisa AI is unbeatable value. The analytics dashboard gives us clear insights into learning impact and ROI.",
+      rating: 5
+    },
+    {
+      name: "Vikram Singh",
+      role: "CTO",
+      company: "Digital Dynamics",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      text: "The integration with our existing systems was seamless. Our teams can now access learning anywhere, anytime, and the mobile app is fantastic.",
+      rating: 5
+    }
+  ];
+
+  // Demo section data
+  const courses = [
+    {
+      id: 1,
+      title: "FREE Agentic AI Bootcamp for HR",
+      type: "Workshop",
+      category: "Workshop Courses",
+      users: 189,
+      image: "ai",
+      status: "Public",
+      price: "₹5,000",
+      duration: "3-Week Course",
+      description: "Transform HR with AI in 3 Sundays",
+      date: "10 AUG | 11.00 AM",
+      isPublic: true,
+      imageType: "icon"
+    },
+    {
+      id: 2,
+      title: "BD Team How BD Team Work",
+      type: "MicroLearning",
+      category: "Micro Learning",
+      users: 0,
+      image: "team",
+      status: "Private",
+      isPublic: false,
+      imageType: "icon"
+    },
+    {
+      id: 3,
+      title: "FREE AI Weekend Bootcamp for Sales Leaders",
+      type: "Workshop",
+      category: "Workshop Courses",
+      users: 16,
+      image: "sales",
+      status: "Private",
+      price: "100% Free",
+      duration: "3 Sundays",
+      description: "For Sales/GTM Heads",
+      date: "03 AUG | 2.00 PM",
+      isPublic: false,
+      imageType: "icon"
+    },
+    {
+      id: 4,
+      title: "Sales Techniques for Beginners: Mastering the Fundamentals",
+      type: "MicroLearning",
+      category: "Micro Learning",
+      users: 1,
+      image: "fundamentals",
+      status: "Public",
+      isPublic: true,
+      imageType: "icon"
+    },
+    {
+      id: 5,
+      title: "Engagement Mastery: Transforming Workplace Culture",
+      type: "MicroLearning",
+      category: "Micro Learning",
+      users: 8,
+      image: "engagement",
+      status: "Public",
+      isPublic: true,
+      imageType: "icon"
+    },
+    {
+      id: 6,
+      title: "AI Innovations in Human Resources: Transforming Talent Management",
+      type: "MicroLearning",
+      category: "Micro Learning",
+      users: 15,
+      image: "hr",
+      status: "Public",
+      isPublic: true,
+      imageType: "icon"
+    }
+  ];
+
+  const users = [
+    { id: 1, name: "Aarav Mehta", email: "aarav.mehta@example.com", dateJoined: "22 Jul 25, 11:45 AM", courses: 2, status: "Active", group: "HR Team", invitedBy: "Admin" },
+    { id: 2, name: "Sanya Kapoor", email: "sanya.kapoor@example.com", dateJoined: "15 Aug 25, 09:30 AM", courses: 3, status: "Active", group: "Marketing", invitedBy: "Manager" },
+    { id: 3, name: "Rohit Sharma", email: "rohit.sharma@example.com", dateJoined: "05 Sep 25, 02:10 PM", courses: 1, status: "Invited", group: "Sales", invitedBy: "Team Lead" },
+    { id: 4, name: "Meera Iyer", email: "meera.iyer@example.com", dateJoined: "18 Jun 25, 04:50 PM", courses: 4, status: "Active", group: "Engineering", invitedBy: "CTO" },
+    { id: 5, name: "Kabir Nair", email: "kabir.nair@example.com", dateJoined: "30 Jul 25, 07:15 PM", courses: 2, status: "Active", group: "Design", invitedBy: "Design Lead" }
+  ];
+
+  const categories = ["All", "Professional Degree Courses", "Academic Courses", "Bootcamp Courses", "Workshop Courses", "Micro Learning"];
+
+  // Testimonials helper functions
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+
+  // Demo helper functions
+  const filteredCourses = courses.filter(course => {
+    const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         course.type.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    if (selectedCategory === "All") return matchesSearch;
+    return matchesSearch && course.category === selectedCategory;
+  });
+
+  const filteredUsers = users.filter(user => {
+    const matchesSearch = user.name.toLowerCase().includes(userSearchQuery.toLowerCase()) ||
+                         user.email.toLowerCase().includes(userSearchQuery.toLowerCase()) ||
+                         user.group.toLowerCase().includes(userSearchQuery.toLowerCase());
+    
+    if (selectedUserFilter === "All") return matchesSearch;
+    return matchesSearch && user.status === selectedUserFilter;
+  });
+
+  const handleCreateCourse = () => {
+    if (courseType && courseTitle) {
+      setShowCreateModal(false);
+      setCourseType("");
+      setCourseTitle("");
+      setCourseDescription("");
+    }
+  };
+
+  const handleTabChange = (tabName: string) => {
+    setActiveTab(tabName);
+  };
+
+  const renderCourseIcon = (image: string, imageType: string) => {
+    if (imageType === "icon") {
+      const iconMap: { [key: string]: JSX.Element } = {
+        ai: <Target className="w-8 h-8" />,
+        team: <Users className="w-8 h-8" />,
+        sales: <TrendingUp className="w-8 h-8" />,
+        fundamentals: <BookOpen className="w-8 h-8" />,
+        engagement: <Award className="w-8 h-8" />,
+        hr: <Users className="w-8 h-8" />,
+        new: <Plus className="w-8 h-8" />
+      };
+      return iconMap[image] || <BookOpen className="w-8 h-8" />;
+    }
+    return <span className="text-3xl">{image}</span>;
+  };
+
+  // Auto-rotation logic
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          // Move to next outcome
+          const currentIndex = outcomeKeys.indexOf(activeOutcome);
+          const nextIndex = (currentIndex + 1) % outcomeKeys.length;
+          setActiveOutcome(outcomeKeys[nextIndex]);
+          return 10; // Reset timer to 10 seconds
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [activeOutcome, outcomeKeys]);
+
+  // Reset timer when outcome changes manually
+  React.useEffect(() => {
+    setTimeLeft(10);
+  }, [activeOutcome]);
+
+  // Auto-rotation for pillars section
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setPillarTimeLeft((prev) => {
+        if (prev <= 1) {
+          // Move to next pillar
+          const currentIndex = pillarKeys.indexOf(activePillar);
+          const nextIndex = (currentIndex + 1) % pillarKeys.length;
+          setActivePillar(pillarKeys[nextIndex]);
+          return 10; // Reset timer to 10 seconds
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [activePillar, pillarKeys]);
+
+  // Reset timer when pillar changes manually
+  React.useEffect(() => {
+    setPillarTimeLeft(10);
+  }, [activePillar]);
+
+  const pillars = {
+    platform: {
+      title: "AI-first L&D Platform",
+      features: [
+        "Modern LXP/LMS with AI tutor, pathways, nudges, quizzes, certificates",
+        "Personalized journeys by role, level, and performance signals",
+        "Teams/Slack/Email nudges; SSO; HRIS connectors",
+        "Standards-friendly (SCORM/xAPI if needed)",
+        "Analytics: time-to-productivity, skill attainment, completion, MAU/WAU",
+        "Admin joy: drag-and-drop, instant cohorts, one-click reports"
+      ],
+      proofCallout: "Launch a new program in 48 hours, not 8 weeks."
+    },
+    content: {
+      title: "AI-first Content Development (Studio)",
+      features: [
+        "Rapid AI storyboarding → script → visuals → voiceover → publish",
+        "Convert SOPs/Docs into micro-lessons; multi-lingual; brand-safe",
+        "Templates for sales, service, onboarding, compliance",
+        "Review workflows; SME annotation; versioning"
+      ],
+      proofCallout: "Ship 10 courses/week without 10 vendors."
+    },
+    jit: {
+      title: "AI-first Just-in-Time Learning (JIT)",
+      features: [
+        "In-the-flow answers inside Slack/Teams/CRM",
+        "Diagnostic prompts → targeted micro-clip (60-120s) + quick checklist",
+        "Works offline for field via lightweight mobile cards",
+        "Governance: source-locked, approvals, audit trail"
+      ],
+      proofCallout: "Reduce 'ask a buddy' time by 60%+."
+    }
+  };
+
+  const outcomes = {
+    onboarding: {
+      title: "Onboarding",
+      features: [
+        "Cut time-to-productivity by 40-60%",
+        "Reduce buddy load and increase retention",
+        "Interactive onboarding paths with progress tracking",
+        "Role-specific learning journeys",
+        "Automated compliance and policy training"
+      ],
+      impact: "New hires productive in days, not weeks"
+    },
+    upskilling: {
+      title: "Upskilling/Reskilling",
+      features: [
+        "Close skill gaps with role-based learning paths",
+        "Hands-on labs and practical exercises",
+        "AI-powered skill assessment and recommendations",
+        "Personalized learning roadmaps",
+        "Career progression tracking and guidance"
+      ],
+      impact: "Close critical skill gaps 3x faster"
+    },
+    frontline: {
+      title: "Frontline Enablement",
+      features: [
+        "Playbooks and JIT cards inside CRM",
+        "Increase win rates with better product knowledge",
+        "Mobile-first learning for field teams",
+        "Real-time performance support",
+        "Offline access for remote locations"
+      ],
+      impact: "Win rates increase by 25-40%"
+    },
+    performance: {
+      title: "Performance Enablement",
+      features: [
+        "Smart nudges to practice and improve",
+        "Continuous feedback loops and coaching",
+        "Performance analytics and insights",
+        "Goal-aligned learning recommendations",
+        "Manager dashboards for team development"
+      ],
+      impact: "Performance improvements in 30 days"
+    },
+    talent: {
+      title: "Talent Development",
+      features: [
+        "Manager pathways and leadership sprints",
+        "Individual Development Plans (IDPs)",
+        "Succession planning and talent pipelines",
+        "Leadership competency frameworks",
+        "Mentorship and coaching programs"
+      ],
+      impact: "Build next-gen leaders 50% faster"
+    },
+    enterprise: {
+      title: "Extended Enterprise",
+      features: [
+        "Train dealers, partners, and distributors",
+        "Co-branded learning portals",
+        "Partner certification programs",
+        "Channel enablement and support",
+        "White-label learning solutions"
+      ],
+      impact: "Partner performance up 35%"
+    },
+    compliance: {
+      title: "Compliance",
+      features: [
+        "Zero-drama compliance rollouts",
+        "Automated reminders and tracking",
+        "Clean audit trails and reporting",
+        "Policy updates and notifications",
+        "Risk management and mitigation"
+      ],
+      impact: "100% compliance with zero friction"
+    }
+  };
+
+  // Testimonials GSAP animations
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Testimonials animation with dramatic entrance
+      const testimonialElements = testimonialsRef.current;
+      if (testimonialElements) {
+        gsap.fromTo(testimonialElements, 
+          { 
+            opacity: 0, 
+            y: 60,
+            scale: 0.9,
+            rotationY: -15
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotationY: 0,
+            duration: 1.2,
+            stagger: 0.25,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: ".testimonials-section",
+              start: "top 85%",
+              end: "bottom 15%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // Auto-rotate testimonials with improved timing
+      const interval = setInterval(() => {
+        setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+      }, 6000);
+
+      // Background elements animation
+      gsap.fromTo(".bg-elements", 
+        { 
+          opacity: 0,
+          scale: 0.8,
+          rotation: -10
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1.5,
+          ease: "power3.out",
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: ".testimonials-section",
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      // Company logos animation with staggered reveal
+      gsap.fromTo(".company-logo", 
+        { 
+          opacity: 0, 
+          y: 30,
+          scale: 0.8
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+          delay: 1.2,
+          scrollTrigger: {
+            trigger: ".testimonials-section",
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      return () => clearInterval(interval);
+    });
+
+    return () => ctx.revert();
+  }, [testimonials.length]);
   
   return (
     <main>
@@ -84,23 +568,221 @@ const Index = () => {
             />
           </div>
           
-          {/* Navigation Links - Centered */}
-          <div className="hidden md:flex items-center justify-center flex-1 px-8">
-            <div className="flex items-center gap-6 lg:gap-8">
-            {[
-              { href: "#main", label: "LISA AI" },
-                { href: "#problem", label: "The Problem" },
-                { href: "#solution", label: "Our Solution" },
-                { href: "#why-lisa", label: "Why LISA AI" },
-                { href: "#how-it-works", label: "How It Works" }
-            ].map((link) => (
+          {/* Right Side - Navigation Links and Actions */}
+          <div className="flex items-center gap-6">
+            {/* Navigation Links */}
+            <div className="hidden lg:flex items-center gap-4">
+              {/* Platform Dropdown */}
+              <div className="relative group">
+                <a
+                  href="#"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                >
+                  Platform
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <a href="/platform/lxp" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">LXP</div>
+                      <div className="text-xs text-gray-500 mt-1">Personalised learning feeds, skills graph, AI coach</div>
+                    </a>
+                    <a href="/platform/lms" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">LMS</div>
+                      <div className="text-xs text-gray-500 mt-1">Paths, assessments, certifications, multi-tenant control</div>
+                    </a>
+                    <a href="/platform/content-studio" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Content Studio</div>
+                      <div className="text-xs text-gray-500 mt-1">Build courses, micro-videos, JIT cards. Go live in hours, not weeks</div>
+                    </a>
+                    <a href="/platform/on-demand-library" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">On Demand Library (500+)</div>
+                      <div className="text-xs text-gray-500 mt-1">Lisa-original modules across roles & industries</div>
+                    </a>
+                    <a href="/platform/just-in-time" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Just-in-Time</div>
+                      <div className="text-xs text-gray-500 mt-1">In-work nudges inside Slack, CRM, and email</div>
+                    </a>
+                    <a href="/platform/pulse" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Pulse (Analytics)</div>
+                      <div className="text-xs text-gray-500 mt-1">Skills heatmaps, adoption, ROI dashboards</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Solutions Dropdown */}
+              <div className="relative group">
+                <a
+                  href="#"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                >
+                  Solutions
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <a href="/solutions/faster-onboarding" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Faster Onboarding</div>
+                      <div className="text-xs text-gray-500 mt-1">Cut ramp time; lighten buddy load; boost 30/60/90</div>
+                    </a>
+                    <a href="/solutions/upskill-reskill" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Upskill & Reskill</div>
+                      <div className="text-xs text-gray-500 mt-1">Role paths + hands-on labs to close gaps fast</div>
+                    </a>
+                    <a href="/solutions/frontline-enablement" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Frontline Enablement</div>
+                      <div className="text-xs text-gray-500 mt-1">CRM playbooks & quick cards. Win rate ↑, AHT ↓</div>
+                    </a>
+                    <a href="/solutions/performance-coaching" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Performance Coaching</div>
+                      <div className="text-xs text-gray-500 mt-1">Nudge → practice → feedback → measurable lift</div>
+                    </a>
+                    <a href="/solutions/leadership-talent" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Leadership & Talent</div>
+                      <div className="text-xs text-gray-500 mt-1">Manager pathways, sprints, IDPs at scale</div>
+                    </a>
+                    <a href="/solutions/partner-dealer-academies" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Partner & Dealer Academies</div>
+                      <div className="text-xs text-gray-500 mt-1">Co-branded portals; certify your ecosystem</div>
+                    </a>
+                    <a href="/solutions/compliance-made-simple" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Compliance Made Simple</div>
+                      <div className="text-xs text-gray-500 mt-1">Auto-reminders, clean trails, zero chaos</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why Lisa Dropdown */}
+              <div className="relative group">
+                <a
+                  href="#"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                >
+                  Why Lisa
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <a href="/why-lisa/ai-first-zero-legacy" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">AI-first. Zero legacy.</div>
+                    </a>
+                    <a href="/why-lisa/35-years-learning-dna" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">35+ years of learning DNA.</div>
+                    </a>
+                    <a href="/why-lisa/go-live-30-days" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Go-live in &lt;30 days.</div>
+                    </a>
+                    <a href="/why-lisa/loved-by-ops-hr-it" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Loved by ops, HR, and IT.</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Resources Dropdown */}
+              <div className="relative group">
+                <a
+                  href="#"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                >
+                  Resources
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <a href="/resources/blog" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Blog</div>
+                    </a>
+                    <a href="/resources/ai-for-hr-hub" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">AI for HR Hub</div>
+                    </a>
+                    <a href="/resources/podcasts" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Podcasts</div>
+                    </a>
+                    <a href="/resources/playbooks-templates" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Playbooks & Templates</div>
+                    </a>
+                    <a href="/resources/benchmarks-reports" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Benchmarks & Reports</div>
+                    </a>
+                    <a href="/resources/buyer-guides" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Buyer Guides (LMS / LXP)</div>
+                    </a>
+                    <a href="/resources/ebooks" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">eBooks</div>
+                    </a>
+                    <a href="/resources/glossary" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Glossary</div>
+                    </a>
+                    <a href="/resources/faqs" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">FAQs</div>
+                    </a>
+                    <a href="/resources/events-bootcamps" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Events & Bootcamps</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Company Dropdown */}
+              <div className="relative group">
+                <a
+                  href="#"
+                  className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                >
+                  Company
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <a href="/company/about" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">About</div>
+                    </a>
+                    <a href="/company/customers" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Customers</div>
+                    </a>
+                    <a href="/company/careers" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Careers</div>
+                    </a>
+                    <a href="/company/press-media" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Press & Media</div>
+                    </a>
+                    <a href="/company/contact" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                      <div className="font-semibold">Contact</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Other Navigation Links */}
               <a
-                key={link.href}
-                href={link.href}
-                  className="text-sm font-black text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+                href="#pricing"
+                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector(link.href);
+                  const element = document.querySelector('#pricing');
                   if (element) {
                     element.scrollIntoView({ 
                       behavior: 'smooth',
@@ -109,19 +791,21 @@ const Index = () => {
                   }
                 }}
               >
-                {link.label}
+                Pricing
               </a>
-            ))}
-            <ThemeToggle />
-          </div>
+              <a
+                href="/lisa-tour"
+                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+              >
+                Lisa Tour
+              </a>
           </div>
           
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
-            <Button variant="default" size="sm" className="hidden sm:flex !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
+            {/* Book a Demo Button */}
+            <Button variant="default" size="sm" className="hidden sm:flex !bg-neutral-950 !text-white hover:!bg-neutral-800 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
-            <Button variant="default" size="sm" className="sm:hidden !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
+            <Button variant="default" size="sm" className="sm:hidden !bg-neutral-950 !text-white hover:!bg-neutral-800 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Demo</a>
             </Button>
           </div>
@@ -129,55 +813,80 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="main" className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="main" className="relative py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elegant Background */}
         <div className="absolute inset-0 bg-background" />
         
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            className="text-center max-w-4xl sm:max-w-5xl mx-auto"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            {/* Left Side - Text Content */}
+            <div className="text-center lg:text-left">
+              {/* Metallic Text */}
+            <motion.div 
+                className="inline-flex items-center justify-center lg:justify-start mb-2 sm:mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+                <span className="relative text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap">
+                  <span className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg animate-pulse">
+                    Corporate L&D is DOOMED
+                </span>
+                  <span className="text-yellow-600 drop-shadow-lg">🤯</span>
+                </span>
+            </motion.div>
+
             {/* Main Content */}
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-6 sm:mb-8 px-2"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-2 sm:mb-3 px-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-gray-900 dark:text-white">Corporate L&D is </span>
-              <span className="text-yellow-500 dark:text-yellow-400">DOOMED</span>
-              <span className="text-gray-900 dark:text-white"> 🤯</span>
+              <span className="text-gray-900">Legacy L&D is slow. </span>
+              <span className="text-purple-600">Lisa ships skills now.</span>
             </motion.h1>
             
-            <motion.h2 
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 px-4"
+              {/* Subheading as Bullet Points */}
+              <motion.div 
+                className="text-left mb-2 sm:mb-3 px-4 lg:px-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Meet Corporate L&D that actually ships outcomes
-            </motion.h2>
-            
-            <motion.p 
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Introducing LISA AI — your corporate learning platform backed by a university
-            </motion.p>
+                  <ul className="space-y-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium text-gray-600">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <span>AI-first platform with intelligent learning paths</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <span>500+ course library covering all business skills</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <span>Just-in-time learning for instant skill application</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <span>Onboard faster, upskill smarter, enable frontline in days—not quarters</span>
+                  </li>
+                </ul>
+              </motion.div>
             
             {/* CTA Buttons - Responsive layout */}
             <motion.div 
-              className="flex flex-col items-center gap-4 sm:gap-6 px-4"
+                className="flex flex-col items-center lg:items-start gap-4 sm:gap-6 px-4 lg:px-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -190,547 +899,378 @@ const Index = () => {
                     Explore 500 Courses Library
                   </a>
                 </Button>
-                <Button variant="default" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-sm hover:shadow-md transition-all duration-300 whitespace-normal text-center !bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
+                <Button variant="default" size="xl" className="basis-1/2 sm:basis-auto flex-1 sm:flex-none w-auto min-w-0 sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-3 sm:px-6 shadow-sm hover:shadow-md transition-all duration-300 whitespace-normal text-center !bg-neutral-950 !text-white hover:!bg-neutral-800 rounded-full" asChild>
                   <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
                     Book a Demo
                   </a>
                 </Button>
               </div>
               
-              {/* Bottom row - single centered link */}
-              <div className="flex justify-center w-full">
-                <a 
-                  href="#how-it-works"
-                  className="inline-flex items-center gap-2 text-purple-500 dark:text-purple-600 hover:text-purple-600 dark:hover:text-purple-700 font-semibold text-base sm:text-lg transition-colors duration-200 group"
-                >
-                    Create a Course with AI Instantly
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </a>
+            </motion.div>
+            </div>
+
+            {/* Right Side - Image */}
+            <motion.div 
+              className="flex justify-center lg:justify-end"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative w-full max-w-lg lg:max-w-xl">
+                <img 
+                  src="/platform_banner_1a0b63f87a.webp" 
+                  alt="LISA Platform Banner" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* The Problem Section */}
-      <section id="problem" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* 3 Pillars of LISA Section */}
+      <section id="pillars" className="py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            viewport={{ once: true, margin: "-100px" }}
+            className="text-center max-w-4xl mx-auto mb-3 sm:mb-5 md:mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 text-purple-600"
                     initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              <span className="text-purple-500 dark:text-purple-600">The Problem</span> <span className="text-neutral-950 dark:text-neutral-50">(Why change?)</span>
+              3 Pillars of LISA
             </motion.h2>
+            
                   <motion.p
-              className="text-base sm:text-lg text-muted-foreground"
+              className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-              Current corporate L&D is broken. Here's what's holding you back:
+              Three powerful pillars that transform corporate learning
             </motion.p>
           </motion.div>
           
+          {/* Tab Buttons */}
             <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            {[
-              { 
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-                title: "Endless recorded content", 
-                description: "Hours of boring videos that employees skip through",
-                color: "red"
-              },
-              { 
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-                title: "Foreign-author content", 
-                description: "Generic content that misses your organizational context",
-                color: "red"
-              },
-              { 
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-                title: "SCORM/xAPI packaging pain", 
-                description: "Technical headaches that slow down deployment",
-                color: "red"
-              },
-              { 
-                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
-                title: "Low adoption & unclear impact", 
-                description: "Scattered reporting, unclear ROI, poor engagement",
-                color: "red"
-              }
-            ].map((problem, index) => (
-              <motion.div
-                key={problem.title}
-                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-red-200/40 dark:border-red-800/40 hover:bg-white dark:hover:bg-gray-800/40 group"
-                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.03, rotateY: 2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-                <motion.div 
-                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <img 
-                      src={problem.image} 
-                      alt={problem.title}
-                      className="w-full h-full object-cover"
-                    />
-                </motion.div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-600 transition-colors duration-300">
-                      {problem.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {problem.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Solution Section */}
-      <section id="solution" className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-32 pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div 
-            className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 text-purple-500 dark:text-purple-600"
-              initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-              Our Solution
-            </motion.h2>
-                  <motion.p
-              className="text-lg sm:text-xl text-muted-foreground mb-4 sm:mb-6 md:mb-8"
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-8 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-              Introducing LISA AI.
-                  </motion.p>
-            <motion.p 
-              className="text-base sm:text-lg text-gray-700 dark:text-gray-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-              Build, deliver, and track learning that moves business metrics
-            </motion.p>
+            <Button 
+              variant={activePillar === 'platform' ? 'default' : 'outline'}
+              size="lg" 
+              onClick={() => setActivePillar('platform')}
+              className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                activePillar === 'platform' 
+                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+              }`}
+            >
+              AI-first L&D Platform
+            </Button>
+            <Button 
+              variant={activePillar === 'content' ? 'default' : 'outline'}
+              size="lg" 
+              onClick={() => setActivePillar('content')}
+              className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                activePillar === 'content' 
+                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+              }`}
+            >
+              AI-first Content Development
+            </Button>
+            <Button 
+              variant={activePillar === 'jit' ? 'default' : 'outline'}
+              size="lg" 
+              onClick={() => setActivePillar('jit')}
+              className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                activePillar === 'jit' 
+                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+              }`}
+            >
+              AI-first Just-in-Time Learning
+            </Button>
             </motion.div>
 
+          {/* Content Card */}
             <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
+            className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            {[
-              { 
-                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
-                title: "500 Ready Courses", 
-                description: "Across tech, business, and workplace skills",
-                color: "green"
-              },
-              { 
-                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-                title: "Create with AI", 
-                description: "From topic to quizzes in minutes with your org context",
-                color: "green"
-              },
-              { 
-                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
-                title: "Mobile + Desktop", 
-                description: "Seamless learning on any device",
-                color: "green"
-              }
-            ].map((feature, index) => (
-                  <motion.div
-                key={feature.title}
-                                                className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-green-200/40 dark:border-green-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
-                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.03, rotateY: 2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-                <motion.div 
-                  className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title}
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-                  </motion.div>
-                ))}
-                </motion.div>
-                
-        </div>
-      </section>
-
-      {/* Unbeatable Cost Section - Separate Section */}
-      <section className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 pb-16 sm:pb-20 md:pb-24 lg:pb-32 xl:pb-40 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div 
-            className="relative max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            key={activePillar}
           >
-            {/* Limited Time Offer Badge */}
-            <motion.div 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold mb-6 mx-auto"
-              initial={{ scale: 0, rotate: -10 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, type: "spring" }}
-              viewport={{ once: true }}
-            >
-              <span className="animate-pulse">⚡</span>
-              LIMITED TIME OFFER
-            </motion.div>
-
-            {/* Main Content */}
-            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-xl rounded-3xl p-8 sm:p-12 md:p-16 shadow-sm">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative">
+              {/* Progress Bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 rounded-t-2xl overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-purple-500 to-purple-600 transition-all duration-1000 ease-linear"
+                  style={{ 
+                    width: `${pillarTimeLeft <= 1 ? 100 : ((10 - pillarTimeLeft) / 10) * 100}%` 
+                  }}
+                />
+              </div>
               
-              {/* Header */}
-              <div className="text-center mb-8">
-                <motion.h2 
-                  className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-950 dark:text-neutral-50"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-              Unbeatable Cost
-                </motion.h2>
-                
-                <motion.p 
-                  className="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 mb-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  Transform your workforce for less than a coffee per employee
-                </motion.p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left Column - Features */}
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
+                    {pillars[activePillar].title}
+                </h3>
+                  
+                  <div className="space-y-4">
+                    {pillars[activePillar].features.map((feature, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-gray-700 dark:text-gray-300">
+                          {feature}
+                        </p>
+                      </div>
+                    ))}
+        </div>
               </div>
 
-              {/* Pricing Display */}
-              <motion.div 
-                className="text-center mb-8"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 1.0, type: "spring" }}
-                viewport={{ once: true }}
-              >
-                <div className="relative inline-block">
-                  {/* Original Price (Crossed Out) */}
-                  <div className="text-2xl sm:text-3xl text-neutral-400 dark:text-neutral-600 line-through mb-2">
-                    Rs. 500/month/Employee
+                {/* Right Column - Proof Callout */}
+                <div className="flex items-center justify-center">
+                  <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-8 text-center shadow-xl">
+                    <div className="text-white">
+                      <h4 className="text-xl sm:text-2xl font-black mb-4">Proof Callout</h4>
+                      <p className="text-lg sm:text-xl font-bold">
+                        "{pillars[activePillar].proofCallout}"
+                      </p>
                   </div>
-                  
-                  {/* Current Price */}
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-black text-purple-500 dark:text-purple-600 mb-2">
-                    Rs. 200
                   </div>
-                  
-                  <div className="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-semibold">
-                    per month per employee
                   </div>
-                  
-                  {/* Savings Badge */}
-                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    Save 60%
                   </div>
-                </div>
-              </motion.div>
-
-              {/* Value Proposition */}
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
-                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">500+</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Ready Courses</div>
-                </div>
-                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
-                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">AI</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Course Creation</div>
-                </div>
-                <div className="text-center p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl border border-neutral-200 dark:border-neutral-700">
-                  <div className="text-2xl font-black text-neutral-950 dark:text-neutral-50 mb-2">24/7</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Support</div>
-                </div>
-              </motion.div>
-
-              {/* CTA */}
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-                  ⏰ This offer expires soon. Lock in your rate today!
-                </p>
-                <Button 
-                  variant="default" 
-                  size="xl" 
-                  className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 px-8 py-4 text-lg font-bold rounded-full shadow-sm hover:shadow-md transition-all duration-300"
-                  asChild
-                >
-                  <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
-                    Claim This Offer Now
-                  </a>
-                </Button>
-              </motion.div>
             </div>
             </motion.div>
         </div>
       </section>
 
-      {/* Why LISA AI Section */}
-      <section id="why-lisa" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Course Library Carousel */}
+      <CourseLibraryCarousel />
+
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Outcomes We Solve Section */}
+      <section id="outcomes" className="py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Background Box for Entire Section */}
           <motion.div 
-            className="bg-neutral-100 dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 md:p-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <motion.div 
-              className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16"
+            className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, type: "spring", stiffness: 100 }}
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h2 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-                Why LISA AI
+              <span className="text-purple-500 dark:text-purple-600">Outcomes We Solve</span>
             </motion.h2>
-              
               <motion.p 
-                className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8"
+              className="text-lg sm:text-xl text-gray-600"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                This is the future we are building along with LetsUpgrade.in and you can launch your Learning Academy for students to be part of online and be prepared for your job before they are even onboarded :)
+              Seven key outcomes that drive measurable business impact
               </motion.p>
           </motion.div>
           
-            {/* Main Content with Image */}
           <motion.div 
-              className="max-w-4xl mx-auto mb-12"
+            className="max-w-7xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-              <div className="relative rounded-2xl overflow-hidden shadow-sm">
-                <img 
-                  src="/platform_banner_1a0b63f87a.webp" 
-                  alt="LISA AI Platform"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {/* Feature 1 */}
-                        <motion.div 
-                className="text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <Building2 className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+              {/* Left Side - Tabs */}
+              <div className="space-y-4 lg:col-span-1">
+                <Button
+                  variant={activeOutcome === 'onboarding' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('onboarding')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'onboarding'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Onboarding
+                </Button>
+                <Button
+                  variant={activeOutcome === 'upskilling' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('upskilling')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'upskilling'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Upskilling/Reskilling
+                </Button>
+                <Button
+                  variant={activeOutcome === 'frontline' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('frontline')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'frontline'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Frontline Enablement
+                </Button>
+                <Button
+                  variant={activeOutcome === 'performance' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('performance')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'performance'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Performance Enablement
+                </Button>
+                <Button
+                  variant={activeOutcome === 'talent' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('talent')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'talent'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Talent Development
+                </Button>
+                <Button
+                  variant={activeOutcome === 'enterprise' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('enterprise')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'enterprise'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Extended Enterprise
+                </Button>
+                <Button
+                  variant={activeOutcome === 'compliance' ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={() => setActiveOutcome('compliance')}
+                  className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
+                    activeOutcome === 'compliance'
+                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                  }`}
+                >
+                  Compliance
+                </Button>
                   </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                  Deep Partnerships
-                </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      We are deeply partnered with ITM Group of Institutions (3 universities in India) & LetsUpgrade.in
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Feature 2 */}
-          <motion.div 
-                className="text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-            viewport={{ once: true }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <GraduationCap className="w-4 h-4 text-purple-500 dark:text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      Certifications & Degrees
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      Optionally offer Degrees, NSDC certifications, and Micro-credits through our ecosystem
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Feature 3 */}
+
+              {/* Right Side - Content Card */}
               <motion.div
-                className="text-left"
-                initial={{ opacity: 0, y: 20 }}
+                className="lg:col-span-2 flex"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
+                key={activeOutcome}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <Users className="w-4 h-4 text-purple-500 dark:text-purple-600" />
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 w-full relative">
+                  {/* Progress Bar Timer */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-700 rounded-t-2xl overflow-hidden">
+                    <div 
+                      className="h-full transition-all duration-1000 ease-linear bg-gradient-to-r from-purple-500 to-purple-600"
+                      style={{ 
+                        width: `${timeLeft <= 1 ? 100 : ((10 - timeLeft) / 10) * 100}%` 
+                      }}
+                    />
                   </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      Talent Pipeline
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      Build a talent pipeline: we can supply trained employees directly to your company
-                    </p>
-                  </div>
-                </div>
-                </motion.div>
-              
-              {/* Feature 4 */}
-              <motion.div 
-                className="text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <School className="w-4 h-4 text-purple-500 dark:text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      University Partnership
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      You're not just subscribing to an LMS — you're subscribing to a university.
-                    </p>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+                    {/* Left Side - Content */}
+                    <div className="flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
+                          {outcomes[activeOutcome].title}
+                        </h3>
+
+                        <div className="space-y-4">
+                          {outcomes[activeOutcome].features.map((feature, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                              <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <p className="text-gray-700 dark:text-gray-300">
+                                {feature}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Business Impact Callout */}
+                      <div className="mt-8">
+                        <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center shadow-xl">
+                          <div className="text-white">
+                            <h4 className="text-lg sm:text-xl font-black mb-2">Business Impact</h4>
+                            <p className="text-base sm:text-lg font-bold">
+                              "{outcomes[activeOutcome].impact}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </div>
-              </motion.div>
-              
-              {/* Feature 5 */}
-              <motion.div 
-                className="text-left sm:col-span-2 lg:col-span-1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <Briefcase className="w-4 h-4 text-purple-500 dark:text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      Talent & Hiring
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      Learners who enroll in your programs can be hired directly into your teams. Why hire freshers when you can hire directly from your own trained pipeline?
-                    </p>
-                  </div>
-                </div>
-          </motion.div>
-          
-              {/* Feature 6 */}
-          <motion.div 
-                className="text-left"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.1 }}
-            viewport={{ once: true }}
-          >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                    <Monitor className="w-4 h-4 text-purple-500 dark:text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl">
-                      Seamless Hybrid Learning
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                      Conduct online, offline & hybrid programs effortlessly
-                    </p>
+
+                    {/* Right Side - Image */}
+                    <div className="flex items-center justify-center">
+                      <div className="w-full h-80 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 rounded-2xl flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-24 h-24 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <h4 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-2">
+                            {outcomes[activeOutcome].title}
+                          </h4>
+                          <p className="text-purple-600 dark:text-purple-300 text-sm">
+                            Measurable Results
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -739,11 +1279,14 @@ const Index = () => {
         </div>
       </section>
 
-            {/* How It Works Section */}
-      <section id="how-it-works" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* How Fast Can We Go Section */}
+      <section id="how-fast" className="py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
+            className="text-center max-w-4xl mx-auto mb-3 sm:mb-5 md:mb-6 px-4"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, type: "spring", stiffness: 100 }}
@@ -756,226 +1299,910 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-purple-500 dark:text-purple-600">How It Works</span> <span className="text-neutral-950 dark:text-neutral-50">(3 steps)</span>
+              <span className="text-purple-500 dark:text-purple-600">How fast can we go?</span>
             </motion.h2>
+            <motion.p 
+              className="text-lg sm:text-xl text-gray-600"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              3 steps to rapid implementation and scaling
+            </motion.p>
             </motion.div>
             
+          {/* 3 Cards Grid with Arrows */}
           <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4"
+            className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              {[
-                {
-                  step: "1",
-                  title: "Pick from 500 courses or start from a topic", 
-                  icon: "📚",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-                  description: "Choose from our extensive library of pre-built courses or create custom content tailored to your organization's specific needs.",
-                  features: ["500 pre-built courses", "Custom topic creation", "Industry-specific content", "Expert-curated materials"]
-                },
-                {
-                  step: "2",
-                  title: "Use AI to generate curriculum, content, and assessments", 
-                  icon: "🤖",
-                  image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-                  description: "Our AI technology automatically creates comprehensive curriculum, engaging content, and relevant assessments based on your requirements.",
-                  features: ["AI-powered curriculum generation", "Automated assessment creation", "Personalized learning paths", "Real-time content adaptation"]
-                },
-                {
-                  step: "3",
-                  title: "Launch to your teams with instant dashboards for adoption and impact", 
-                  icon: "📊",
-                  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-                  description: "Deploy your learning programs instantly and track team engagement, progress, and business impact through comprehensive analytics.",
-                  features: ["Real-time analytics dashboard", "Progress tracking", "ROI measurement", "Team performance insights"]
-                }
-              ].map((step, index) => (
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {/* Desktop/Tablet Layout with Horizontal Arrows */}
+            <div className="hidden md:flex items-center justify-center gap-4">
+              {steps.map((step, index) => (
+                <div key={step.id} className="flex items-center">
                   <motion.div
-                  key={step.step}
-                  className="relative group"
-                  initial={{ opacity: 0, y: 30 }}
+                    className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-1"
+                    initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                    transition={{ duration: 0.8, delay: 0.5 + (index * 0.2) }}
                   viewport={{ once: true }}
                 >
-
-                    
-                  {/* Step Card - Course card style */}
-                  <div className="bg-neutral-100 dark:bg-neutral-900 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-[520px] flex flex-col min-w-[320px] group relative">
-                    
-                    {/* Step Number Badge - Top right corner like course category */}
-                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black z-10">
-                      Step {step.step}
-                    </div>
-                    
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-700">
-                      <img 
-                        src={step.image} 
-                        alt={`Step ${step.step}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        style={{ 
-                          objectPosition: 'center center',
-                          objectFit: 'cover'
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-background/20"></div>
-                      </div>
-                    
-                    {/* Content */}
-                    <div className="p-4 flex-1 flex flex-col">
-                      {/* Title */}
-                      <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-lg sm:text-xl leading-tight min-h-[3rem]">
-                        {step.title}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-sm text-muted-foreground mb-3 line-clamp-3 flex-1 min-h-[4.5rem]">
-                        {step.description}
-                      </p>
-                      
-                      {/* Features as Tags */}
-                      <div className="flex flex-wrap gap-1 mb-4">
-                        {step.features.slice(0, 3).map((feature, featureIndex) => (
-                          <span key={featureIndex} className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-black transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                            {feature}
-                          </span>
-                        ))}
-                    </div>
-                    
-
-                      </div>
-                      </div>
-
-
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {step.description}
+                    </p>
+                    <ul className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
+                      {step.details.split('. ').map((detail, idx) => (
+                        <li key={idx} className="text-sm">
+                          {detail.trim()}
+                        </li>
+                      ))}
+                    </ul>
                   </motion.div>
-                ))}
-              </motion.div>
-            
+                  
+                  {/* Horizontal Arrow (except for last card) */}
+                  {index < steps.length - 1 && (
+                    <motion.div 
+                      className="mx-4"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.7 + (index * 0.2) }}
+                      viewport={{ once: true }}
+                    >
+                      <svg 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="text-purple-600"
+                      >
+                        <path 
+                          d="M9 18L15 12L9 6" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+            </div>
 
+            {/* Mobile Layout with Vertical Arrows */}
+            <div className="md:hidden space-y-6">
+              {steps.map((step, index) => (
+                <div key={step.id}>
+                  <motion.div 
+                    className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 + (index * 0.2) }}
+                    viewport={{ once: true }}
+                  >
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {step.description}
+                    </p>
+                    <ul className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
+                      {step.details.split('. ').map((detail, idx) => (
+                        <li key={idx} className="text-sm">
+                          {detail.trim()}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                  
+                  {/* Vertical Arrow (except for last card) */}
+                  {index < steps.length - 1 && (
+                    <motion.div 
+                      className="flex justify-center py-4"
+                      initial={{ opacity: 0, y: -10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.7 + (index * 0.2) }}
+                      viewport={{ once: true }}
+                    >
+                      <svg 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="text-purple-600"
+                      >
+                        <path 
+                          d="M6 9L12 15L18 9" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </motion.div>
+                  )}
+                    </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Trust & Scale Section */}
-                      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-background">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div 
-              className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4"
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, type: "spring", stiffness: 100 }}
-              viewport={{ once: true, margin: "-100px" }}
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section py-20 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
+        {/* Background elements with blockchain theme */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-purple-500/20 opacity-20 bg-elements"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-900 dark:text-neutral-50 mb-6">
+              What Our
+              <span className="text-purple-500"> Clients Say</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto text-balance">
+              Real feedback from L&D leaders who have transformed their corporate learning with Lisa AI.
+            </p>
+          </div>
+
+          {/* Enhanced Testimonials Carousel with blockchain theme */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-2xl bg-white dark:bg-neutral-900 backdrop-blur-sm shadow-[0_0_50px_rgba(147,51,233,0.1)]">
+              <div 
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonialIndex * 100}%)` }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div 
+                    key={index}
+                    ref={(el) => { if (el) testimonialsRef.current[index] = el; }}
+                    className="w-full flex-shrink-0 p-8 px-16"
+                  >
+                    <div className="text-center">
+                      {/* Star rating with enhanced glow effect */}
+                      <div className="flex justify-center mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <svg key={i} className="w-6 h-6 text-yellow-400 fill-current transform hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+
+                      {/* Testimonial text with enhanced styling */}
+                      <blockquote className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed italic text-balance font-light">
+                        "{testimonial.text}"
+                      </blockquote>
+
+                      {/* Author info with enhanced styling */}
+                      <div className="flex items-center justify-center space-x-6">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name}
+                          className="w-16 h-16 rounded-full object-cover border-2 border-neutral-300 dark:border-neutral-600 shadow-lg transform hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="text-left">
+                          <div className="text-lg font-semibold text-neutral-900 dark:text-neutral-50">{testimonial.name}</div>
+                          <div className="text-base text-neutral-600 dark:text-neutral-300 font-light">{testimonial.role}</div>
+                          <div className="text-base text-purple-500 font-light">{testimonial.company}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Enhanced Navigation buttons with blockchain theme */}
+            <button 
+              onClick={prevTestimonial}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full flex items-center justify-center transition-all duration-500 hover:scale-110 shadow-lg hover:shadow-xl hover:bg-neutral-50 dark:hover:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 z-10"
             >
-              <motion.h2 
-                className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button 
+              onClick={nextTestimonial}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full flex items-center justify-center transition-all duration-500 hover:scale-110 shadow-lg hover:shadow-xl hover:bg-neutral-50 dark:hover:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 z-10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Enhanced Dots indicator with blockchain theme */}
+          <div className="flex justify-center mt-10 space-x-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonialIndex(index)}
+                className={`transition-all duration-500 rounded-full transform hover:scale-125 ${
+                  index === currentTestimonialIndex 
+                    ? 'w-4 h-4 bg-gradient-to-r from-purple-500 to-purple-600 shadow-lg shadow-purple-500/50 scale-125' 
+                    : 'w-3 h-3 bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500 shadow-md'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Company logos with marquee carousel */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <p className="text-lg text-neutral-600 dark:text-neutral-300 font-normal">Trusted by the world's largest organizations</p>
+            </div>
+            
+            {/* Marquee Carousel Container */}
+            <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 sm:p-12">
+              <div className="relative overflow-hidden">
+                {/* Carousel Container */}
+                <div className="flex animate-scroll">
+                  {/* First set of logos */}
+                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
+                    {[
+                      { 
+                        name: "Raymond", 
+                        logo: "/logos/raymond.png"
+                      },
+                      { 
+                        name: "TITAN eyeplus", 
+                        logo: "/logos/titan-eyeplus.png"
+                      },
+                      { 
+                        name: "Eisai", 
+                        logo: "/logos/eisai.png"
+                      },
+                      { 
+                        name: "Hinduja Hospitals", 
+                        logo: "/logos/hinduja-hospitals.png"
+                      },
+                      { 
+                        name: "ICICI", 
+                        logo: "/logos/icici.png"
+                      }
+                    ].map((company, index) => (
+                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
+                        <img 
+                          src={company.logo} 
+                          alt={`${company.name} logo`}
+                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second set of logos (duplicate for seamless loop) */}
+                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
+                    {[
+                      { 
+                        name: "Raymond", 
+                        logo: "/logos/raymond.png"
+                      },
+                      { 
+                        name: "TITAN eyeplus", 
+                        logo: "/logos/titan-eyeplus.png"
+                      },
+                      { 
+                        name: "Eisai", 
+                        logo: "/logos/eisai.png"
+                      },
+                      { 
+                        name: "Hinduja Hospitals", 
+                        logo: "/logos/hinduja-hospitals.png"
+                      },
+                      { 
+                        name: "ICICI", 
+                        logo: "/logos/icici.png"
+                      }
+                    ].map((company, index) => (
+                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
+                        <img 
+                          src={company.logo} 
+                          alt={`${company.name} logo`}
+                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Third set of logos (duplicate for seamless loop) */}
+                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
+                    {[
+                      { 
+                        name: "Raymond", 
+                        logo: "/logos/raymond.png"
+                      },
+                      { 
+                        name: "TITAN eyeplus", 
+                        logo: "/logos/titan-eyeplus.png"
+                      },
+                      { 
+                        name: "Eisai", 
+                        logo: "/logos/eisai.png"
+                      },
+                      { 
+                        name: "Hinduja Hospitals", 
+                        logo: "/logos/hinduja-hospitals.png"
+                      },
+                      { 
+                        name: "ICICI", 
+                        logo: "/logos/icici.png"
+                      }
+                    ].map((company, index) => (
+                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
+                        <img 
+                          src={company.logo} 
+                          alt={`${company.name} logo`}
+                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Pricing Section */}
+      <section className="py-20 bg-neutral-950 dark:bg-neutral-900 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+              Simple, Transparent
+              <span className="text-purple-400"> Pricing</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto text-balance">
+              Choose the plan that fits your organization's learning needs. Start free and scale as you grow.
+            </p>
+                    </div>
+                    
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Starter Tier */}
+            <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105 flex flex-col">
+              <div className="text-center flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
+                <div className="text-neutral-400 text-sm mb-6">Pilot for one team</div>
+                <div className="text-4xl font-bold text-white mb-2">Free</div>
+                <div className="text-neutral-400 text-sm mb-8">forever</div>
+                
+                <div className="text-left mb-8 flex-grow">
+                  <div className="text-neutral-300 text-sm mb-4">Includes:</div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Platform access
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Library subset
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Basic JIT learning
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Up to 50 users
+                    </li>
+                  </ul>
+                </div>
+                
+                <button className="w-full bg-neutral-700 hover:bg-neutral-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 mt-auto">
+                  Start Pilot
+                </button>
+              </div>
+            </div>
+
+            {/* Enterprise Tier */}
+            <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105 flex flex-col">
+              <div className="text-center flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                <div className="text-neutral-400 text-sm mb-6">Multi-BU, SSO/HRIS</div>
+                <div className="text-4xl font-bold text-white mb-2">Custom</div>
+                <div className="text-neutral-400 text-sm mb-8">pricing</div>
+                
+                <div className="text-left mb-8 flex-grow">
+                  <div className="text-neutral-300 text-sm mb-4">Everything in Starter, plus:</div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Multi-BU support
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      SSO/HRIS integration
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Custom SLAs
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Advanced security
+                    </li>
+                    <li className="flex items-center text-white text-sm">
+                      <svg className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Co-branded portals
+                    </li>
+                  </ul>
+                </div>
+                
+                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 mt-auto">
+                  Talk to Sales
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Integrations Section */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Seamless
+              <span className="text-purple-600"> Integrations</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-balance">
+              Connect LISA with your existing tools and workflows. Our platform integrates seamlessly with your favorite applications.
+            </p>
+          </div>
+
+          {/* Integration Categories */}
+          <div className="max-w-7xl mx-auto">
+            <div className="space-y-16">
+              {/* HRIS/SSO Integration */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-500 transition-colors duration-300">
+                    HRIS/SSO
+                    </h3>
+                  <p className="text-gray-600 text-sm">
+                    Single sign-on and human resource information system integrations
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="relative overflow-hidden">
+                    <div className="flex animate-scroll-hris">
+                      {/* First set of logos */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
+                          { name: "Okta", logo: "/logos/okta.png" },
+                          { name: "Google", logo: "/logos/google.png" },
+                          { name: "Workday", logo: "/logos/workday.png" },
+                          { name: "SAP", logo: "/logos/sap.png" },
+                          { name: "Zoho", logo: "/logos/zoho.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    
+                      {/* Second set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
+                          { name: "Okta", logo: "/logos/okta.png" },
+                          { name: "Google", logo: "/logos/google.png" },
+                          { name: "Workday", logo: "/logos/workday.png" },
+                          { name: "SAP", logo: "/logos/sap.png" },
+                          { name: "Zoho", logo: "/logos/zoho.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Third set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
+                          { name: "Okta", logo: "/logos/okta.png" },
+                          { name: "Google", logo: "/logos/google.png" },
+                          { name: "Workday", logo: "/logos/workday.png" },
+                          { name: "SAP", logo: "/logos/sap.png" },
+                          { name: "Zoho", logo: "/logos/zoho.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Comms Integration */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-500 transition-colors duration-300">
+                    Comms
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Communication and collaboration platform integrations
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="relative overflow-hidden">
+                    <div className="flex animate-scroll-comms">
+                      {/* First set of logos */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Slack", logo: "/logos/slack.png" },
+                          { name: "Teams", logo: "/logos/teams.png" },
+                          { name: "Gmail", logo: "/logos/gmail.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Second set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Slack", logo: "/logos/slack.png" },
+                          { name: "Teams", logo: "/logos/teams.png" },
+                          { name: "Gmail", logo: "/logos/gmail.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                    </div>
+                    
+                      {/* Third set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Slack", logo: "/logos/slack.png" },
+                          { name: "Teams", logo: "/logos/teams.png" },
+                          { name: "Gmail", logo: "/logos/gmail.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CRM/Field Integration */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-500 transition-colors duration-300">
+                    CRM/Field
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Customer relationship management and field service integrations
+                  </p>
+                      </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="relative overflow-hidden">
+                    <div className="flex animate-scroll-crm">
+                      {/* First set of logos */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Salesforce", logo: "/logos/salesforce.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
+                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Second set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Salesforce", logo: "/logos/salesforce.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
+                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Third set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Salesforce", logo: "/logos/salesforce.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
+                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Integration */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-500 transition-colors duration-300">
+                    Content
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Content management and collaboration platform integrations
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="relative overflow-hidden">
+                    <div className="flex animate-scroll-content">
+                      {/* First set of logos */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Google Drive", logo: "/logos/google-drive.png" },
+                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
+                          { name: "Confluence", logo: "/logos/confluence.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Second set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Google Drive", logo: "/logos/google-drive.png" },
+                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
+                          { name: "Confluence", logo: "/logos/confluence.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Third set of logos (duplicate for seamless loop) */}
+                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
+                        {[
+                          { name: "Google Drive", logo: "/logos/google-drive.png" },
+                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
+                          { name: "Confluence", logo: "/logos/confluence.png" }
+                        ].map((integration, index) => (
+                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="h-12 object-contain mb-3"
+                            />
+                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Security & Compliance Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Security & 
+              <span className="text-purple-500"> Compliance</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto text-balance">
+              Enterprise-grade security and compliance features to protect your data and meet regulatory requirements
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* Security Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* SSO, RBAC, SCIM */}
+              <motion.div 
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Trust & Scale
-              </motion.h2>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Identity & Access Management</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Single Sign-On (SSO), Role-Based Access Control (RBAC), and SCIM provisioning for seamless user management and security.
+                    </p>
+                  </div>
+                </div>
               </motion.div>
 
+              {/* Data Protection */}
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-            {[
-              { 
-                icon: Shield, 
-                title: "Built for enterprise rollouts", 
-                description: "Scalable architecture designed for large organizations"
-              },
-              { 
-                icon: CheckCircle, 
-                title: "Proven in universities and corporate environments", 
-                description: "Battle-tested across diverse learning environments"
-              },
-              { 
-                icon: Users, 
-                title: "Backed by ITM's academic and industry network", 
-                description: "Strong partnerships with educational institutions"
-              }
-            ].map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  className="backdrop-blur-xl bg-white/90 dark:bg-gray-800/30 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-blue-200/40 dark:border-blue-800/40 text-center hover:bg-white dark:hover:bg-gray-800/40 group"
-                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8, scale: 1.03, rotateY: 2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                <motion.div 
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <feature.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-blue-600 dark:text-blue-400" />
-                </motion.div>
-                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors duration-300">
-                  {feature.title}
-                    </h3>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {feature.description}
-            </p>
-                </motion.div>
-              ))}
-          </motion.div>
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Data Protection</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      End-to-end encryption, data masking, and secure data storage with regular backups and disaster recovery.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Security Audits & Compliance */}
+              <motion.div
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Security Audits & Compliance</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      SOC 2 Type II, GDPR, HIPAA compliance with regular security audits and penetration testing.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Data Residency Options */}
+              <motion.div
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Data Residency Options</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Choose your data center location with options for US, EU, and Asia-Pacific regions to meet local compliance requirements.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-      </section>
-            
-
-
-
-      {/* Book Demo Section */}
-      <section id="demo" className="py-16 sm:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h2 
-              className="text-3xl sm:text-4xl font-black mb-6"
-              initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-              Book a Demo
-            </motion.h2>
-            <motion.p 
-              className="text-lg text-muted-foreground mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Curious how LISA AI can transform learning in your organization?
-            </motion.p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button variant="default" size="xl" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
-                <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Schedule a Demo</a>
-              </Button>
-            </motion.div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Meet with a product expert and get a custom walkthrough.
-            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -1001,68 +2228,47 @@ const Index = () => {
             {/* Quick Links */}
             <div>
               <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Products</a></li>
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Nexi Agents</a></li>
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Workshops</a></li>
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Reports</a></li>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#features" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Features</a></li>
+                <li><a href="#pricing" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#integrations" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Integrations</a></li>
+                <li><a href="#security" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Security</a></li>
               </ul>
             </div>
 
-            {/* Solutions */}
+            {/* Resources */}
             <div>
-              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Solutions</h3>
-              <ul className="space-y-2">
-                <li><a href="/corporate" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Corporate L&D</a></li>
-                <li><a href="/university" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Universities</a></li>
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Healthcare & BFSI</a></li>
-                <li><a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Retail & Manufacturing</a></li>
+              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Resources</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="/resources/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/resources/playbooks" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Playbooks</a></li>
+                <li><a href="/resources/benchmarks" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Benchmarks</a></li>
+                <li><a href="/resources/faqs" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">FAQs</a></li>
               </ul>
             </div>
 
             {/* Contact */}
             <div>
               <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Contact</h3>
-              <div className="space-y-2">
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">hello@lisa.ai</p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">Mumbai, IN • Remote-first</p>
-                <div className="flex space-x-4 mt-4">
-                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                    </svg>
-                  </a>
-                  <a href="mailto:hello@lisa.ai" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              <ul className="space-y-2 text-sm">
+                <li><a href="mailto:hello@lisaapp.in" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">hello@lisaapp.in</a></li>
+                <li><a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Book a Demo</a></li>
+                <li><a href="/company/contact" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Contact Us</a></li>
+              </ul>
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-neutral-200 dark:border-neutral-700 mb-8"></div>
-
           {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 sm:mb-0">
-              © 2025 LISA. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</a>
+          <div className="border-t border-neutral-200 dark:border-neutral-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 md:mb-0">
+                © 2025 LetsUpgrade EdTech Pvt. Ltd. All rights reserved.
+              </div>
+              <div className="flex space-x-6 text-sm">
+                <a href="/privacy" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy Policy</a>
+                <a href="/terms" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Terms of Service</a>
+                <a href="/cookies" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Cookie Policy</a>
+              </div>
             </div>
           </div>
         </div>

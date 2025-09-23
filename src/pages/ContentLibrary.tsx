@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { Search, Filter, Clock, Users, Star, BookOpen, ArrowLeft, Target, Award, Video } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import StickyTopBar from "@/components/StickyTopBar";
 
 interface Course {
@@ -12090,19 +12089,18 @@ const ContentLibrary = () => {
             <img 
               src="/lisa-logo.svg" 
               alt="LISA Logo" 
-              className="h-8 w-auto max-w-[120px] sm:max-w-none dark:hidden" 
+              className="h-8 w-auto max-w-[120px] sm:max-w-none hidden" 
             />
             <img 
               src="/lisa_-_final_-_logo_-_wite__e2e8f0 (2).svg" 
               alt="LISA Logo" 
-              className="h-8 w-auto max-w-[120px] sm:max-w-none hidden dark:block" 
+              className="h-8 w-auto max-w-[120px] sm:max-w-none hidden" 
             />
           </div>
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <Button variant="default" size="sm" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 rounded-full" asChild>
+            <Button variant="default" size="sm" className="!bg-neutral-950 !text-white hover:!bg-neutral-800 rounded-full" asChild>
               <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
           </div>
@@ -12129,8 +12127,8 @@ const ContentLibrary = () => {
 
           {/* Search and Filters */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-8 shadow-sm">
-              <h3 className="text-xl font-black mb-6 text-center text-gray-900 dark:text-white">
+            <div className="bg-neutral-100 backdrop-blur-sm rounded-2xl p-8 shadow-sm">
+              <h3 className="text-xl font-black mb-6 text-center text-gray-900">
                 Find Your Perfect Course
               </h3>
               
@@ -12142,7 +12140,7 @@ const ContentLibrary = () => {
                     placeholder="Search for courses, skills, or topics..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 pr-4 py-4 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-purple-500 dark:focus:border-purple-400"
+                    className="pl-12 pr-4 py-4 text-base border-2 border-gray-200 focus:border-purple-500"
                   />
                 </div>
               </div>
@@ -12151,7 +12149,7 @@ const ContentLibrary = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Category Filter */}
                 <div>
-                  <label className="block text-sm font-black text-gray-700 dark:text-gray-300 mb-3">
+                  <label className="block text-sm font-black text-gray-700 mb-3">
                     📂 Category
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -12162,7 +12160,7 @@ const ContentLibrary = () => {
                         className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedCategory === category
                             ? "bg-purple-600 text-white shadow-sm"
-                            : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200"
                         }`}
                       >
                         {category}
@@ -12173,7 +12171,7 @@ const ContentLibrary = () => {
                 
                 {/* Level Filter */}
                 <div>
-                  <label className="block text-sm font-black text-gray-700 dark:text-gray-300 mb-3">
+                  <label className="block text-sm font-black text-gray-700 mb-3">
                     📊 Difficulty Level
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -12184,7 +12182,7 @@ const ContentLibrary = () => {
                         className={`px-3 py-2 rounded-lg text-sm font-black transition-all duration-200 ${
                           selectedLevel === level
                             ? "bg-purple-600 text-white shadow-sm"
-                            : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200"
                         }`}
                       >
                         {level}
@@ -12195,7 +12193,7 @@ const ContentLibrary = () => {
               </div>
               
               {/* Results Count */}
-              <div className="text-center pt-6 mt-6 border-t border-gray-200 dark:border-gray-600">
+              <div className="text-center pt-6 mt-6 border-t border-gray-200">
                 <p className="text-sm text-muted-foreground">
                   Showing <span className="font-black text-purple-600">{startIndex + 1}-{Math.min(endIndex, filteredCourses.length)}</span> of <span className="font-black">{filteredCourses.length}</span> courses
                   {filteredCourses.length !== courses.length && ` (filtered from ${courses.length} total)`}
@@ -12221,9 +12219,9 @@ const ContentLibrary = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col min-w-[280px]">
+                <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col min-w-[280px]">
                   {/* Course Thumbnail */}
-                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50">
                     <img 
                       src={course.image} 
                       alt={course.title}
@@ -12247,7 +12245,7 @@ const ContentLibrary = () => {
                   
                   {/* Course Info */}
                   <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                    <h3 className="font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
                       {course.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-4 flex-1 min-h-[4.5rem]">
@@ -12381,10 +12379,10 @@ const ContentLibrary = () => {
           ></div>
           
           {/* Modal Content */}
-          <div className="w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8 relative z-20 max-h-[90vh] overflow-y-auto">
+          <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8 relative z-20 max-h-[90vh] overflow-y-auto">
             {/* Close Button */}
             <button 
-              className="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 z-10 touch-manipulation"
+              className="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors duration-200 z-10 touch-manipulation"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -12396,7 +12394,7 @@ const ContentLibrary = () => {
                 setSelectedCourse(null);
               }}
             >
-              <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -12422,29 +12420,29 @@ const ContentLibrary = () => {
               
               {/* Content Section */}
               <div className="lg:w-1/2 flex flex-col justify-center">
-                <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-4">
                   {selectedCourse.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
                   {selectedCourse.description}
                 </p>
                 
                 {/* Course Details */}
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Clock className="h-4 w-4" />
                     <span>Duration: {selectedCourse.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Target className="h-4 w-4" />
                     <span>Target Audience: {selectedCourse.targetAudience}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Award className="h-4 w-4" />
                     <span>Certificate: {selectedCourse.certificate}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Video className="h-4 w-4" />
                     <span>Format: {selectedCourse.deliveryFormat}</span>
                   </div>
@@ -12452,10 +12450,10 @@ const ContentLibrary = () => {
                 
                 {/* Learning Outcomes */}
                 <div className="space-y-2 mb-6">
-                  <h4 className="text-sm font-black text-gray-900 dark:text-white mb-3">Learning Outcomes:</h4>
+                  <h4 className="text-sm font-black text-gray-900 mb-3">Learning Outcomes:</h4>
                   <ul className="space-y-2">
                     {selectedCourse.learningOutcomes.map((outcome, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
                         <div className="w-2 h-2 bg-purple-500 rounded-full flex-shrink-0 mt-2"></div>
                         {outcome}
                       </li>
@@ -12496,15 +12494,15 @@ const ContentLibrary = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-black mb-4 text-gray-900 dark:text-white text-center">
+            <div className="bg-neutral-100 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-black mb-4 text-gray-900 text-center">
                 Ready to Access the Full Library?
               </h3>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto text-center leading-relaxed">
                 Get unlimited access to our complete course catalog with advanced features, progress tracking, and personalized learning paths.
               </p>
               <div className="flex justify-center">
-                <Button variant="default" size="xl" className="!bg-neutral-950 dark:!bg-neutral-50 !text-white dark:!text-black hover:!bg-neutral-800 dark:hover:!bg-neutral-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-full" asChild>
+                <Button variant="default" size="xl" className="!bg-neutral-950 !text-white hover:!bg-neutral-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-full" asChild>
                   <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">
                     🗣️ Talk to Our Team for Full Access
                   </a>
