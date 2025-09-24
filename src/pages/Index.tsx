@@ -820,7 +820,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('onboarding')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'onboarding'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -832,7 +832,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('upskilling')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'upskilling'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -844,7 +844,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('frontline')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'frontline'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -856,7 +856,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('performance')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'performance'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -868,7 +868,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('talent')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'talent'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -880,7 +880,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('enterprise')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'enterprise'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
@@ -892,7 +892,7 @@ const Index = () => {
                   onClick={() => setActiveOutcome('compliance')}
                   className={`w-full h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                     activeOutcome === 'compliance'
-                      ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white'
+                      ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
                       : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
                   }`}
                 >
