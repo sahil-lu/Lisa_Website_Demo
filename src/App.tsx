@@ -33,16 +33,15 @@ import LovedByOpsHRIT from "./pages/why-lisa/LovedByOpsHRIT";
 
 // Resources pages
 import Blog from "./pages/resources/Blog";
-// Placeholder components for remaining resources pages
-const AIForHRHub = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">AI for HR Hub Page - Coming Soon</h1></div>;
-const Podcasts = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Podcasts Page - Coming Soon</h1></div>;
-const PlaybooksTemplates = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Playbooks & Templates Page - Coming Soon</h1></div>;
-const BenchmarksReports = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Benchmarks & Reports Page - Coming Soon</h1></div>;
-const BuyerGuides = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Buyer Guides Page - Coming Soon</h1></div>;
-const EBooks = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">eBooks Page - Coming Soon</h1></div>;
-const Glossary = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Glossary Page - Coming Soon</h1></div>;
-const FAQs = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">FAQs Page - Coming Soon</h1></div>;
-const EventsBootcamps = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Events & Bootcamps Page - Coming Soon</h1></div>;
+import AIForHRHub from "./pages/resources/AIForHRHub";
+import Podcasts from "./pages/resources/Podcasts";
+import PlaybooksTemplates from "./pages/resources/PlaybooksTemplates";
+import BenchmarksReports from "./pages/resources/BenchmarksReports";
+import BuyerGuides from "./pages/resources/BuyerGuides";
+import EBooks from "./pages/resources/eBooks";
+import Glossary from "./pages/resources/Glossary";
+import FAQs from "./pages/resources/FAQs";
+import EventsBootcamps from "./pages/resources/EventsBootcamps";
 
 // Company pages
 import About from "./pages/company/About";

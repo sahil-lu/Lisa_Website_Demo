@@ -756,7 +756,7 @@ const Index = () => {
                         </p>
                       </div>
                     ))}
-                  </div>
+              </div>
 
                   {/* Proof Callout below bullet points */}
                   <div className="mt-8">
@@ -776,7 +776,7 @@ const Index = () => {
                   <div className="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
                     <p className="text-gray-500 text-sm">Image placeholder</p>
                   </div>
-                </div>
+                  </div>
                   </div>
             </div>
             </motion.div>
