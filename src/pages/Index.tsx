@@ -62,6 +62,17 @@ const Index = () => {
   // Array of outcome keys for auto-rotation
   const outcomeKeys = ['onboarding', 'upskilling', 'frontline', 'performance', 'talent', 'enterprise', 'compliance'];
   
+  // Image mapping for outcomes
+  const outcomeImages = {
+    onboarding: 'onboarding.png',
+    upskilling: 'upskilling.png',
+    frontline: 'frontline-enablement.png',
+    performance: 'performance-enablement.png',
+    talent: 'talent-development.png',
+    enterprise: 'extended-enterprise.png',
+    compliance: 'compilance.png'
+  };
+  
   // Array of pillar keys for auto-rotation
   const pillarKeys = ['platform', 'content', 'jit'];
 
@@ -964,7 +975,7 @@ const Index = () => {
                     <div className="flex items-center justify-center">
                       <div className="w-full h-80 rounded-2xl overflow-hidden">
                         <img 
-                          src={`/${activeOutcome}.png`}
+                          src={`/${outcomeImages[activeOutcome]}`}
                           alt={`${outcomes[activeOutcome].title} illustration`}
                           className="w-full h-full object-contain"
                         />
