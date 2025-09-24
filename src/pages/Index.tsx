@@ -318,10 +318,12 @@ const Index = () => {
     platform: {
       title: "AI-first L&D Platform",
       features: [
-        "Personalized Learning Journeys – AI tutor, role/level/performance-based pathways, quizzes, and certificates.",
-        "Seamless Engagement & Integrations – Nudges via Teams/Slack/Email, SSO, HRIS connectors, and SCORM/xAPI support.",
-        "Insightful Analytics – Track time-to-productivity, skill attainment, completion, and engagement (MAU/WAU).",
-        "Effortless Administration – Drag-and-drop course creation, instant cohorts, and one-click reports."
+        "Modern LXP/LMS with AI tutor, pathways, nudges, quizzes, certificates",
+        "Personalized journeys by role, level, and performance signals",
+        "Teams/Slack/Email nudges; SSO; HRIS connectors",
+        "Standards-friendly (SCORM/xAPI if needed)",
+        "Analytics: time-to-productivity, skill attainment, completion, MAU/WAU",
+        "Admin joy: drag-and-drop, instant cohorts, one-click reports"
       ],
       proofCallout: "Launch a new program in 48 hours, not 8 weeks."
     },
@@ -716,7 +718,7 @@ const Index = () => {
                 viewport={{ once: true }}
             key={activePillar}
           >
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[600px] h-[600px]">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[700px] h-[700px]">
               {/* Progress Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 rounded-t-2xl overflow-hidden">
                 <div 
@@ -734,16 +736,16 @@ const Index = () => {
                     {pillars[activePillar].title}
                 </h3>
                   
-                  <div className="flex-1 flex flex-col justify-start">
+                  <div className="flex-1 flex flex-col justify-start space-y-3">
                     {pillars[activePillar].features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3 py-2">
+                      <div key={index} className="flex items-start gap-3 py-1">
                         <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-gray-700 dark:text-gray-300">
                           {feature}
                         </p>
                       </div>
                     ))}
-              </div>
+                  </div>
 
                   {/* Proof Callout below bullet points */}
                   <div className="mt-8">
@@ -760,10 +762,10 @@ const Index = () => {
 
                 {/* Right Column - Image placeholder */}
                 <div className="flex items-center justify-center h-full">
-                  <div className="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                  <div className="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
                     <p className="text-gray-500 text-sm">Image placeholder</p>
                   </div>
-                  </div>
+                </div>
                   </div>
             </div>
             </motion.div>
