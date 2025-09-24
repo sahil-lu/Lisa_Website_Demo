@@ -741,7 +741,7 @@ const Index = () => {
                 viewport={{ once: true }}
             key={activePillar}
           >
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[500px] h-[500px]">
               {/* Progress Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 rounded-t-2xl overflow-hidden">
                 <div 
@@ -754,7 +754,7 @@ const Index = () => {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Column - Features */}
-                <div>
+                <div className="flex flex-col justify-between">
                   <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
                     {pillars[activePillar].title}
                 </h3>
@@ -772,7 +772,7 @@ const Index = () => {
               </div>
 
                 {/* Right Column - Proof Callout */}
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center h-full">
                   <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-8 text-center shadow-xl">
                     <div className="text-white">
                       <h4 className="text-xl sm:text-2xl font-black mb-4">Proof Callout</h4>
