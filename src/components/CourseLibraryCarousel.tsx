@@ -248,18 +248,18 @@ const CourseLibraryCarousel = () => {
             {courses.map((course, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 mx-3">
                 <div className="group cursor-pointer">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 w-[320px] h-[480px] flex flex-col border border-gray-100">
-                    {/* Course Thumbnail */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gradient-to-br from-gray-50 to-gray-100">
-                      <img 
-                        src={course.image} 
-                        alt={course.title}
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 w-[320px] h-[520px] flex flex-col border border-gray-100">
+                  {/* Course Thumbnail */}
+                    <div className="relative h-52 overflow-hidden flex-shrink-0 bg-gradient-to-br from-gray-50 to-gray-100">
+                    <img 
+                      src={course.image} 
+                      alt={course.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          // Fallback to a placeholder if image fails to load
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
-                        }}
-                      />
+                      onError={(e) => {
+                        // Fallback to a placeholder if image fails to load
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
+                      }}
+                    />
                       {/* Category Badge */}
                       <div className="absolute top-4 right-4">
                         <Badge className="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -270,23 +270,23 @@ const CourseLibraryCarousel = () => {
                       <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {course.duration}
-                      </div>
                     </div>
-                    
+                  </div>
+                  
                     {/* Course Content */}
-                    <div className="p-6 flex-1 flex flex-col">
+                    <div className="p-6 flex-1 flex flex-col justify-between">
                       {/* Title */}
                       <h3 className="font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors text-lg leading-tight line-clamp-2">
-                        {course.title}
-                      </h3>
+                      {course.title}
+                    </h3>
                       
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4 flex-1 leading-relaxed line-clamp-3">
+                      <p className="text-sm text-gray-600 mb-3 flex-1 leading-relaxed line-clamp-3">
                         {course.learningObjectives}
                       </p>
                       
                       {/* Target Audience */}
-                      <div className="flex items-start gap-2 mb-4">
+                      <div className="flex items-start gap-2 mb-3">
                         <Users className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0" />
                         <span className="text-xs text-gray-500 line-clamp-2">
                           {course.targetAudience}
@@ -294,13 +294,13 @@ const CourseLibraryCarousel = () => {
                       </div>
                       
                       {/* Certificate */}
-                      <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                        <div className="flex items-center gap-1">
+                      <div className="flex items-center pt-3 border-t border-gray-100">
+                      <div className="flex items-center gap-1">
                           <Award className="h-4 w-4 text-green-500" />
                           <span className="text-xs font-medium text-green-600">
                             {course.certificate}
                           </span>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -312,18 +312,18 @@ const CourseLibraryCarousel = () => {
             {courses.map((course, index) => (
               <div key={`second-${index}`} className="flex-shrink-0 mx-3">
                 <div className="group cursor-pointer">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 w-[320px] h-[480px] flex flex-col border border-gray-100">
-                    {/* Course Thumbnail */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gradient-to-br from-gray-50 to-gray-100">
-                      <img 
-                        src={course.image} 
-                        alt={course.title}
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 w-[320px] h-[520px] flex flex-col border border-gray-100">
+                  {/* Course Thumbnail */}
+                    <div className="relative h-52 overflow-hidden flex-shrink-0 bg-gradient-to-br from-gray-50 to-gray-100">
+                    <img 
+                      src={course.image} 
+                      alt={course.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          // Fallback to a placeholder if image fails to load
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
-                        }}
-                      />
+                      onError={(e) => {
+                        // Fallback to a placeholder if image fails to load
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
+                      }}
+                    />
                       {/* Category Badge */}
                       <div className="absolute top-4 right-4">
                         <Badge className="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -334,23 +334,23 @@ const CourseLibraryCarousel = () => {
                       <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {course.duration}
-                      </div>
                     </div>
-                    
+                  </div>
+                  
                     {/* Course Content */}
-                    <div className="p-6 flex-1 flex flex-col">
+                    <div className="p-6 flex-1 flex flex-col justify-between">
                       {/* Title */}
                       <h3 className="font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors text-lg leading-tight line-clamp-2">
-                        {course.title}
-                      </h3>
+                      {course.title}
+                    </h3>
                       
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4 flex-1 leading-relaxed line-clamp-3">
+                      <p className="text-sm text-gray-600 mb-3 flex-1 leading-relaxed line-clamp-3">
                         {course.learningObjectives}
                       </p>
                       
                       {/* Target Audience */}
-                      <div className="flex items-start gap-2 mb-4">
+                      <div className="flex items-start gap-2 mb-3">
                         <Users className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0" />
                         <span className="text-xs text-gray-500 line-clamp-2">
                           {course.targetAudience}
@@ -358,13 +358,13 @@ const CourseLibraryCarousel = () => {
                       </div>
                       
                       {/* Certificate */}
-                      <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                        <div className="flex items-center gap-1">
+                      <div className="flex items-center pt-3 border-t border-gray-100">
+                      <div className="flex items-center gap-1">
                           <Award className="h-4 w-4 text-green-500" />
                           <span className="text-xs font-medium text-green-600">
                             {course.certificate}
                           </span>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
