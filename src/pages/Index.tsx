@@ -20,7 +20,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// ScrollTrigger will be registered in useEffect
 
 const Logo = ({ name, src }: { name: string; src: string }) => (
   <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
@@ -431,6 +431,9 @@ const Index = () => {
 
   // Testimonials GSAP animations
   useEffect(() => {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    
     const ctx = gsap.context(() => {
       // Testimonials animation with dramatic entrance
       const testimonialElements = testimonialsRef.current;

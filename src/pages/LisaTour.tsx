@@ -37,7 +37,7 @@ import {
 import { motion } from "framer-motion";
 import StickyTopBar from "@/components/StickyTopBar";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
 
 interface Course {
   id: number;
@@ -990,7 +990,9 @@ const LisaTour = () => {
                             email: "newuser@example.com",
                             dateJoined: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }) + ", " + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
                             courses: 0,
-                            status: "Active"
+                            status: "Active",
+                            group: "General",
+                            invitedBy: "Admin"
                           };
                           users.push(newUser);
                           setUserSearchQuery("");
