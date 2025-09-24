@@ -1285,7 +1285,11 @@ const Index = () => {
                     <img 
                       src={company.logo} 
                       alt={`${company.name} logo`}
-                      className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300"
+                      className={`object-contain transition-all duration-300 ${
+                        company.name === "ICICI" 
+                          ? "h-8 sm:h-10 md:h-12" 
+                          : "h-16 sm:h-20 md:h-24"
+                      }`}
                     />
                   </div>
                 ))}
