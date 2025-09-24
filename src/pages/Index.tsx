@@ -1249,36 +1249,36 @@ const Index = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   { 
-                    name: "American Express", 
-                    logo: "/logos/american-express.png"
+                    name: "Raymond", 
+                    logo: "/logos/raymond.png"
                   },
                   { 
-                    name: "OPPO", 
-                    logo: "/logos/oppo.png"
+                    name: "TITAN eyeplus", 
+                    logo: "/logos/titan-eyeplus.png"
                   },
                   { 
-                    name: "Atos", 
-                    logo: "/logos/atos.png"
+                    name: "Eisai", 
+                    logo: "/logos/eisai.png"
                   },
                   { 
-                    name: "Capgemini", 
-                    logo: "/logos/capgemini.png"
+                    name: "Hinduja Hospitals", 
+                    logo: "/logos/hinduja-hospitals.png"
                   },
                   { 
-                    name: "HSBC", 
-                    logo: "/logos/hsbc.png"
+                    name: "ICICI", 
+                    logo: "/logos/icici.png"
                   },
                   { 
-                    name: "IBM", 
-                    logo: "/logos/ibm.png"
+                    name: "Kotak", 
+                    logo: "/logos/kotak.png"
                   },
                   { 
-                    name: "IMDb", 
-                    logo: "/logos/imdb.png"
+                    name: "Reliance Jewels", 
+                    logo: "/logos/reliance-jewels.png"
                   },
                   { 
-                    name: "Instagram", 
-                    logo: "/logos/instagram.png"
+                    name: "Richs", 
+                    logo: "/logos/richs.png"
                   }
                 ].map((company, index) => (
                   <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
