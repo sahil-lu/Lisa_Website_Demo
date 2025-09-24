@@ -10,82 +10,13 @@ const LXP = () => {
       <Navbar />
       
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                LXP - Learning Experience Platform
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Personalised learning feeds, skills graph, AI coach
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition-colors">
-                  Book a Demo
-                </button>
-                <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 transition-colors">
-                  Learn More
-                </button>
-              </div>
-            </div>
+        <div className="container mx-auto px-4 py-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              LXP Page - Coming Soon
+            </h1>
           </div>
-        </section>
-
-        {/* Content Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                Transform Learning with AI-Powered Personalization
-              </h2>
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Personalized learning feeds based on role and goals
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Skills graph visualization and gap analysis
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      AI coach for continuous guidance
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Social learning and peer collaboration
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Benefits</h3>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Increased learner engagement and retention
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Faster skill development and career growth
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Data-driven learning insights
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-600 mr-3">•</span>
-                      Seamless integration with existing tools
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </main>
       
       <Footer />
