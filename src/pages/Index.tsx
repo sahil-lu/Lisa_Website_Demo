@@ -759,9 +759,9 @@ const Index = () => {
                     {pillars[activePillar].title}
                 </h3>
                   
-                  <div className="flex-1 flex flex-col justify-center space-y-4">
+                  <div className="flex-1 flex flex-col justify-evenly">
                     {pillars[activePillar].features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
+                      <div key={index} className="flex items-start gap-3 py-2">
                         <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-gray-700 dark:text-gray-300">
                           {feature}
