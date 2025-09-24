@@ -754,12 +754,12 @@ const Index = () => {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Column - Features */}
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col h-full">
                   <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
                     {pillars[activePillar].title}
                 </h3>
                   
-                  <div className="space-y-4">
+                  <div className="flex-1 flex flex-col justify-center space-y-4">
                     {pillars[activePillar].features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
