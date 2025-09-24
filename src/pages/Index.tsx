@@ -1271,10 +1271,6 @@ const Index = () => {
                     logo: "/logos/icici bank.png"
                   },
                   { 
-                    name: "Hinduja Hospitals", 
-                    logo: "/logos/hinduja-hospitals.png"
-                  },
-                  { 
                     name: "Kotak", 
                     logo: "/logos/kotak.png"
                   },
