@@ -716,7 +716,7 @@ const Index = () => {
                 viewport={{ once: true }}
             key={activePillar}
           >
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[500px] h-[500px]">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[600px] h-[600px]">
               {/* Progress Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 rounded-t-2xl overflow-hidden">
                 <div 
