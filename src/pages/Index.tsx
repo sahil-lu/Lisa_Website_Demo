@@ -1443,25 +1443,27 @@ const Index = () => {
                     Single sign-on and human resource information system integrations
                   </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {[
-                    { name: "Azure\u00A0AD", logo: "/logos/azure-ad-logo.svg" },
-                    { name: "Okta", logo: "/logos/okta-logo.png" },
-                    { name: "Google", logo: "/logos/google-logo.png" },
-                    { name: "Workday", logo: "/logos/workday-logo.png" },
-                    { name: "SAP", logo: "/logos/sap-logo.png" },
-                    { name: "Zoho", logo: "/logos/zoho-logo.png" },
-                    { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
-                  ].map((integration, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
-                      <img 
-                        src={integration.logo} 
-                        alt={`${integration.name} logo`}
-                        className="h-8 sm:h-10 object-contain mb-2"
-                      />
-                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <div className="flex gap-4 pb-4" style={{ width: 'max-content' }}>
+                    {[
+                      { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                      { name: "Okta", logo: "/logos/okta-logo.png" },
+                      { name: "Google", logo: "/logos/google-logo.png" },
+                      { name: "Workday", logo: "/logos/workday-logo.png" },
+                      { name: "SAP", logo: "/logos/sap-logo.png" },
+                      { name: "Zoho", logo: "/logos/zoho-logo.png" },
+                      { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105 flex-shrink-0" style={{ minWidth: '120px' }}>
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -1475,21 +1477,23 @@ const Index = () => {
                     Communication and collaboration platform integrations
                   </p>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { name: "Slack", logo: "/logos/slack-logo.png" },
-                    { name: "Teams", logo: "/logos/teams-logo.png" },
-                    { name: "Gmail", logo: "/logos/gmail-logo.png" }
-                  ].map((integration, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
-                      <img 
-                        src={integration.logo} 
-                        alt={`${integration.name} logo`}
-                        className="h-8 sm:h-10 object-contain mb-2"
-                      />
-                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <div className="flex gap-4 pb-4" style={{ width: 'max-content' }}>
+                    {[
+                      { name: "Slack", logo: "/logos/slack-logo.png" },
+                      { name: "Teams", logo: "/logos/teams-logo.png" },
+                      { name: "Gmail", logo: "/logos/gmail-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105 flex-shrink-0" style={{ minWidth: '120px' }}>
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -1503,21 +1507,23 @@ const Index = () => {
                     Customer relationship management and field service integrations
                   </p>
                       </div>
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
-                    { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
-                    { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
-                  ].map((integration, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
-                      <img 
-                        src={integration.logo} 
-                        alt={`${integration.name} logo`}
-                        className="h-8 sm:h-10 object-contain mb-2"
-                      />
-                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <div className="flex gap-4 pb-4" style={{ width: 'max-content' }}>
+                    {[
+                      { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
+                      { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
+                      { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105 flex-shrink-0" style={{ minWidth: '120px' }}>
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -1531,21 +1537,23 @@ const Index = () => {
                     Content management and collaboration platform integrations
                   </p>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
-                    { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
-                    { name: "Confluence", logo: "/logos/confluence-logo.png" }
-                  ].map((integration, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
-                      <img 
-                        src={integration.logo} 
-                        alt={`${integration.name} logo`}
-                        className="h-8 sm:h-10 object-contain mb-2"
-                      />
-                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <div className="flex gap-4 pb-4" style={{ width: 'max-content' }}>
+                    {[
+                      { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
+                      { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
+                      { name: "Confluence", logo: "/logos/confluence-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105 flex-shrink-0" style={{ minWidth: '120px' }}>
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
