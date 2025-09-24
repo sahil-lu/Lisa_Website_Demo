@@ -384,7 +384,7 @@ const Index = () => {
       impact: "Win rates increase by 25-40%"
     },
     performance: {
-      title: "Performance Enablement",
+      title: "Performance\u00A0Enablement",
       features: [
         "Smart nudges to practice and improve",
         "Continuous feedback loops and coaching",
