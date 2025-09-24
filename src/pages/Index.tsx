@@ -1445,7 +1445,7 @@ const Index = () => {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {[
-                    { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                    { name: "Azure\u00A0AD", logo: "/logos/azure-ad-logo.svg" },
                     { name: "Okta", logo: "/logos/okta-logo.png" },
                     { name: "Google", logo: "/logos/google-logo.png" },
                     { name: "Workday", logo: "/logos/workday-logo.png" },
@@ -1459,7 +1459,7 @@ const Index = () => {
                         alt={`${integration.name} logo`}
                         className="h-8 sm:h-10 object-contain mb-2"
                       />
-                      <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
+                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
                     </div>
                   ))}
                 </div>
@@ -1487,7 +1487,7 @@ const Index = () => {
                         alt={`${integration.name} logo`}
                         className="h-8 sm:h-10 object-contain mb-2"
                       />
-                      <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
+                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
                     </div>
                   ))}
                 </div>
@@ -1515,7 +1515,7 @@ const Index = () => {
                         alt={`${integration.name} logo`}
                         className="h-8 sm:h-10 object-contain mb-2"
                       />
-                      <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
+                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
                     </div>
                   ))}
                 </div>
@@ -1543,7 +1543,7 @@ const Index = () => {
                         alt={`${integration.name} logo`}
                         className="h-8 sm:h-10 object-contain mb-2"
                       />
-                      <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
+                      <span className="text-xs font-medium text-gray-600 text-center whitespace-nowrap">{integration.name}</span>
                     </div>
                   ))}
                 </div>
