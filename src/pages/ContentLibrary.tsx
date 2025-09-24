@@ -12087,7 +12087,7 @@ const ContentLibrary = () => {
               </a>
             </Button>
             <img 
-              src="/lisa new logo.svg" 
+              src="/logos/lisa new logo.svg" 
               alt="LISA Logo" 
               className="h-8 w-auto max-w-[120px] sm:max-w-none" 
             />

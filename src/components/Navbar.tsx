@@ -29,7 +29,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <img 
-            src="/lisa new logo.svg" 
+            src="/logos/lisa new logo.svg" 
             alt="LISA Logo" 
             className="h-8 w-auto" 
           />
