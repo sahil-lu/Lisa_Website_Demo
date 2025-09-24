@@ -660,7 +660,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              3 Pillars of LISA
+              <span className="text-neutral-950">3 Pillars of </span><span className="text-purple-600">LISA AI</span>
             </motion.h2>
             
                   <motion.p
@@ -688,7 +688,7 @@ const Index = () => {
               onClick={() => setActivePillar('platform')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'platform' 
-                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
@@ -700,7 +700,7 @@ const Index = () => {
               onClick={() => setActivePillar('content')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'content' 
-                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
@@ -712,7 +712,7 @@ const Index = () => {
               onClick={() => setActivePillar('jit')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'jit' 
-                  ? 'shadow-sm hover:shadow-md !bg-purple-600 hover:!bg-purple-700 !text-white' 
+                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
