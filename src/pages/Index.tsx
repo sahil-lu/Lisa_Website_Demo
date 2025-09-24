@@ -1263,12 +1263,20 @@ const Index = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   { 
+                    name: "Eisai", 
+                    logo: "/logos/eisai.png"
+                  },
+                  { 
                     name: "ICICI Bank", 
                     logo: "/logos/icici bank.png"
                   },
                   { 
-                    name: "Reliance Jewels", 
-                    logo: "/logos/reliance jewels.png"
+                    name: "Hinduja Hospitals", 
+                    logo: "/logos/hinduja-hospitals.png"
+                  },
+                  { 
+                    name: "Kotak", 
+                    logo: "/logos/kotak.png"
                   },
                   { 
                     name: "Raymond", 
@@ -1279,16 +1287,8 @@ const Index = () => {
                     logo: "/logos/richs.png"
                   },
                   { 
-                    name: "Eisai", 
-                    logo: "/logos/eisai.png"
-                  },
-                  { 
-                    name: "TITAN Eye", 
-                    logo: "/logos/titan eye.png"
-                  },
-                  { 
-                    name: "Kotak", 
-                    logo: "/logos/kotak.png"
+                    name: "Reliance Jewels", 
+                    logo: "/logos/reliance jewels.png"
                   }
                 ].map((company, index) => (
                   <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
