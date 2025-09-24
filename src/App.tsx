@@ -45,11 +45,10 @@ import EventsBootcamps from "./pages/resources/EventsBootcamps";
 
 // Company pages
 import About from "./pages/company/About";
-// Placeholder components for remaining company pages
-const Customers = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Customers Page - Coming Soon</h1></div>;
-const Careers = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Careers Page - Coming Soon</h1></div>;
-const PressMedia = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Press & Media Page - Coming Soon</h1></div>;
-const Contact = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Contact Page - Coming Soon</h1></div>;
+import Customers from "./pages/company/Customers";
+import Careers from "./pages/company/Careers";
+import PressMedia from "./pages/company/PressMedia";
+import Contact from "./pages/company/Contact";
 
 
 const queryClient = new QueryClient();
