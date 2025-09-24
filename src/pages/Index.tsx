@@ -318,12 +318,10 @@ const Index = () => {
     platform: {
       title: "AI-first L&D Platform",
       features: [
-        "Modern LXP/LMS with AI tutor, pathways, nudges, quizzes, certificates",
-        "Personalized journeys by role, level, and performance signals",
-        "Teams/Slack/Email nudges; SSO; HRIS connectors",
-        "Standards-friendly (SCORM/xAPI if needed)",
-        "Analytics: time-to-productivity, skill attainment, completion, MAU/WAU",
-        "Admin joy: drag-and-drop, instant cohorts, one-click reports"
+        "Personalized Learning Journeys – AI tutor, role/level/performance-based pathways, quizzes, and certificates.",
+        "Seamless Engagement & Integrations – Nudges via Teams/Slack/Email, SSO, HRIS connectors, and SCORM/xAPI support.",
+        "Insightful Analytics – Track time-to-productivity, skill attainment, completion, and engagement (MAU/WAU).",
+        "Effortless Administration – Drag-and-drop course creation, instant cohorts, and one-click reports."
       ],
       proofCallout: "Launch a new program in 48 hours, not 8 weeks."
     },
@@ -732,29 +730,27 @@ const Index = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Column - Features */}
                 <div className="flex flex-col h-full">
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
                     {pillars[activePillar].title}
                 </h3>
                   
-                  <div className="flex-1 flex flex-col justify-start overflow-hidden">
-                    <div className="space-y-1">
+                  <div className="flex-1 flex flex-col justify-start">
                     {pillars[activePillar].features.map((feature, index) => (
-                        <div key={index} className="flex items-start gap-3 py-1">
+                      <div key={index} className="flex items-start gap-3 py-2">
                         <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-gray-700 dark:text-gray-300 text-sm">
+                        <p className="text-gray-700 dark:text-gray-300">
                           {feature}
                         </p>
                       </div>
                     ))}
-        </div>
               </div>
 
                   {/* Proof Callout below bullet points */}
-                  <div className="mt-4 flex-shrink-0">
-                    <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-4 text-center shadow-xl">
+                  <div className="mt-8">
+                    <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center shadow-xl">
                     <div className="text-white">
-                        <h4 className="text-base sm:text-lg font-black mb-2">Proof Callout</h4>
-                        <p className="text-sm sm:text-base font-bold">
+                        <h4 className="text-lg sm:text-xl font-black mb-3">Proof Callout</h4>
+                        <p className="text-base sm:text-lg font-bold">
                         "{pillars[activePillar].proofCallout}"
                       </p>
                   </div>
