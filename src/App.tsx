@@ -13,7 +13,6 @@ import NotFound from "./pages/NotFound";
 import LXP from "./pages/platform/LXP";
 import LMS from "./pages/platform/LMS";
 import ContentStudio from "./pages/platform/ContentStudio";
-import OnDemandLibrary from "./pages/platform/OnDemandLibrary";
 import JustInTime from "./pages/platform/JustInTime";
 import Pulse from "./pages/platform/Pulse";
 
@@ -72,7 +71,6 @@ const App = () => (
             <Route path="/platform/lxp" element={<LXP />} />
             <Route path="/platform/lms" element={<LMS />} />
             <Route path="/platform/content-studio" element={<ContentStudio />} />
-            <Route path="/platform/on-demand-library" element={<OnDemandLibrary />} />
             <Route path="/platform/just-in-time" element={<JustInTime />} />
             <Route path="/platform/pulse" element={<Pulse />} />
             

@@ -68,7 +68,7 @@ const Navbar = () => {
                     <div className="font-semibold">Content Studio</div>
                     <div className="text-xs text-gray-500 mt-1">Build courses, micro-videos, JIT cards. Go live in hours, not weeks</div>
                   </a>
-                  <a href="/platform/on-demand-library" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                  <a href="/content-library" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">On Demand Library (500+)</div>
                     <div className="text-xs text-gray-500 mt-1">Lisa-original modules across roles & industries</div>
                   </a>
