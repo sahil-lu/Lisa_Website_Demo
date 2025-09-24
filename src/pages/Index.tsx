@@ -791,7 +791,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              <span className="text-purple-500 dark:text-purple-600">Outcomes We Solve</span>
+              <span className="text-neutral-950">Outcomes We Solve</span>
             </motion.h2>
               <motion.p 
               className="text-lg sm:text-xl text-gray-600"
@@ -999,7 +999,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-purple-500 dark:text-purple-600">How fast can we go?</span>
+              <span className="text-neutral-950">How fast can we go?</span>
             </motion.h2>
             <motion.p 
               className="text-lg sm:text-xl text-gray-600"

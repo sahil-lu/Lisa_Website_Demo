@@ -96,7 +96,7 @@ const CourseLibraryCarousel = () => {
       <div className="w-full">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 text-purple-600 dark:text-purple-400">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 text-neutral-950">
             500+ Course Library & Growing
           </h2>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4">
