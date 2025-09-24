@@ -734,7 +734,7 @@ const Index = () => {
                 <div className="flex flex-col h-full">
                   <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
                     {pillars[activePillar].title}
-                </h3>
+                  </h3>
                   
                   <div className="flex-1 flex flex-col justify-start">
                     {pillars[activePillar].features.map((feature, index) => (
@@ -745,17 +745,17 @@ const Index = () => {
                         </p>
                       </div>
                     ))}
-              </div>
+                  </div>
 
                   {/* Proof Callout below bullet points */}
                   <div className="mt-8">
                     <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center shadow-xl">
-                    <div className="text-white">
+                      <div className="text-white">
                         <h4 className="text-lg sm:text-xl font-black mb-3">Proof Callout</h4>
                         <p className="text-base sm:text-lg font-bold">
-                        "{pillars[activePillar].proofCallout}"
-                      </p>
-                  </div>
+                          "{pillars[activePillar].proofCallout}"
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -765,8 +765,8 @@ const Index = () => {
                   <div className="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
                     <p className="text-gray-500 text-sm">Image placeholder</p>
                   </div>
-                  </div>
-                  </div>
+                </div>
+              </div>
             </div>
             </motion.div>
         </div>
