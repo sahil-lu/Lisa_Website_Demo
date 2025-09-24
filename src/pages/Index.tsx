@@ -491,29 +491,6 @@ const Index = () => {
         }
       );
 
-      // Company logos animation with staggered reveal
-      gsap.fromTo(".company-logo", 
-        { 
-          opacity: 0, 
-          y: 30,
-          scale: 0.8
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
-          delay: 1.2,
-          scrollTrigger: {
-            trigger: ".testimonials-section",
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
 
       return () => clearInterval(interval);
     });
@@ -1261,119 +1238,57 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Company logos with marquee carousel */}
+          {/* Company logos with static grid */}
           <div className="mt-16">
             <div className="text-center mb-8">
               <p className="text-lg text-neutral-600 dark:text-neutral-300 font-normal">Trusted by the world's largest organizations</p>
             </div>
             
-            {/* Marquee Carousel Container */}
-            <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 sm:p-12">
-              <div className="relative overflow-hidden">
-                {/* Carousel Container */}
-                <div className="flex animate-scroll">
-                  {/* First set of logos */}
-                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
-                    {[
-                      { 
-                        name: "Raymond", 
-                        logo: "/logos/raymond.png"
-                      },
-                      { 
-                        name: "TITAN eyeplus", 
-                        logo: "/logos/titan-eyeplus.png"
-                      },
-                      { 
-                        name: "Eisai", 
-                        logo: "/logos/eisai.png"
-                      },
-                      { 
-                        name: "Hinduja Hospitals", 
-                        logo: "/logos/hinduja-hospitals.png"
-                      },
-                      { 
-                        name: "ICICI", 
-                        logo: "/logos/icici.png"
-                      }
-                    ].map((company, index) => (
-                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
-                        <img 
-                          src={company.logo} 
-                          alt={`${company.name} logo`}
-                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
-                        />
-                      </div>
-                    ))}
+            {/* Static Grid Container */}
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { 
+                    name: "American Express", 
+                    logo: "/logos/american-express.png"
+                  },
+                  { 
+                    name: "OPPO", 
+                    logo: "/logos/oppo.png"
+                  },
+                  { 
+                    name: "Atos", 
+                    logo: "/logos/atos.png"
+                  },
+                  { 
+                    name: "Capgemini", 
+                    logo: "/logos/capgemini.png"
+                  },
+                  { 
+                    name: "HSBC", 
+                    logo: "/logos/hsbc.png"
+                  },
+                  { 
+                    name: "IBM", 
+                    logo: "/logos/ibm.png"
+                  },
+                  { 
+                    name: "IMDb", 
+                    logo: "/logos/imdb.png"
+                  },
+                  { 
+                    name: "Instagram", 
+                    logo: "/logos/instagram.png"
+                  }
+                ].map((company, index) => (
+                  <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                    <img 
+                      src={company.logo} 
+                      alt={`${company.name} logo`}
+                      className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300"
+                    />
                   </div>
-
-                  {/* Second set of logos (duplicate for seamless loop) */}
-                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
-                    {[
-                      { 
-                        name: "Raymond", 
-                        logo: "/logos/raymond.png"
-                      },
-                      { 
-                        name: "TITAN eyeplus", 
-                        logo: "/logos/titan-eyeplus.png"
-                      },
-                      { 
-                        name: "Eisai", 
-                        logo: "/logos/eisai.png"
-                      },
-                      { 
-                        name: "Hinduja Hospitals", 
-                        logo: "/logos/hinduja-hospitals.png"
-                      },
-                      { 
-                        name: "ICICI", 
-                        logo: "/logos/icici.png"
-                      }
-                    ].map((company, index) => (
-                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
-                        <img 
-                          src={company.logo} 
-                          alt={`${company.name} logo`}
-                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
-                        />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Third set of logos (duplicate for seamless loop) */}
-                  <div className="flex items-center justify-center space-x-16 sm:space-x-20 md:space-x-24 lg:space-x-28 xl:space-x-32 flex-shrink-0">
-                    {[
-                      { 
-                        name: "Raymond", 
-                        logo: "/logos/raymond.png"
-                      },
-                      { 
-                        name: "TITAN eyeplus", 
-                        logo: "/logos/titan-eyeplus.png"
-                      },
-                      { 
-                        name: "Eisai", 
-                        logo: "/logos/eisai.png"
-                      },
-                      { 
-                        name: "Hinduja Hospitals", 
-                        logo: "/logos/hinduja-hospitals.png"
-                      },
-                      { 
-                        name: "ICICI", 
-                        logo: "/logos/icici.png"
-                      }
-                    ].map((company, index) => (
-                      <div key={index} className="flex flex-col items-center justify-center p-6 transition-all duration-300 hover:scale-110">
-                        <img 
-                          src={company.logo} 
-                          alt={`${company.name} logo`}
-                          className="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300 hover:brightness-110"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
