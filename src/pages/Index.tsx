@@ -1444,74 +1444,25 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                  <div className="relative overflow-hidden">
-                    <div className="flex animate-scroll-hris">
-                      {/* First set of logos */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
-                          { name: "Okta", logo: "/logos/okta-logo.png" },
-                          { name: "Google", logo: "/logos/google-logo.png" },
-                          { name: "Workday", logo: "/logos/workday-logo.png" },
-                          { name: "SAP", logo: "/logos/sap-logo.png" },
-                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {[
+                      { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                      { name: "Okta", logo: "/logos/okta-logo.png" },
+                      { name: "Google", logo: "/logos/google-logo.png" },
+                      { name: "Workday", logo: "/logos/workday-logo.png" },
+                      { name: "SAP", logo: "/logos/sap-logo.png" },
+                      { name: "Zoho", logo: "/logos/zoho-logo.png" },
+                      { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
                       </div>
-                    
-                      {/* Second set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
-                          { name: "Okta", logo: "/logos/okta-logo.png" },
-                          { name: "Google", logo: "/logos/google-logo.png" },
-                          { name: "Workday", logo: "/logos/workday-logo.png" },
-                          { name: "SAP", logo: "/logos/sap-logo.png" },
-                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Third set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
-                          { name: "Okta", logo: "/logos/okta-logo.png" },
-                          { name: "Google", logo: "/logos/google-logo.png" },
-                          { name: "Workday", logo: "/logos/workday-logo.png" },
-                          { name: "SAP", logo: "/logos/sap-logo.png" },
-                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -1527,62 +1478,21 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                  <div className="relative overflow-hidden">
-                    <div className="flex animate-scroll-comms">
-                      {/* First set of logos */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Slack", logo: "/logos/slack-logo.png" },
-                          { name: "Teams", logo: "/logos/teams-logo.png" },
-                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { name: "Slack", logo: "/logos/slack-logo.png" },
+                      { name: "Teams", logo: "/logos/teams-logo.png" },
+                      { name: "Gmail", logo: "/logos/gmail-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
                       </div>
-
-                      {/* Second set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Slack", logo: "/logos/slack-logo.png" },
-                          { name: "Teams", logo: "/logos/teams-logo.png" },
-                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                    </div>
-                    
-                      {/* Third set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Slack", logo: "/logos/slack-logo.png" },
-                          { name: "Teams", logo: "/logos/teams-logo.png" },
-                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -1598,62 +1508,21 @@ const Index = () => {
                   </p>
                       </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                  <div className="relative overflow-hidden">
-                    <div className="flex animate-scroll-crm">
-                      {/* First set of logos */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
-                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
+                      { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
+                      { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
                       </div>
-
-                      {/* Second set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
-                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Third set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
-                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -1669,62 +1538,21 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                  <div className="relative overflow-hidden">
-                    <div className="flex animate-scroll-content">
-                      {/* First set of logos */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
-                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
-                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
+                      { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
+                      { name: "Confluence", logo: "/logos/confluence-logo.png" }
+                    ].map((integration, index) => (
+                      <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                        <img 
+                          src={integration.logo} 
+                          alt={`${integration.name} logo`}
+                          className="h-8 sm:h-10 object-contain mb-2"
+                        />
+                        <span className="text-xs font-medium text-gray-600 text-center">{integration.name}</span>
                       </div>
-
-                      {/* Second set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
-                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
-                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Third set of logos (duplicate for seamless loop) */}
-                      <div className="flex items-center justify-center space-x-24 flex-shrink-0">
-                        {[
-                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
-                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
-                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
-                        ].map((integration, index) => (
-                          <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
-                            <img 
-                              src={integration.logo} 
-                              alt={`${integration.name} logo`}
-                              className="h-12 object-contain mb-3"
-                            />
-                            <span className="text-sm font-medium text-gray-600">{integration.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
