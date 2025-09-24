@@ -964,7 +964,7 @@ const Index = () => {
                       </div>
 
                       {/* Business Impact Callout */}
-                      <div className="mt-8">
+                      <div className="mt-8 mb-6">
                         <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center shadow-xl">
                           <div className="text-white">
                             <h4 className="text-lg sm:text-xl font-black mb-2">Business Impact</h4>
