@@ -296,7 +296,7 @@ const Navbar = () => {
             href="https://calendar.app.google/4tjN6L4oY6db7QtV8"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg"
+            className="bg-neutral-950 hover:bg-neutral-800 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg"
           >
             Book a Demo
           </a>
