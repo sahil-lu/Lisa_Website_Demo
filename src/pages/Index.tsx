@@ -1095,8 +1095,8 @@ const Index = () => {
                   )}
                 </div>
               ))}
-            </div>
-
+                      </div>
+                    
             {/* Mobile Layout with Vertical Arrows */}
             <div className="md:hidden space-y-6">
               {steps.map((step, index) => (
@@ -1109,11 +1109,11 @@ const Index = () => {
                     viewport={{ once: true }}
                   >
                     <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                      {step.title}
-                    </h3>
+                        {step.title}
+                      </h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                      {step.description}
-                    </p>
+                        {step.description}
+                      </p>
                     <ul className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
                       {step.details.split('. ').map((detail, idx) => (
                         <li key={idx} className="text-sm">
@@ -1151,8 +1151,8 @@ const Index = () => {
                     </motion.div>
                   )}
                     </div>
-              ))}
-            </div>
+                        ))}
+                    </div>
           </motion.div>
         </div>
       </section>
@@ -1174,7 +1174,7 @@ const Index = () => {
             <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto text-balance">
               Real feedback from L&D leaders who have transformed their corporate learning with Lisa AI.
             </p>
-          </div>
+                      </div>
 
           {/* Enhanced Testimonials Carousel with blockchain theme */}
           <div className="relative max-w-5xl mx-auto">
@@ -1241,7 +1241,7 @@ const Index = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-          </div>
+        </div>
 
           {/* Enhanced Dots indicator with blockchain theme */}
           <div className="flex justify-center mt-10 space-x-3">
@@ -1527,13 +1527,13 @@ const Index = () => {
                       {/* First set of logos */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
-                          { name: "Okta", logo: "/logos/okta.png" },
-                          { name: "Google", logo: "/logos/google.png" },
-                          { name: "Workday", logo: "/logos/workday.png" },
-                          { name: "SAP", logo: "/logos/sap.png" },
-                          { name: "Zoho", logo: "/logos/zoho.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                          { name: "Okta", logo: "/logos/okta-logo.png" },
+                          { name: "Google", logo: "/logos/google-logo.png" },
+                          { name: "Workday", logo: "/logos/workday-logo.png" },
+                          { name: "SAP", logo: "/logos/sap-logo.png" },
+                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1549,13 +1549,13 @@ const Index = () => {
                       {/* Second set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
-                          { name: "Okta", logo: "/logos/okta.png" },
-                          { name: "Google", logo: "/logos/google.png" },
-                          { name: "Workday", logo: "/logos/workday.png" },
-                          { name: "SAP", logo: "/logos/sap.png" },
-                          { name: "Zoho", logo: "/logos/zoho.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                          { name: "Okta", logo: "/logos/okta-logo.png" },
+                          { name: "Google", logo: "/logos/google-logo.png" },
+                          { name: "Workday", logo: "/logos/workday-logo.png" },
+                          { name: "SAP", logo: "/logos/sap-logo.png" },
+                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1571,13 +1571,13 @@ const Index = () => {
                       {/* Third set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Azure AD", logo: "/logos/azure-ad.png" },
-                          { name: "Okta", logo: "/logos/okta.png" },
-                          { name: "Google", logo: "/logos/google.png" },
-                          { name: "Workday", logo: "/logos/workday.png" },
-                          { name: "SAP", logo: "/logos/sap.png" },
-                          { name: "Zoho", logo: "/logos/zoho.png" },
-                          { name: "Darwinbox", logo: "/logos/darwinbox.png" }
+                          { name: "Azure AD", logo: "/logos/azure-ad-logo.svg" },
+                          { name: "Okta", logo: "/logos/okta-logo.png" },
+                          { name: "Google", logo: "/logos/google-logo.png" },
+                          { name: "Workday", logo: "/logos/workday-logo.png" },
+                          { name: "SAP", logo: "/logos/sap-logo.png" },
+                          { name: "Zoho", logo: "/logos/zoho-logo.png" },
+                          { name: "Darwinbox", logo: "/logos/darwinbox-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1610,9 +1610,9 @@ const Index = () => {
                       {/* First set of logos */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Slack", logo: "/logos/slack.png" },
-                          { name: "Teams", logo: "/logos/teams.png" },
-                          { name: "Gmail", logo: "/logos/gmail.png" }
+                          { name: "Slack", logo: "/logos/slack-logo.png" },
+                          { name: "Teams", logo: "/logos/teams-logo.png" },
+                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1628,9 +1628,9 @@ const Index = () => {
                       {/* Second set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Slack", logo: "/logos/slack.png" },
-                          { name: "Teams", logo: "/logos/teams.png" },
-                          { name: "Gmail", logo: "/logos/gmail.png" }
+                          { name: "Slack", logo: "/logos/slack-logo.png" },
+                          { name: "Teams", logo: "/logos/teams-logo.png" },
+                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1646,9 +1646,9 @@ const Index = () => {
                       {/* Third set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Slack", logo: "/logos/slack.png" },
-                          { name: "Teams", logo: "/logos/teams.png" },
-                          { name: "Gmail", logo: "/logos/gmail.png" }
+                          { name: "Slack", logo: "/logos/slack-logo.png" },
+                          { name: "Teams", logo: "/logos/teams-logo.png" },
+                          { name: "Gmail", logo: "/logos/gmail-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1681,9 +1681,9 @@ const Index = () => {
                       {/* First set of logos */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Salesforce", logo: "/logos/salesforce.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
-                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
+                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1699,9 +1699,9 @@ const Index = () => {
                       {/* Second set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Salesforce", logo: "/logos/salesforce.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
-                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
+                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1717,9 +1717,9 @@ const Index = () => {
                       {/* Third set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Salesforce", logo: "/logos/salesforce.png" },
-                          { name: "Zoho CRM", logo: "/logos/zoho-crm.png" },
-                          { name: "Freshsales", logo: "/logos/freshsales.png" }
+                          { name: "Salesforce", logo: "/logos/salesforce-logo.png" },
+                          { name: "Zoho CRM", logo: "/logos/zoho-crm-logo.webp" },
+                          { name: "Freshsales", logo: "/logos/freshsales-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1752,9 +1752,9 @@ const Index = () => {
                       {/* First set of logos */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Google Drive", logo: "/logos/google-drive.png" },
-                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
-                          { name: "Confluence", logo: "/logos/confluence.png" }
+                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
+                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
+                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1770,9 +1770,9 @@ const Index = () => {
                       {/* Second set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Google Drive", logo: "/logos/google-drive.png" },
-                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
-                          { name: "Confluence", logo: "/logos/confluence.png" }
+                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
+                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
+                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1788,9 +1788,9 @@ const Index = () => {
                       {/* Third set of logos (duplicate for seamless loop) */}
                       <div className="flex items-center justify-center space-x-24 flex-shrink-0">
                         {[
-                          { name: "Google Drive", logo: "/logos/google-drive.png" },
-                          { name: "SharePoint", logo: "/logos/sharepoint.png" },
-                          { name: "Confluence", logo: "/logos/confluence.png" }
+                          { name: "Google Drive", logo: "/logos/googledrive-logo.svg" },
+                          { name: "SharePoint", logo: "/logos/sharepoint-logo.png" },
+                          { name: "Confluence", logo: "/logos/confluence-logo.png" }
                         ].map((integration, index) => (
                           <div key={index} className="flex flex-col items-center justify-center min-h-[80px] px-8">
                             <img 
@@ -1808,9 +1808,9 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
+            </div>
       </section>
-
+            
       {/* Visual Breaker */}
       <VisualBreaker />
 
@@ -1831,13 +1831,13 @@ const Index = () => {
             {/* Security Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* SSO, RBAC, SCIM */}
-              <motion.div 
+          <motion.div 
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
+              transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1858,9 +1858,9 @@ const Index = () => {
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1877,7 +1877,7 @@ const Index = () => {
               </motion.div>
 
               {/* Security Audits & Compliance */}
-              <motion.div
+            <motion.div
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -1897,7 +1897,7 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+            </motion.div>
 
               {/* Data Residency Options */}
               <motion.div
@@ -1920,7 +1920,7 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+          </motion.div>
             </div>
           </div>
         </div>
