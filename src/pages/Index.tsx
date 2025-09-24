@@ -1703,10 +1703,14 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 "Ready to ditch legacy L&D?"
               </h2>
+              
+              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-8">
+                Get <span className="text-purple-600">LISA AI</span> Now
+              </p>
               
               <div className="flex justify-center">
                 <Button 
