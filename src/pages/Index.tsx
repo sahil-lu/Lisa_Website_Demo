@@ -771,10 +771,14 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Right Column - Image placeholder */}
+                {/* Right Column - Image */}
                 <div className="flex items-center justify-center h-full">
-                  <div className="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">Image placeholder</p>
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    <img 
+                      src={`/${activePillar === 'platform' ? 'AI-first L&D Platform.png' : activePillar === 'content' ? 'AI-first Content Development.png' : 'AI-first Just-in-Time Learning.png'}`}
+                      alt={`${pillars[activePillar].title} illustration`}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   </div>
                   </div>
