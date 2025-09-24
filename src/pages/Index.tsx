@@ -1215,8 +1215,8 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
+                      </div>
+                    
             {/* Enhanced Navigation buttons with blockchain theme */}
             <button 
               onClick={prevTestimonial}
@@ -1249,9 +1249,9 @@ const Index = () => {
                     : 'w-3 h-3 bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500 shadow-md'
                 }`}
               />
-            ))}
-          </div>
-
+                        ))}
+                    </div>
+                    
           {/* Company logos with static grid */}
           <div className="mt-16">
             <div className="text-center mb-8">
@@ -1305,9 +1305,9 @@ const Index = () => {
                           : "h-16 sm:h-20 md:h-24"
                       }`}
                     />
-                  </div>
+                      </div>
                 ))}
-              </div>
+                      </div>
             </div>
           </div>
         </div>
@@ -1572,9 +1572,9 @@ const Index = () => {
               </div>
             </div>
           </div>
-            </div>
+        </div>
       </section>
-            
+
       {/* Visual Breaker */}
       <VisualBreaker />
 
@@ -1595,13 +1595,13 @@ const Index = () => {
             {/* Security Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* SSO, RBAC, SCIM */}
-          <motion.div 
+              <motion.div 
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1641,12 +1641,12 @@ const Index = () => {
               </motion.div>
 
               {/* Security Audits & Compliance */}
-            <motion.div
+                <motion.div
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -1664,7 +1664,7 @@ const Index = () => {
             </motion.div>
 
               {/* Data Residency Options */}
-              <motion.div
+                <motion.div 
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -1687,6 +1687,41 @@ const Index = () => {
           </motion.div>
             </div>
           </div>
+            </div>
+      </section>
+            
+      {/* Visual Breaker */}
+      <VisualBreaker />
+
+      {/* Ready to ditch legacy L&D Section */}
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-1 bg-orange-500 rounded-full"></div>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                "Ready to ditch legacy L&D?" → <span className="text-purple-600">[Book a demo]</span>
+              </h2>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  size="lg"
+                  className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Book a Demo
+              </Button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
