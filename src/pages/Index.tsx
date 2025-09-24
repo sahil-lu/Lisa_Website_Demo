@@ -736,7 +736,7 @@ const Index = () => {
                     {pillars[activePillar].title}
                 </h3>
                   
-                  <div className="flex-1 flex flex-col justify-evenly">
+                  <div className="flex-1 flex flex-col justify-start">
                     {pillars[activePillar].features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3 py-2">
                         <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -745,18 +745,25 @@ const Index = () => {
                         </p>
                       </div>
                     ))}
-        </div>
               </div>
 
-                {/* Right Column - Proof Callout */}
-                <div className="flex items-center justify-center h-full">
-                  <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-8 text-center shadow-xl">
+                  {/* Proof Callout below bullet points */}
+                  <div className="mt-8">
+                    <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center shadow-xl">
                     <div className="text-white">
-                      <h4 className="text-xl sm:text-2xl font-black mb-4">Proof Callout</h4>
-                      <p className="text-lg sm:text-xl font-bold">
+                        <h4 className="text-lg sm:text-xl font-black mb-3">Proof Callout</h4>
+                        <p className="text-base sm:text-lg font-bold">
                         "{pillars[activePillar].proofCallout}"
                       </p>
                   </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Image placeholder */}
+                <div className="flex items-center justify-center h-full">
+                  <div className="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                    <p className="text-gray-500 text-sm">Image placeholder</p>
                   </div>
                   </div>
                   </div>
