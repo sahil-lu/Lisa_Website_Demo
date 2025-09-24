@@ -149,9 +149,9 @@ const CourseLibraryCarousel = () => {
             {courses.map((course, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 mx-4">
                 <div className="group cursor-pointer">
-                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col w-[280px]">
+                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[520px] flex flex-col w-[320px]">
                     {/* Course Thumbnail */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50">
+                    <div className="relative h-52 overflow-hidden flex-shrink-0 bg-gray-50/50">
                       <img 
                         src={course.image} 
                         alt={course.title}
@@ -175,10 +175,10 @@ const CourseLibraryCarousel = () => {
                     
                     {/* Course Info */}
                     <div className="p-4 flex-1 flex flex-col">
-                      <h3 className="font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors text-sm leading-tight">
+                      <h3 className="font-black text-gray-900 mb-3 group-hover:text-purple-600 transition-colors text-sm leading-relaxed">
                         {course.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-3 flex-1">
+                      <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">
                         {course.description}
                       </p>
                       
@@ -216,9 +216,9 @@ const CourseLibraryCarousel = () => {
             {courses.map((course, index) => (
               <div key={`second-${index}`} className="flex-shrink-0 mx-4">
                 <div className="group cursor-pointer">
-                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col w-[280px]">
+                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[520px] flex flex-col w-[320px]">
                     {/* Course Thumbnail */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50">
+                    <div className="relative h-52 overflow-hidden flex-shrink-0 bg-gray-50/50">
                       <img 
                         src={course.image} 
                         alt={course.title}
@@ -242,10 +242,10 @@ const CourseLibraryCarousel = () => {
                     
                     {/* Course Info */}
                     <div className="p-4 flex-1 flex flex-col">
-                      <h3 className="font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors text-sm leading-tight">
+                      <h3 className="font-black text-gray-900 mb-3 group-hover:text-purple-600 transition-colors text-sm leading-relaxed">
                         {course.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-3 flex-1">
+                      <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">
                         {course.description}
                       </p>
                       
