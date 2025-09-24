@@ -485,14 +485,9 @@ const LisaTour = () => {
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img 
-                    src="./lisa-logo.svg" 
+                    src="/lisa new logo.svg" 
                     alt="Lisa AI Logo" 
-                    className="w-12 h-12 object-contain dark:hidden"
-                  />
-                  <img 
-                    src="./lisa-logo-dark.png" 
-                    alt="Lisa AI Logo" 
-                    className="w-12 h-12 object-contain hidden dark:block"
+                    className="w-12 h-12 object-contain"
                   />
                 </div>
               </div>

@@ -26,7 +26,7 @@ const AnimatedLogo: React.FC = () => {
         }}
       />
       <motion.img 
-        src="/lisa-logo.svg" 
+        src="/lisa new logo.svg" 
         alt="LISA Logo" 
         className="h-8 w-auto relative z-10"
         animate={{
