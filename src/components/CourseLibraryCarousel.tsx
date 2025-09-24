@@ -148,61 +148,63 @@ const CourseLibraryCarousel = () => {
             {/* First set of courses */}
             {courses.map((course, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 mx-4">
-                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col w-[300px]">
-                  {/* Course Thumbnail */}
-                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
-                    <img 
-                      src={course.image} 
-                      alt={course.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                      style={{ 
-                        objectPosition: 'center center',
-                        objectFit: 'contain'
-                      }}
-                      onError={(e) => {
-                        // Fallback to a placeholder if image fails to load
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
-                      }}
-                    />
-                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
-                      {index % 2 === 0 ? 'Emotional Intelligence' : 'Leadership'}
+                <div className="group cursor-pointer">
+                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col min-w-[280px]">
+                    {/* Course Thumbnail */}
+                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50">
+                      <img 
+                        src={course.image} 
+                        alt={course.title}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        style={{ 
+                          objectPosition: 'center center',
+                          objectFit: 'contain'
+                        }}
+                        onError={(e) => {
+                          // Fallback to a placeholder if image fails to load
+                          e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
+                        }}
+                      />
+                      <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
+                        {course.tags[0]}
+                      </div>
+                      <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
+                        {course.duration}
+                      </div>
                     </div>
-                    <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
-                      {index % 2 === 0 ? 'Beginner' : 'Intermediate'}
-                    </div>
-                  </div>
-                  
-                  {/* Course Info */}
-                  <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors text-sm leading-tight">
-                      {course.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                      Master {course.title.toLowerCase()} for professional success and career growth.
-                    </p>
                     
-                    {/* Tags */}
-                    <div className="mb-4">
-                      {course.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <div key={tagIndex} className="text-sm text-gray-900 dark:text-white font-medium mb-1">
-                          {tag}
+                    {/* Course Info */}
+                    <div className="p-4 flex-1 flex flex-col">
+                      <h3 className="font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3 line-clamp-4 flex-1 min-h-[4.5rem]">
+                        {course.description}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {course.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <Badge key={tagIndex} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      
+                      {/* Course Stats */}
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-2">
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span className="text-xs">{course.duration}</span>
                         </div>
-                      ))}
-                    </div>
-                    
-                    {/* Course Stats */}
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-2">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        <span className="text-xs">{course.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Target className="h-3 w-3" />
-                        <span className="text-xs">{course.targetAudience.split(' ')[0]}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Award className="h-3 w-3" />
-                        <span className="text-xs">{course.certificate}</span>
+                        <div className="flex items-center gap-1">
+                          <Target className="h-3 w-3" />
+                          <span className="text-xs">{course.targetAudience.split(' ')[0]}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Award className="h-3 w-3" />
+                          <span className="text-xs">{course.certificate}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -213,61 +215,63 @@ const CourseLibraryCarousel = () => {
             {/* Duplicate for seamless loop */}
             {courses.map((course, index) => (
               <div key={`second-${index}`} className="flex-shrink-0 mx-4">
-                <div className="bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col w-[300px]">
-                  {/* Course Thumbnail */}
-                  <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50 dark:bg-gray-800/50">
-                    <img 
-                      src={course.image} 
-                      alt={course.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                      style={{ 
-                        objectPosition: 'center center',
-                        objectFit: 'contain'
-                      }}
-                      onError={(e) => {
-                        // Fallback to a placeholder if image fails to load
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
-                      }}
-                    />
-                    <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
-                      {index % 2 === 0 ? 'Emotional Intelligence' : 'Leadership'}
+                <div className="group cursor-pointer">
+                  <div className="bg-neutral-100 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-sm transition-all duration-300 h-[480px] flex flex-col min-w-[280px]">
+                    {/* Course Thumbnail */}
+                    <div className="relative h-48 overflow-hidden flex-shrink-0 bg-gray-50/50">
+                      <img 
+                        src={course.image} 
+                        alt={course.title}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        style={{ 
+                          objectPosition: 'center center',
+                          objectFit: 'contain'
+                        }}
+                        onError={(e) => {
+                          // Fallback to a placeholder if image fails to load
+                          e.currentTarget.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center";
+                        }}
+                      />
+                      <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-black">
+                        {course.tags[0]}
+                      </div>
+                      <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
+                        {course.duration}
+                      </div>
                     </div>
-                    <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
-                      {index % 2 === 0 ? 'Beginner' : 'Intermediate'}
-                    </div>
-                  </div>
-                  
-                  {/* Course Info */}
-                  <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-black text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors text-sm leading-tight">
-                      {course.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                      Master {course.title.toLowerCase()} for professional success and career growth.
-                    </p>
                     
-                    {/* Tags */}
-                    <div className="mb-4">
-                      {course.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <div key={tagIndex} className="text-sm text-gray-900 dark:text-white font-medium mb-1">
-                          {tag}
+                    {/* Course Info */}
+                    <div className="p-4 flex-1 flex flex-col">
+                      <h3 className="font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 text-sm leading-tight min-h-[3rem]">
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3 line-clamp-4 flex-1 min-h-[4.5rem]">
+                        {course.description}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {course.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <Badge key={tagIndex} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      
+                      {/* Course Stats */}
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-2">
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span className="text-xs">{course.duration}</span>
                         </div>
-                      ))}
-                    </div>
-                    
-                    {/* Course Stats */}
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-2">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        <span className="text-xs">{course.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Target className="h-3 w-3" />
-                        <span className="text-xs">{course.targetAudience.split(' ')[0]}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Award className="h-3 w-3" />
-                        <span className="text-xs">{course.certificate}</span>
+                        <div className="flex items-center gap-1">
+                          <Target className="h-3 w-3" />
+                          <span className="text-xs">{course.targetAudience.split(' ')[0]}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Award className="h-3 w-3" />
+                          <span className="text-xs">{course.certificate}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
