@@ -294,16 +294,13 @@ const CourseLibraryCarousel = () => {
                       </div>
                       
                       {/* Certificate */}
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                      <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
                         <div className="flex items-center gap-1">
                           <Award className="h-4 w-4 text-green-500" />
                           <span className="text-xs font-medium text-green-600">
                             {course.certificate}
                           </span>
                         </div>
-                        <button className="text-purple-600 hover:text-purple-700 text-sm font-semibold transition-colors">
-                          Start Course →
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -361,16 +358,13 @@ const CourseLibraryCarousel = () => {
                       </div>
                       
                       {/* Certificate */}
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                      <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
                         <div className="flex items-center gap-1">
                           <Award className="h-4 w-4 text-green-500" />
                           <span className="text-xs font-medium text-green-600">
                             {course.certificate}
                           </span>
                         </div>
-                        <button className="text-purple-600 hover:text-purple-700 text-sm font-semibold transition-colors">
-                          Start Course →
-                        </button>
                       </div>
                     </div>
                   </div>
