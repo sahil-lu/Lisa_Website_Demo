@@ -1704,15 +1704,11 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-1 bg-orange-500 rounded-full"></div>
-              </div>
-              
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
                 "Ready to ditch legacy L&D?" → <span className="text-purple-600">[Book a demo]</span>
               </h2>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex justify-center">
                 <Button 
                   size="lg"
                   className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
