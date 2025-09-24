@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { GeistSans } from 'geist/font/sans';
 import Index from "./pages/Index";
 import ContentLibrary from "./pages/ContentLibrary";
 import LisaTour from "./pages/LisaTour";
@@ -60,7 +61,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
+          <div className={GeistSans.className}>
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/content-library" element={<ContentLibrary />} />
             <Route path="/lisa-tour" element={<LisaTour />} />
@@ -108,7 +110,8 @@ const App = () => (
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
+            </Routes>
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
