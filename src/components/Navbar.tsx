@@ -28,11 +28,13 @@ const Navbar = () => {
           </button>
           
           {/* Logo */}
-          <img 
-            src="/logos/lisa new logo.svg" 
-            alt="LISA Logo" 
-            className="h-8 w-auto" 
-          />
+          <a href="/" className="flex items-center">
+            <img 
+              src="/logos/lisa new logo.svg" 
+              alt="LISA Logo" 
+              className="h-8 w-auto hover:opacity-80 transition-opacity duration-200" 
+            />
+          </a>
         </div>
         
         {/* Right Side - Navigation Links and Actions */}

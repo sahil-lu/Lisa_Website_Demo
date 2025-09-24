@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Search, Filter, Clock, Users, Star, BookOpen, ArrowLeft, Target, Award, Video } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
-import StickyTopBar from "@/components/StickyTopBar";
+import Navbar from "@/components/Navbar";
 
 interface Course {
   id: number;
@@ -12066,41 +12066,8 @@ const ContentLibrary = () => {
         <meta name="description" content="Access 500 auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
       </Helmet>
 
-      {/* Sticky Top Bar */}
-      <StickyTopBar />
-
-      {/* Navigation Header */}
-      <nav className="sticky top-[40px] z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            {/* Back Arrow - Mobile Only */}
-            <Button variant="ghost" size="sm" className="lg:hidden" asChild>
-              <a href="/">
-                <ArrowLeft className="h-4 w-4" />
-              </a>
-            </Button>
-            {/* Back to Home - Desktop Only */}
-            <Button variant="ghost" size="sm" className="hidden lg:flex" asChild>
-              <a href="/">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Home
-              </a>
-            </Button>
-            <img 
-              src="/logos/lisa new logo.svg" 
-              alt="LISA Logo" 
-              className="h-8 w-auto max-w-[120px] sm:max-w-none" 
-            />
-          </div>
-          
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
-            <Button variant="default" size="sm" className="!bg-neutral-950 !text-white hover:!bg-neutral-800 rounded-full" asChild>
-              <a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer">Book a Demo</a>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className="py-16 sm:py-24 bg-background">
