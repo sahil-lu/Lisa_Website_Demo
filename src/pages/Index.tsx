@@ -1271,6 +1271,10 @@ const Index = () => {
                     logo: "/logos/icici bank.png"
                   },
                   { 
+                    name: "Hinduja", 
+                    logo: "/logos/hinduja.png"
+                  },
+                  { 
                     name: "Kotak", 
                     logo: "/logos/kotak.png"
                   },
@@ -1291,14 +1295,14 @@ const Index = () => {
                     logo: "/logos/titan eye.png"
                   }
                 ].map((company, index) => (
-                  <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                  <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-2 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
                     <img 
                       src={company.logo} 
                       alt={`${company.name} logo`}
                       className={`object-contain transition-all duration-300 ${
                         company.name === "ICICI Bank" 
-                          ? "h-20 sm:h-24 md:h-28" 
-                          : "h-24 sm:h-32 md:h-40"
+                          ? "h-28 sm:h-32 md:h-36" 
+                          : "h-32 sm:h-40 md:h-48"
                       }`}
                     />
                       </div>
