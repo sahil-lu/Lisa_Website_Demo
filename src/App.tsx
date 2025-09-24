@@ -9,31 +9,32 @@ import ContentLibrary from "./pages/ContentLibrary";
 import LisaTour from "./pages/LisaTour";
 import NotFound from "./pages/NotFound";
 
-// Platform pages (placeholder components for now)
-const LXP = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">LXP Page - Coming Soon</h1></div>;
-const LMS = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">LMS Page - Coming Soon</h1></div>;
-const ContentStudio = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Content Studio Page - Coming Soon</h1></div>;
-const OnDemandLibrary = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">On Demand Library Page - Coming Soon</h1></div>;
-const JustInTime = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Just-in-Time Page - Coming Soon</h1></div>;
-const Pulse = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Pulse Analytics Page - Coming Soon</h1></div>;
+// Platform pages
+import LXP from "./pages/platform/LXP";
+import LMS from "./pages/platform/LMS";
+import ContentStudio from "./pages/platform/ContentStudio";
+import OnDemandLibrary from "./pages/platform/OnDemandLibrary";
+import JustInTime from "./pages/platform/JustInTime";
+import Pulse from "./pages/platform/Pulse";
 
-// Solutions pages (placeholder components for now)
-const FasterOnboarding = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Faster Onboarding Page - Coming Soon</h1></div>;
-const UpskillReskill = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Upskill & Reskill Page - Coming Soon</h1></div>;
-const FrontlineEnablement = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Frontline Enablement Page - Coming Soon</h1></div>;
-const PerformanceCoaching = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Performance Coaching Page - Coming Soon</h1></div>;
-const LeadershipTalent = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Leadership & Talent Page - Coming Soon</h1></div>;
-const PartnerDealerAcademies = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Partner & Dealer Academies Page - Coming Soon</h1></div>;
-const ComplianceMadeSimple = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Compliance Made Simple Page - Coming Soon</h1></div>;
+// Solutions pages
+import FasterOnboarding from "./pages/solutions/FasterOnboarding";
+import UpskillReskill from "./pages/solutions/UpskillReskill";
+import FrontlineEnablement from "./pages/solutions/FrontlineEnablement";
+import PerformanceCoaching from "./pages/solutions/PerformanceCoaching";
+import LeadershipTalent from "./pages/solutions/LeadershipTalent";
+import PartnerDealerAcademies from "./pages/solutions/PartnerDealerAcademies";
+import ComplianceMadeSimple from "./pages/solutions/ComplianceMadeSimple";
 
-// Why Lisa pages (placeholder components for now)
-const AIFirstZeroLegacy = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">AI-first. Zero legacy. Page - Coming Soon</h1></div>;
-const ThirtyFiveYearsLearningDNA = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">35+ years of learning DNA. Page - Coming Soon</h1></div>;
-const GoLiveThirtyDays = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Go-live in &lt;30 days. Page - Coming Soon</h1></div>;
-const LovedByOpsHRIT = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Loved by ops, HR, and IT. Page - Coming Soon</h1></div>;
+// Why Lisa pages
+import AIFirstZeroLegacy from "./pages/why-lisa/AIFirstZeroLegacy";
+import ThirtyFiveYearsLearningDNA from "./pages/why-lisa/ThirtyFiveYearsLearningDNA";
+import GoLiveThirtyDays from "./pages/why-lisa/GoLiveThirtyDays";
+import LovedByOpsHRIT from "./pages/why-lisa/LovedByOpsHRIT";
 
-// Resources pages (placeholder components for now)
-const Blog = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Blog Page - Coming Soon</h1></div>;
+// Resources pages
+import Blog from "./pages/resources/Blog";
+// Placeholder components for remaining resources pages
 const AIForHRHub = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">AI for HR Hub Page - Coming Soon</h1></div>;
 const Podcasts = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Podcasts Page - Coming Soon</h1></div>;
 const PlaybooksTemplates = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Playbooks & Templates Page - Coming Soon</h1></div>;
@@ -44,8 +45,9 @@ const Glossary = () => <div className="min-h-screen flex items-center justify-ce
 const FAQs = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">FAQs Page - Coming Soon</h1></div>;
 const EventsBootcamps = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Events & Bootcamps Page - Coming Soon</h1></div>;
 
-// Company pages (placeholder components for now)
-const About = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">About Page - Coming Soon</h1></div>;
+// Company pages
+import About from "./pages/company/About";
+// Placeholder components for remaining company pages
 const Customers = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Customers Page - Coming Soon</h1></div>;
 const Careers = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Careers Page - Coming Soon</h1></div>;
 const PressMedia = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl font-bold">Press & Media Page - Coming Soon</h1></div>;
@@ -85,8 +87,8 @@ const App = () => (
             
             {/* Why Lisa Routes */}
             <Route path="/why-lisa/ai-first-zero-legacy" element={<AIFirstZeroLegacy />} />
-            <Route path="/why-lisa/35-years-learning-dna" element={<ThirtyFiveYearsLearningDNA />} />
-            <Route path="/why-lisa/go-live-30-days" element={<GoLiveThirtyDays />} />
+            <Route path="/why-lisa/thirty-five-years-learning-dna" element={<ThirtyFiveYearsLearningDNA />} />
+            <Route path="/why-lisa/go-live-thirty-days" element={<GoLiveThirtyDays />} />
             <Route path="/why-lisa/loved-by-ops-hr-it" element={<LovedByOpsHRIT />} />
             
             {/* Resources Routes */}
