@@ -564,7 +564,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <span className="text-gray-900">Legacy L&D is slow. </span>
-              <span className="text-purple-600">LISA AI ships skills now.</span>
+              <span className="text-purple-600">LISA AI</span> <span className="text-gray-900">ships skills now.</span>
             </motion.h1>
             
               {/* Subheading as Bullet Points */}
