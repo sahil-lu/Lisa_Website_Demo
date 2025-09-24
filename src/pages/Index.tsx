@@ -1705,7 +1705,7 @@ const Index = () => {
           >
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                "Ready to ditch legacy L&D?"
+                Ready to ditch legacy L&D?
               </h2>
               
               <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-8">
@@ -1718,7 +1718,7 @@ const Index = () => {
                   className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Book a Demo
-              </Button>
+                </Button>
               </div>
             </div>
           </motion.div>
