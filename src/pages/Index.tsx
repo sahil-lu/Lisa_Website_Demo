@@ -1263,36 +1263,32 @@ const Index = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   { 
+                    name: "ICICI Bank", 
+                    logo: "/logos/icici bank.png"
+                  },
+                  { 
+                    name: "Reliance Jewels", 
+                    logo: "/logos/reliance jewels.png"
+                  },
+                  { 
                     name: "Raymond", 
                     logo: "/logos/raymond.png"
                   },
                   { 
-                    name: "TITAN eyeplus", 
-                    logo: "/logos/titan-eyeplus.png"
+                    name: "Richs", 
+                    logo: "/logos/richs.png"
                   },
                   { 
                     name: "Eisai", 
                     logo: "/logos/eisai.png"
                   },
                   { 
-                    name: "Hinduja Hospitals", 
-                    logo: "/logos/hinduja-hospitals.png"
-                  },
-                  { 
-                    name: "ICICI", 
-                    logo: "/logos/icici.png"
+                    name: "TITAN Eye", 
+                    logo: "/logos/titan eye.png"
                   },
                   { 
                     name: "Kotak", 
                     logo: "/logos/kotak.png"
-                  },
-                  { 
-                    name: "Reliance Jewels", 
-                    logo: "/logos/reliance-jewels.png"
-                  },
-                  { 
-                    name: "Richs", 
-                    logo: "/logos/richs.png"
                   }
                 ].map((company, index) => (
                   <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
@@ -1300,7 +1296,7 @@ const Index = () => {
                       src={company.logo} 
                       alt={`${company.name} logo`}
                       className={`object-contain transition-all duration-300 ${
-                        company.name === "ICICI" 
+                        company.name === "ICICI Bank" 
                           ? "h-8 sm:h-10 md:h-12" 
                           : "h-16 sm:h-20 md:h-24"
                       }`}
