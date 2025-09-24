@@ -1297,8 +1297,8 @@ const Index = () => {
                       alt={`${company.name} logo`}
                       className={`object-contain transition-all duration-300 ${
                         company.name === "ICICI Bank" 
-                          ? "h-8 sm:h-10 md:h-12" 
-                          : "h-16 sm:h-20 md:h-24"
+                          ? "h-12 sm:h-16 md:h-20" 
+                          : "h-24 sm:h-32 md:h-40"
                       }`}
                     />
                       </div>
