@@ -932,7 +932,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 key={activeOutcome}
               >
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 w-full relative">
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 w-full relative min-h-[500px] h-[500px]">
                   {/* Progress Bar Timer */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-700 rounded-t-2xl overflow-hidden">
                     <div 
