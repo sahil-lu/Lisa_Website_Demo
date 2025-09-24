@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar } from '../../components/Navbar';
-import { StickyTopBar } from '../../components/StickyTopBar';
+import Navbar from '../../components/Navbar';
+import StickyTopBar from '../../components/StickyTopBar';
 import { Footer } from '../../components/Footer';
 
 const JustInTime = () => {
