@@ -1705,7 +1705,7 @@ const Index = () => {
           >
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                "Ready to ditch legacy L&D?" → <span className="text-purple-600">[Book a demo]</span>
+                "Ready to ditch legacy L&D?"
               </h2>
               
               <div className="flex justify-center">
