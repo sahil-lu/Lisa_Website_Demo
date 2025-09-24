@@ -346,7 +346,7 @@ const LisaTour = () => {
             <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">✓</span>
             </div>
-            <h2 className="text-3xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">That's How Easy LISA Is!</h2>
+            <h2 className="text-3xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">That's How Easy LISA AI Is!</h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-8 text-lg leading-relaxed">
               You just experienced the power of LISA AI! Creating courses, managing users, and analyzing data has never been this simple.
             </p>
@@ -486,7 +486,7 @@ const LisaTour = () => {
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img 
                     src="/logos/lisa new logo.svg" 
-                    alt="Lisa AI Logo" 
+                    alt="LISA AI Logo" 
                     className="w-12 h-12 object-contain"
                   />
                 </div>

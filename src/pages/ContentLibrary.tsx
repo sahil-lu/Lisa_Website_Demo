@@ -12063,7 +12063,7 @@ const ContentLibrary = () => {
   return (
     <main>
       <Helmet>
-        <title>Content Library - Lisa AI</title>
+        <title>Content Library - LISA AI</title>
         <meta name="description" content="Access 500 auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
       </Helmet>
 
@@ -12084,7 +12084,7 @@ const ContentLibrary = () => {
             viewport={{ once: true }}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6">
-              Explore Lisa's Content Library
+              Explore LISA AI's Content Library
             </h1>
             <p className="text-xl text-muted-foreground">
               500 Courses across Communication, Leadership, Compliance & More — Auto-Generated, Expert-Reviewed.

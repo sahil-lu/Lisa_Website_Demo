@@ -94,7 +94,7 @@ const Timeline: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, .
         <Reveal>
           <div className="text-center mt-16 max-w-3xl mx-auto">
             <p className="text-lg text-muted-foreground">
-              Lisa is building AI tutors that teach better than any human, at global scale.
+              LISA AI is building AI tutors that teach better than any human, at global scale.
             </p>
           </div>
         </Reveal>

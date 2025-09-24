@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer className="mt-20 border-t bg-neutral-50 dark:bg-neutral-950">
       <div className="container mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div>
-          <h3 className="font-semibold mb-3">About Lisa</h3>
+          <h3 className="font-semibold mb-3">About LISA AI</h3>
           <p className="text-sm text-muted-foreground">
             LISA is an AI-powered learning ecosystem helping enterprises and institutions create personalized, adaptive learning at scale.
           </p>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="border-t">
         <div className="container mx-auto py-6 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <p>© 2025 LISA. All rights reserved.</p>
+          <p>© 2025 LISA AI. All rights reserved.</p>
           <div className="flex gap-4 mt-2 sm:mt-0">
             <a href="#" className="hover:text-foreground">Privacy Policy</a>
             <a href="#" className="hover:text-foreground">Terms</a>

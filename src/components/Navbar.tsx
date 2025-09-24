@@ -70,7 +70,7 @@ const Navbar = () => {
                   </a>
                   <a href="/content-library" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">On Demand Library (500+)</div>
-                    <div className="text-xs text-gray-500 mt-1">Lisa-original modules across roles & industries</div>
+                    <div className="text-xs text-gray-500 mt-1">LISA AI-original modules across roles & industries</div>
                   </a>
                   <a href="/platform/just-in-time" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">Just-in-Time</div>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 href="#"
                 className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
-                Why Lisa
+                Why LISA AI
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -215,7 +215,7 @@ const Navbar = () => {
                   </a>
                   <a href="/resources/faqs" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">FAQs</div>
-                    <div className="text-xs text-gray-500 mt-1">Frequently asked questions about LISA</div>
+                    <div className="text-xs text-gray-500 mt-1">Frequently asked questions about LISA AI</div>
                   </a>
                   <a href="/resources/events-bootcamps" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">Events & Bootcamps</div>
@@ -246,7 +246,7 @@ const Navbar = () => {
                   </a>
                   <a href="/company/customers" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">Customers</div>
-                    <div className="text-xs text-gray-500 mt-1">See who's using LISA to transform learning</div>
+                    <div className="text-xs text-gray-500 mt-1">See who's using LISA AI to transform learning</div>
                   </a>
                   <a href="/company/careers" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                     <div className="font-semibold">Careers</div>
@@ -268,7 +268,7 @@ const Navbar = () => {
               href="/lisa-tour"
               className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
             >
-              Lisa Tour
+              LISA AI Tour
             </a>
             <a
               href="#pricing"

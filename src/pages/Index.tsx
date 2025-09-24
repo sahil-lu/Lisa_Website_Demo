@@ -105,7 +105,7 @@ const Index = () => {
       role: "Head of L&D",
       company: "TechCorp India",
       avatar: "https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Lisa AI has transformed our corporate learning. The AI course creation feature saved us months of development time, and our employees love the personalized learning paths.",
+      text: "LISA AI has transformed our corporate learning. The AI course creation feature saved us months of development time, and our employees love the personalized learning paths.",
       rating: 5
     },
     {
@@ -121,7 +121,7 @@ const Index = () => {
       role: "Learning Manager",
       company: "InnovateTech",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
-      text: "At ₹500 per employee per month, Lisa AI is unbeatable value. The analytics dashboard gives us clear insights into learning impact and ROI.",
+      text: "At ₹500 per employee per month, LISA AI is unbeatable value. The analytics dashboard gives us clear insights into learning impact and ROI.",
       rating: 5
     },
     {
@@ -564,7 +564,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <span className="text-gray-900">Legacy L&D is slow. </span>
-              <span className="text-purple-600">Lisa ships skills now.</span>
+              <span className="text-purple-600">LISA AI ships skills now.</span>
             </motion.h1>
             
               {/* Subheading as Bullet Points */}
@@ -1166,7 +1166,7 @@ const Index = () => {
               <span className="text-purple-500"> Clients Say</span>
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto text-balance">
-              Real feedback from L&D leaders who have transformed their corporate learning with Lisa AI.
+              Real feedback from L&D leaders who have transformed their corporate learning with LISA AI.
             </p>
                       </div>
 
@@ -1718,7 +1718,7 @@ const Index = () => {
                   className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Book a Demo
-                </Button>
+              </Button>
               </div>
             </div>
           </motion.div>
