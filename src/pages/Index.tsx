@@ -1289,6 +1289,10 @@ const Index = () => {
                   { 
                     name: "Reliance Jewels", 
                     logo: "/logos/reliance jewels.png"
+                  },
+                  { 
+                    name: "TITAN Eye", 
+                    logo: "/logos/titan eye.png"
                   }
                 ].map((company, index) => (
                   <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
