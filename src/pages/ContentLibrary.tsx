@@ -7,6 +7,7 @@ import { Search, Filter, Clock, Users, Star, BookOpen, ArrowLeft, Target, Award,
 import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import StickyTopBar from "@/components/StickyTopBar";
 
 interface Course {
   id: number;
@@ -12066,6 +12067,9 @@ const ContentLibrary = () => {
         <meta name="description" content="Access 500 auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
       </Helmet>
 
+      {/* Sticky Top Bar */}
+      <StickyTopBar />
+      
       {/* Navigation */}
       <Navbar />
 
