@@ -43,6 +43,47 @@ const Index = () => {
   const [activeOutcome, setActiveOutcome] = React.useState('onboarding');
   const [timeLeft, setTimeLeft] = React.useState(10);
   
+  // Refs for carousel containers
+  const pillarCarouselRef = React.useRef<HTMLDivElement>(null);
+  const outcomeCarouselRef = React.useRef<HTMLDivElement>(null);
+  
+  // Function to scroll active tab to center
+  const scrollToActiveTab = (carouselRef: React.RefObject<HTMLDivElement>, activeIndex: number) => {
+    if (carouselRef.current) {
+      const container = carouselRef.current;
+      const tabs = container.querySelectorAll('button');
+      const activeTab = tabs[activeIndex];
+      
+      if (activeTab) {
+        const containerWidth = container.offsetWidth;
+        const tabOffsetLeft = activeTab.offsetLeft;
+        const tabWidth = activeTab.offsetWidth;
+        const scrollLeft = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+        
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+  
+  // Scroll to active pillar tab
+  React.useEffect(() => {
+    const pillarIndex = ['platform', 'content', 'jit'].indexOf(activePillar);
+    if (pillarIndex !== -1) {
+      setTimeout(() => scrollToActiveTab(pillarCarouselRef, pillarIndex), 100);
+    }
+  }, [activePillar]);
+  
+  // Scroll to active outcome tab
+  React.useEffect(() => {
+    const outcomeIndex = outcomeKeys.indexOf(activeOutcome);
+    if (outcomeIndex !== -1) {
+      setTimeout(() => scrollToActiveTab(outcomeCarouselRef, outcomeIndex), 100);
+    }
+  }, [activeOutcome]);
+  
   // Demo section state
   const [activeTab, setActiveTab] = React.useState("Dashboard");
   const [showCreateModal, setShowCreateModal] = React.useState(false);
@@ -525,7 +566,7 @@ const Index = () => {
 
       <main className="flex-1">
       {/* Hero Section */}
-      <section id="main" className="relative py-2 sm:py-3 md:py-4 lg:py-5 xl:py-6 min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="main" className="relative py-6 sm:py-8 md:py-11 lg:py-14 xl:py-17 overflow-hidden">
         {/* Elegant Background */}
         <div className="absolute inset-0 bg-background" />
         
@@ -677,19 +718,65 @@ const Index = () => {
           
           {/* Tab Buttons */}
             <motion.div 
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-8 sm:mb-12"
+            className="mb-8 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
+            {/* Mobile: Horizontal Scrollable Carousel */}
+            <div className="block sm:hidden">
+              <div className="overflow-x-auto pb-2" ref={pillarCarouselRef}>
+                <div className="flex gap-3 px-4" style={{ width: 'max-content' }}>
+                  <Button 
+                    variant={activePillar === 'platform' ? 'default' : 'outline'}
+                    size="lg" 
+                    onClick={() => setActivePillar('platform')}
+                    className={`flex-shrink-0 h-12 text-sm px-6 transition-all duration-300 rounded-full ${
+                      activePillar === 'platform' 
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    AI-first L&D Platform
+                  </Button>
+                  <Button 
+                    variant={activePillar === 'content' ? 'default' : 'outline'}
+                    size="lg" 
+                    onClick={() => setActivePillar('content')}
+                    className={`flex-shrink-0 h-12 text-sm px-6 transition-all duration-300 rounded-full ${
+                      activePillar === 'content' 
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    AI-first Content Development
+                  </Button>
+                  <Button 
+                    variant={activePillar === 'jit' ? 'default' : 'outline'}
+                    size="lg" 
+                    onClick={() => setActivePillar('jit')}
+                    className={`flex-shrink-0 h-12 text-sm px-6 transition-all duration-300 rounded-full ${
+                      activePillar === 'jit' 
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    AI-first Just-in-Time Learning
+                  </Button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Desktop: Vertical Stack */}
+            <div className="hidden sm:flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               variant={activePillar === 'platform' ? 'default' : 'outline'}
               size="lg" 
               onClick={() => setActivePillar('platform')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'platform' 
-                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                    ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
@@ -701,7 +788,7 @@ const Index = () => {
               onClick={() => setActivePillar('content')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'content' 
-                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                    ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
@@ -713,24 +800,25 @@ const Index = () => {
               onClick={() => setActivePillar('jit')}
               className={`flex-1 sm:flex-none min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg px-6 transition-all duration-300 rounded-full ${
                 activePillar === 'jit' 
-                  ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
+                    ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white' 
                   : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
               }`}
             >
               AI-first Just-in-Time Learning
             </Button>
+            </div>
             </motion.div>
 
           {/* Content Card */}
             <motion.div 
-            className="max-w-6xl mx-auto"
+            className="max-w-6xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
             key={activePillar}
           >
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 relative min-h-[700px] h-[700px]">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-10 relative min-h-[600px] sm:min-h-[700px]">
               {/* Progress Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 rounded-t-2xl overflow-hidden">
                 <div 
@@ -741,7 +829,7 @@ const Index = () => {
                 />
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 {/* Left Column - Features */}
                 <div className="flex flex-col h-full">
                   <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6">
@@ -774,11 +862,11 @@ const Index = () => {
 
                 {/* Right Column - Image */}
                 <div className="flex items-center justify-center h-full">
-                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                  <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center">
                     <img 
                       src={`/${activePillar === 'platform' ? 'AI-first L&D Platform.png' : activePillar === 'content' ? 'AI-first Content Development.png' : 'AI-first Just-in-Time Learning.png'}`}
                       alt={`${pillars[activePillar].title} illustration`}
-                      className="w-full h-full object-contain"
+                      className="max-w-full max-h-full object-contain object-center"
                     />
                   </div>
                   </div>
@@ -828,15 +916,107 @@ const Index = () => {
           </motion.div>
           
           <motion.div 
-            className="max-w-7xl mx-auto"
+            className="max-w-7xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
               >
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              {/* Left Side - Tabs */}
-              <div className="space-y-4 lg:col-span-1">
+            {/* Mobile: Horizontal Scrollable Tabs */}
+            <div className="block lg:hidden mb-8">
+              <div className="overflow-x-auto pb-2" ref={outcomeCarouselRef}>
+                <div className="flex gap-3 px-4" style={{ width: 'max-content' }}>
+                  <Button
+                    variant={activeOutcome === 'onboarding' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('onboarding')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'onboarding'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Onboarding
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'upskilling' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('upskilling')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'upskilling'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Upskilling/Reskilling
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'frontline' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('frontline')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'frontline'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Frontline Enablement
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'performance' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('performance')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'performance'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Performance Enablement
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'talent' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('talent')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'talent'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Talent Development
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'enterprise' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('enterprise')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'enterprise'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Extended Enterprise
+                  </Button>
+                  <Button
+                    variant={activeOutcome === 'compliance' ? 'default' : 'outline'}
+                    size="lg"
+                    onClick={() => setActiveOutcome('compliance')}
+                    className={`flex-shrink-0 h-12 text-sm px-4 transition-all duration-300 rounded-full ${
+                      activeOutcome === 'compliance'
+                        ? 'shadow-sm hover:shadow-md !bg-black hover:!bg-gray-800 !text-white'
+                        : 'border-2 border-purple-300 dark:border-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-100/50'
+                    }`}
+                  >
+                    Compliance
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              {/* Left Side - Tabs (Desktop Only) */}
+              <div className="hidden lg:block space-y-4 lg:col-span-1">
                 <Button
                   variant={activeOutcome === 'onboarding' ? 'default' : 'outline'}
                   size="lg"
@@ -923,16 +1103,16 @@ const Index = () => {
                 </Button>
                   </div>
 
-              {/* Right Side - Content Card */}
+              {/* Content Card */}
               <motion.div
-                className="lg:col-span-2 flex"
+                className="lg:col-span-2 flex w-full"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
                 key={activeOutcome}
               >
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 sm:p-12 w-full relative min-h-[500px] h-[500px]">
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-10 w-full relative min-h-[450px] sm:min-h-[500px]">
                   {/* Progress Bar Timer */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-700 rounded-t-2xl overflow-hidden">
                     <div 
@@ -978,11 +1158,11 @@ const Index = () => {
 
                     {/* Right Side - Image */}
                     <div className="flex items-center justify-center">
-                      <div className="w-full h-80 rounded-2xl overflow-hidden">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center">
                         <img 
                           src={`/${outcomeImages[activeOutcome]}`}
                           alt={`${outcomes[activeOutcome].title} illustration`}
-                          className="w-full h-full object-contain"
+                          className="max-w-full max-h-full object-contain object-center"
                         />
                       </div>
                     </div>

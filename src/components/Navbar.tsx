@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => 
+      prev.includes(section) 
+        ? prev.filter(s => s !== section)
+        : [...prev, section]
+    );
+  };
   return (
     <nav className="sticky top-[40px] z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -297,8 +307,198 @@ const Navbar = () => {
           >
             Book a Demo
           </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 rounded-md hover:bg-muted/50 transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <svg 
+              className="w-6 h-6 text-muted-foreground" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="container mx-auto px-4 py-4">
+            {/* Platform Section */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleSection('platform')}
+                className="flex items-center justify-between w-full text-left py-2"
+              >
+                <span className="text-sm font-semibold text-gray-900">Platform</span>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${expandedSections.includes('platform') ? 'rotate-45' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+              {expandedSections.includes('platform') && (
+                <div className="space-y-1 ml-4 mt-2">
+                  <a href="/platform/lxp" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LXP</a>
+                  <a href="/platform/lms" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LMS</a>
+                  <a href="/platform/content-studio" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Content Studio</a>
+                  <a href="/platform/just-in-time" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Just-in-Time</a>
+                  <a href="/platform/pulse" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Pulse</a>
+                </div>
+              )}
+            </div>
+
+            {/* Solutions Section */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleSection('solutions')}
+                className="flex items-center justify-between w-full text-left py-2"
+              >
+                <span className="text-sm font-semibold text-gray-900">Solutions</span>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${expandedSections.includes('solutions') ? 'rotate-45' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+              {expandedSections.includes('solutions') && (
+                <div className="space-y-1 ml-4 mt-2">
+                  <a href="/solutions/faster-onboarding" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Faster Onboarding</a>
+                  <a href="/solutions/upskill-reskill" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Upskill & Reskill</a>
+                  <a href="/solutions/compliance-made-simple" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Compliance Made Simple</a>
+                  <a href="/solutions/frontline-enablement" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Frontline Enablement</a>
+                  <a href="/solutions/leadership-talent" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Leadership & Talent</a>
+                  <a href="/solutions/partner-dealer-academies" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Partner & Dealer Academies</a>
+                  <a href="/solutions/performance-coaching" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Performance Coaching</a>
+                </div>
+              )}
+            </div>
+
+            {/* Why LISA AI Section */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleSection('why-lisa')}
+                className="flex items-center justify-between w-full text-left py-2"
+              >
+                <span className="text-sm font-semibold text-gray-900">Why LISA AI</span>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${expandedSections.includes('why-lisa') ? 'rotate-45' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+              {expandedSections.includes('why-lisa') && (
+                <div className="space-y-1 ml-4 mt-2">
+                  <a href="/why-lisa/ai-first-zero-legacy" className="block py-2 text-sm text-gray-700 hover:text-purple-600">AI-first Zero Legacy</a>
+                  <a href="/why-lisa/go-live-thirty-days" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Go Live in 30 Days</a>
+                  <a href="/why-lisa/loved-by-ops-hr-it" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Loved by Ops, HR & IT</a>
+                  <a href="/why-lisa/thirty-five-years-learning-dna" className="block py-2 text-sm text-gray-700 hover:text-purple-600">35 Years Learning DNA</a>
+                </div>
+              )}
+            </div>
+
+            {/* Resources Section */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleSection('resources')}
+                className="flex items-center justify-between w-full text-left py-2"
+              >
+                <span className="text-sm font-semibold text-gray-900">Resources</span>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${expandedSections.includes('resources') ? 'rotate-45' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+              {expandedSections.includes('resources') && (
+                <div className="space-y-1 ml-4 mt-2">
+                  <a href="/resources/ai-for-hr-hub" className="block py-2 text-sm text-gray-700 hover:text-purple-600">AI for HR Hub</a>
+                  <a href="/resources/podcasts" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Podcasts</a>
+                  <a href="/resources/playbooks-templates" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Playbooks & Templates</a>
+                  <a href="/resources/benchmarks-reports" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Benchmarks & Reports</a>
+                  <a href="/resources/buyer-guides" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Buyer Guides</a>
+                  <a href="/resources/ebooks" className="block py-2 text-sm text-gray-700 hover:text-purple-600">eBooks</a>
+                  <a href="/resources/glossary" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Glossary</a>
+                  <a href="/resources/faqs" className="block py-2 text-sm text-gray-700 hover:text-purple-600">FAQs</a>
+                  <a href="/resources/events-bootcamps" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Events & Bootcamps</a>
+                </div>
+              )}
+            </div>
+
+            {/* Company Section */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleSection('company')}
+                className="flex items-center justify-between w-full text-left py-2"
+              >
+                <span className="text-sm font-semibold text-gray-900">Company</span>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${expandedSections.includes('company') ? 'rotate-45' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
+              {expandedSections.includes('company') && (
+                <div className="space-y-1 ml-4 mt-2">
+                  <a href="/company/about" className="block py-2 text-sm text-gray-700 hover:text-purple-600">About</a>
+                  <a href="/company/customers" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Customers</a>
+                  <a href="/company/careers" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Careers</a>
+                  <a href="/company/press-media" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Press & Media</a>
+                  <a href="/company/contact" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Contact</a>
+                </div>
+              )}
+            </div>
+
+            {/* Other Links */}
+            <div className="border-t border-gray-200 pt-4">
+              <a href="/lisa-tour" className="block py-2 text-sm font-medium text-gray-900 hover:text-purple-600">LISA AI Tour</a>
+              <a 
+                href="#pricing" 
+                className="block py-2 text-sm font-medium text-gray-900 hover:text-purple-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  const element = document.querySelector('#pricing');
+                  if (element) {
+                    element.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }
+                }}
+              >
+                Pricing
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
