@@ -525,7 +525,7 @@ const Index = () => {
 
       <main className="flex-1">
       {/* Hero Section */}
-      <section id="main" className="relative py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="main" className="relative py-2 sm:py-3 md:py-4 lg:py-5 xl:py-6 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elegant Background */}
         <div className="absolute inset-0 bg-background" />
         
