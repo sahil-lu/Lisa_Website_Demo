@@ -12061,7 +12061,7 @@ const ContentLibrary = () => {
   }, [searchTerm, selectedCategory, selectedLevel]);
 
   return (
-    <main>
+    <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Content Library - LISA AI</title>
         <meta name="description" content="Access 500 auto-generated, expert-reviewed courses across communication, leadership, compliance, and more." />
@@ -12072,6 +12072,8 @@ const ContentLibrary = () => {
       
       {/* Navigation */}
       <Navbar />
+
+      <main className="flex-1">
 
       {/* Hero Section */}
       <section className="py-16 sm:py-24 bg-background">
@@ -12478,9 +12480,10 @@ const ContentLibrary = () => {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 };
 

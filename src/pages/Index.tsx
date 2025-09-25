@@ -510,7 +510,7 @@ const Index = () => {
   }, [testimonials.length]);
   
   return (
-    <main>
+    <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>LISA AI – Corporate Learning Platform Backed by a University</title>
         <meta name="description" content="Corporate L&D that actually ships outcomes. Meet LISA AI — your corporate learning platform backed by a university." />
@@ -523,6 +523,7 @@ const Index = () => {
 
       <Navbar />
 
+      <main className="flex-1">
       {/* Hero Section */}
       <section id="main" className="relative py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12 min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elegant Background */}
@@ -1724,6 +1725,7 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <motion.footer 
@@ -1792,7 +1794,7 @@ const Index = () => {
           </div>
         </div>
       </motion.footer>
-    </main>
+    </div>
   );
 };
 

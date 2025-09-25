@@ -330,9 +330,11 @@ const LisaTour = () => {
   }, []);
 
   return (
-    <main>
+    <div className="min-h-screen flex flex-col">
       <StickyTopBar />
       <Navbar />
+
+      <main className="flex-1">
 
       <section className="py-12 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
 
@@ -1312,7 +1314,8 @@ const LisaTour = () => {
           </div>
         </div>
       </motion.footer>
-    </main>
+      </main>
+    </div>
   );
 };
 
