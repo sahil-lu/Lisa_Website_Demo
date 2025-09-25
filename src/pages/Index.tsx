@@ -1263,36 +1263,36 @@ const Index = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   { 
-                    name: "Eisai", 
-                    logo: "/logos/eisai.png"
+                    name: "Google", 
+                    logo: "/logos/google-logo.png"
                   },
                   { 
-                    name: "ICICI Bank", 
-                    logo: "/logos/icici bank.png"
+                    name: "Microsoft", 
+                    logo: "/logos/azure-ad-logo.svg"
                   },
                   { 
                     name: "Hinduja", 
                     logo: "/logos/hinduja.png"
                   },
                   { 
-                    name: "Kotak", 
-                    logo: "/logos/kotak.png"
+                    name: "Salesforce", 
+                    logo: "/logos/salesforce-logo.png"
                   },
                   { 
-                    name: "Raymond", 
-                    logo: "/logos/raymond.png"
+                    name: "SAP", 
+                    logo: "/logos/sap-logo.png"
                   },
                   { 
-                    name: "Richs", 
-                    logo: "/logos/richs.png"
+                    name: "Workday", 
+                    logo: "/logos/workday-logo.png"
                   },
                   { 
-                    name: "Reliance Jewels", 
-                    logo: "/logos/reliance jewels.png"
+                    name: "Slack", 
+                    logo: "/logos/slack-logo.png"
                   },
                   { 
-                    name: "TITAN Eye", 
-                    logo: "/logos/titan eye.png"
+                    name: "Zoho", 
+                    logo: "/logos/zoho-logo.png"
                   }
                 ].map((company, index) => (
                   <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-sm p-2 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
@@ -1300,7 +1300,7 @@ const Index = () => {
                       src={company.logo} 
                       alt={`${company.name} logo`}
                       className={`object-contain transition-all duration-300 ${
-                        company.name === "ICICI Bank" 
+                        company.name === "Microsoft" 
                           ? "h-28 sm:h-32 md:h-36" 
                           : "h-32 sm:h-40 md:h-48"
                       }`}
