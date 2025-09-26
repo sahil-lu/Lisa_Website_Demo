@@ -155,7 +155,11 @@ const LisaVsOthers = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Docebo */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Docebo</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/doce.png" alt="Docebo" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Established cloud LMS; tends to run as a larger admin/config project with quote-based pricing.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> AI-first, ready on day one, clear pricing, and complete feature set for adoption and performance.
@@ -167,7 +171,11 @@ const LisaVsOthers = () => {
 
                 {/* SuccessFactors Learning */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. SuccessFactors Learning</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/sap.png" alt="SuccessFactors" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Enterprise LMS within a larger HCM; heavier governance and IT projects.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> AI-first, fast rollout, transparent pricing, full feature stack for usage & performance.
@@ -179,7 +187,11 @@ const LisaVsOthers = () => {
 
                 {/* Litmos */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Litmos</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/litmos.png" alt="Litmos" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Traditional cloud LMS; bundle-based pricing; admin-heavy setup.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> AI-first, day-one library, nudges, simulators, BI.
@@ -191,7 +203,11 @@ const LisaVsOthers = () => {
 
                 {/* Absorb */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Absorb</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/absorb.png" alt="Absorb" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Full-featured LMS with modular add-ons; quote-based.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Transparent pricing, ready content, JIT, AI practice.
@@ -203,7 +219,11 @@ const LisaVsOthers = () => {
 
                 {/* LearnUpon */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. LearnUpon</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/learnupon.png" alt="LearnUpon" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Modern LMS; configuration-led; pricing by tiers.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Day-one value with library, JIT, nudges, simulators, BI.
@@ -215,7 +235,11 @@ const LisaVsOthers = () => {
 
                 {/* TalentLMS */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. TalentLMS</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/talentlms.png" alt="TalentLMS" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Quick-start LMS; scales via admin work and add-ons.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Adds AI practice, JIT, nudges, BI, and ready library for real outcomes.
@@ -227,7 +251,11 @@ const LisaVsOthers = () => {
 
                 {/* 360Learning */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. 360Learning</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/360 learning.png" alt="360Learning" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Collaborative learning platform; admin/config effort; pricing by quote.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Outcome-first with JIT, AI practice, nudges, BI, and included library.
@@ -239,7 +267,11 @@ const LisaVsOthers = () => {
 
                 {/* Degreed */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Degreed</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/degreed.png" alt="Degreed" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Skills & learning experience layer; typically complex rollouts.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Deploys in days with ready content, JIT, AI practice, nudges, BI.
@@ -251,7 +283,11 @@ const LisaVsOthers = () => {
 
                 {/* Skilljar */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Skilljar</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/skilljar.png" alt="Skilljar" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Strong for customer education; employee L&D needs more admin/config.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Turnkey employee L&D with library, JIT, AI practice, nudges, BI.
@@ -263,7 +299,11 @@ const LisaVsOthers = () => {
 
                 {/* WorkRamp */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. WorkRamp</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/workramp.png" alt="WorkRamp" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Enablement-oriented platform; pricing by quote; admin-led programs.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Ready library, JIT, AI practice, nudges, BI for measurable lift.
@@ -275,7 +315,11 @@ const LisaVsOthers = () => {
 
                 {/* Moodle Workplace */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Moodle Workplace</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/moodle.png" alt="Moodle" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Open-source-rooted, partner-implemented; maintenance and customization overhead.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Hosted, fast to deploy, ready content, JIT, AI practice, nudges, BI.
@@ -287,7 +331,11 @@ const LisaVsOthers = () => {
 
                 {/* UpsideLMS */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. UpsideLMS</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/upside lms.png" alt="UpsideLMS" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">Traditional LMS with module packs; quote-based tiers.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Clear pricing, ready content, JIT, AI practice, nudges, BI.
@@ -299,7 +347,11 @@ const LisaVsOthers = () => {
 
                 {/* Courseplay */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. Courseplay</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/couseplay.png" alt="Courseplay" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">LXP/EX with pricing nuances; admin-led set-up.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Outcome-first—day-one library, JIT, AI practice, nudges, BI, predictable pricing.
@@ -311,7 +363,11 @@ const LisaVsOthers = () => {
 
                 {/* PlayAblo */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">LISA AI vs. PlayAblo</h3>
+                  <div className="flex items-center justify-center mb-6">
+                    <img src="/logos/lisa new logo.svg" alt="LISA AI" className="h-8 w-auto" />
+                    <span className="text-gray-400 mx-2 text-lg font-semibold">vs</span>
+                    <img src="/logos/playablo.png" alt="PlayAblo" className="h-20 w-auto" />
+                  </div>
                   <p className="text-gray-700 mb-4">SMB-friendly LMS tiers; features vary by band.</p>
                   <div className="text-sm text-gray-600 mb-4">
                     <strong>LISA AI advantage:</strong> Enterprise-grade outcomes with JIT, AI practice, nudges, BI, and a day-one library.
