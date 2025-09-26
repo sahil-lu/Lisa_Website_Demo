@@ -246,7 +246,7 @@ All colors MUST be HSL.
   }
   
 .animate-marquee-slow {
-  animation: marquee-slow 15s linear infinite;
+  animation: marquee-slow 10s linear infinite;
 }
 }
 

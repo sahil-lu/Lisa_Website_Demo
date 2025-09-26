@@ -242,7 +242,7 @@ const CourseLibraryCarousel = () => {
         </div>
 
         {/* Course Carousel */}
-        <div className="relative overflow-hidden w-full">
+        <div className="relative overflow-hidden w-full pb-8">
           <div className="flex animate-marquee-slow">
             {/* First set of courses */}
             {courses.map((course, index) => (

@@ -1498,7 +1498,7 @@ const Index = () => {
       <VisualBreaker />
 
       {/* Pricing Section */}
-      <section className="py-20 bg-neutral-950 dark:bg-neutral-900 relative overflow-hidden">
+      <section id="pricing" className="py-20 bg-neutral-950 dark:bg-neutral-900 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
@@ -1908,72 +1908,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <motion.footer 
-        className="bg-background py-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <div className="container mx-auto px-4">
-          {/* Top Section - Four Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            {/* About LISA */}
-            <div>
-              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">About LISA</h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                LISA is an AI-powered learning ecosystem helping enterprises and institutions create personalized, adaptive learning at scale.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#features" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#integrations" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Integrations</a></li>
-                <li><a href="#security" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Security</a></li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/resources/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Blog</a></li>
-                <li><a href="/resources/playbooks" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Playbooks</a></li>
-                <li><a href="/resources/benchmarks" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Benchmarks</a></li>
-                <li><a href="/resources/faqs" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">FAQs</a></li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h3 className="font-bold text-neutral-900 dark:text-white mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="mailto:hello@lisaapp.in" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">hello@lisaapp.in</a></li>
-                <li><a href="https://calendar.app.google/4tjN6L4oY6db7QtV8" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Book a Demo</a></li>
-                <li><a href="/company/contact" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="border-t border-neutral-200 dark:border-neutral-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 md:mb-0">
-                © 2025 LetsUpgrade EdTech Pvt. Ltd. All rights reserved.
-              </div>
-              <div className="flex space-x-6 text-sm">
-                <a href="/privacy" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy Policy</a>
-                <a href="/terms" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Terms of Service</a>
-                <a href="/cookies" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 };

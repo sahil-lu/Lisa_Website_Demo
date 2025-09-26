@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="relative group">
               <a
                 href="#"
-                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
                 Platform
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ const Navbar = () => {
             <div className="relative group">
               <a
                 href="#"
-                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
                 Solutions
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ const Navbar = () => {
             <div className="relative group">
               <a
                 href="#"
-                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
                 Why LISA AI
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,6 +172,23 @@ const Navbar = () => {
                     <div className="font-semibold">Loved by ops, HR, and IT.</div>
                     <div className="text-xs text-gray-500 mt-1">Designed for all stakeholders, not just learners</div>
                   </a>
+                  <div className="border-t border-gray-200 my-2"></div>
+                  <a href="/resources/lisa-vs-disprz" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                    <div className="font-semibold">LISA vs Disprz</div>
+                    <div className="text-xs text-gray-500 mt-1">Compare LISA AI with Disprz platform</div>
+                  </a>
+                  <a href="/resources/lisa-vs-paradiso" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                    <div className="font-semibold">LISA vs Paradiso</div>
+                    <div className="text-xs text-gray-500 mt-1">Compare LISA AI with Paradiso LMS</div>
+                  </a>
+                  <a href="/resources/lisa-vs-cornerstone" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                    <div className="font-semibold">LISA vs Cornerstone</div>
+                    <div className="text-xs text-gray-500 mt-1">Compare LISA AI with Cornerstone OnDemand</div>
+                  </a>
+                  <a href="/resources/lisa-vs-others" className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
+                    <div className="font-semibold">LISA vs Others</div>
+                    <div className="text-xs text-gray-500 mt-1">Compare LISA AI with other learning platforms</div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -180,7 +197,7 @@ const Navbar = () => {
             <div className="relative group">
               <a
                 href="#"
-                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
                 Resources
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,7 +256,7 @@ const Navbar = () => {
             <div className="relative group">
               <a
                 href="#"
-                className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
+                className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50 flex items-center gap-1"
               >
                 Company
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,13 +293,13 @@ const Navbar = () => {
 
             <a
               href="/lisa-tour"
-              className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+              className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
             >
               LISA AI Tour
             </a>
             <a
               href="#pricing"
-              className="text-sm font-black text-muted-foreground hover:text-foreground transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
+              className="text-sm font-normal text-black hover:text-gray-600 transition-colors duration-200 px-2 py-1 rounded-md hover:bg-muted/50"
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.querySelector('#pricing');
@@ -413,6 +430,11 @@ const Navbar = () => {
                   <a href="/why-lisa/go-live-thirty-days" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Go Live in 30 Days</a>
                   <a href="/why-lisa/loved-by-ops-hr-it" className="block py-2 text-sm text-gray-700 hover:text-purple-600">Loved by Ops, HR & IT</a>
                   <a href="/why-lisa/thirty-five-years-learning-dna" className="block py-2 text-sm text-gray-700 hover:text-purple-600">35 Years Learning DNA</a>
+                  <div className="border-t border-gray-200 my-2"></div>
+                  <a href="/resources/lisa-vs-disprz" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LISA vs Disprz</a>
+                  <a href="/resources/lisa-vs-paradiso" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LISA vs Paradiso</a>
+                  <a href="/resources/lisa-vs-cornerstone" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LISA vs Cornerstone</a>
+                  <a href="/resources/lisa-vs-others" className="block py-2 text-sm text-gray-700 hover:text-purple-600">LISA vs Others</a>
                 </div>
               )}
             </div>

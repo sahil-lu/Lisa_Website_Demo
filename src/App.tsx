@@ -42,6 +42,10 @@ import EBooks from "./pages/resources/eBooks";
 import Glossary from "./pages/resources/Glossary";
 import FAQs from "./pages/resources/FAQs";
 import EventsBootcamps from "./pages/resources/EventsBootcamps";
+import LisaVsDisprz from "./pages/resources/LisaVsDisprz";
+import LisaVsParadiso from "./pages/resources/LisaVsParadiso";
+import LisaVsCornerstone from "./pages/resources/LisaVsCornerstone";
+import LisaVsOthers from "./pages/resources/LisaVsOthers";
 
 // Company pages
 import About from "./pages/company/About";
@@ -98,6 +102,10 @@ const App = () => (
             <Route path="/resources/glossary" element={<Glossary />} />
             <Route path="/resources/faqs" element={<FAQs />} />
             <Route path="/resources/events-bootcamps" element={<EventsBootcamps />} />
+            <Route path="/resources/lisa-vs-disprz" element={<LisaVsDisprz />} />
+            <Route path="/resources/lisa-vs-paradiso" element={<LisaVsParadiso />} />
+            <Route path="/resources/lisa-vs-cornerstone" element={<LisaVsCornerstone />} />
+            <Route path="/resources/lisa-vs-others" element={<LisaVsOthers />} />
             
             {/* Company Routes */}
             <Route path="/company/about" element={<About />} />
